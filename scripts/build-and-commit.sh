@@ -2,7 +2,7 @@
 
 # Define the branches
 MAIN_BRANCH="main"
-TARGET_BRANCH="gh-pages"
+TARGET_BRANCH="branch-2"
 BUILD_FOLDER="build"
 NOJEKYLL_FILE=".nojekyll"
 
@@ -11,6 +11,14 @@ if [ ! -d ".git" ]; then
   echo "This script must be run from the root of a git repository."
   exit 1
 fi
+
+# Check if a commit message was provided as an argument
+if [ "$#" -ne 1 ]; then
+  echo "Usage: $0 '<commit-message>'"
+  exit 1
+fi
+
+COMMIT_MESSAGE="$1"
 
 # Switch to the main branch (local)
 git checkout $MAIN_BRANCH
@@ -50,7 +58,7 @@ fi
 
 # Add and commit the changes (local)
 git add .nojekyll *
-git commit -m "Update build folder contents from $MAIN_BRANCH and add .nojekyll"
+git commit -m "$COMMIT_MESSAGE"
 if [ $? -ne 0 ]; then
   echo "Failed to commit the changes."
   exit 1
@@ -66,4 +74,4 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-echo "Build folder contents successfully copied from $MAIN_BRANCH to $TARGET_BRANCH, .nojekyll file added, and committed locally."
+echo "Build folder contents successfully copied from $MAIN_BRANCH to $TARGET_BRANCH, .nojekyll file added, and committed locally with message: '$COMMIT_MESSAGE'."
