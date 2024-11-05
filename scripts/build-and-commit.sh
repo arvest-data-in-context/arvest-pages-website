@@ -2,11 +2,9 @@
 
 # Define the branches
 MAIN_BRANCH="main"
-TARGET_BRANCH="branch-2"
+TARGET_BRANCH="gh-pages"
 BUILD_FOLDER="build"
 NOJEKYLL_FILE=".nojekyll"
-
-npm run build
 
 # Ensure you are in the git repository
 if [ ! -d ".git" ]; then
@@ -21,6 +19,13 @@ if [ "$#" -ne 1 ]; then
 fi
 
 COMMIT_MESSAGE="$1"
+
+# Run the build command
+npm run build
+if [ $? -ne 0 ]; then
+  echo "Build failed. Exiting."
+  exit 1
+fi
 
 # Switch to the main branch (local)
 git checkout $MAIN_BRANCH
