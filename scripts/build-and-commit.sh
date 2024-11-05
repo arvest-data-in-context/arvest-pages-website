@@ -6,6 +6,8 @@ TARGET_BRANCH="branch-2"
 BUILD_FOLDER="build"
 NOJEKYLL_FILE=".nojekyll"
 
+npm run build
+
 # Ensure you are in the git repository
 if [ ! -d ".git" ]; then
   echo "This script must be run from the root of a git repository."
