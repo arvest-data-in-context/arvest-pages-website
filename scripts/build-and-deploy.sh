@@ -2,7 +2,7 @@
 
 # Define the branches
 MAIN_BRANCH="main"
-TARGET_BRANCH="branch-2"
+TARGET_BRANCH="gh-pages"
 BUILD_FOLDER="build"
 NOJEKYLL_FILE=".nojekyll"
 
@@ -12,16 +12,10 @@ if [ ! -d ".git" ]; then
   exit 1
 fi
 
-# Switch to the main branch and pull the latest changes
+# Switch to the main branch (local)
 git checkout $MAIN_BRANCH
 if [ $? -ne 0 ]; then
   echo "Failed to switch to branch $MAIN_BRANCH."
-  exit 1
-fi
-
-git pull origin $MAIN_BRANCH
-if [ $? -ne 0 ]; then
-  echo "Failed to pull the latest changes from $MAIN_BRANCH."
   exit 1
 fi
 
@@ -33,16 +27,10 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-# Switch to branch-2 and pull the latest changes
+# Switch to branch-2 (local)
 git checkout $TARGET_BRANCH
 if [ $? -ne 0 ]; then
   echo "Failed to switch to branch $TARGET_BRANCH."
-  exit 1
-fi
-
-git pull origin $TARGET_BRANCH
-if [ $? -ne 0 ]; then
-  echo "Failed to pull the latest changes from $TARGET_BRANCH."
   exit 1
 fi
 
@@ -60,7 +48,7 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-# Add and commit the changes
+# Add and commit the changes (local)
 git add $BUILD_FOLDER $NOJEKYLL_FILE
 git commit -m "Update build folder from $MAIN_BRANCH and add .nojekyll"
 if [ $? -ne 0 ]; then
@@ -71,12 +59,11 @@ fi
 # Clean up
 rm -rf $TEMP_DIR
 
-# Switch back to the main branch
+# Switch back to the main branch (local)
 git checkout $MAIN_BRANCH
 if [ $? -ne 0 ]; then
   echo "Failed to switch back to $MAIN_BRANCH."
   exit 1
 fi
 
-echo "Build folder successfully copied from $MAIN_BRANCH to $TARGET_BRANCH, .nojekyll file added, and committed."
-echo "You can now manually push the changes with: git push origin $TARGET_BRANCH"
+echo "Build folder successfully copied from $MAIN_BRANCH to $TARGET_BRANCH, .nojekyll file added, and committed locally."
