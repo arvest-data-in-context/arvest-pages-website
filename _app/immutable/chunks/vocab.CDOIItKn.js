@@ -1,0 +1,1 @@
+import{j as r,C as f}from"./runtime.DjWlY-ct.js";function h(s,e,a,i,d){var o;r&&f();var t=(o=e.$$slots)==null?void 0:o[a],n=!1;t===!0&&(t=e.children,n=!0),t===void 0||t(s,n?()=>i:i)}const l={title:"Hello this is my title"},c={title:"Bonjour voici mon titre"},m={en:l,fr:c};export{m as P,h as s};
