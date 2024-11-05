@@ -2,8 +2,9 @@
 
 # Define the branches
 MAIN_BRANCH="main"
-TARGET_BRANCH="branch-2"
+TARGET_BRANCH="gh-pages"
 BUILD_FOLDER="build"
+NOJEKYLL_FILE=".nojekyll"
 
 # Ensure you are in the git repository
 if [ ! -d ".git" ]; then
@@ -52,9 +53,16 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
+# Add the .nojekyll file at the root of the branch-2
+touch $NOJEKYLL_FILE
+if [ $? -ne 0 ]; then
+  echo "Failed to create the $NOJEKYLL_FILE file."
+  exit 1
+fi
+
 # Add, commit, and push the changes
-git add $BUILD_FOLDER
-git commit -m "Update build folder from $MAIN_BRANCH"
+git add $BUILD_FOLDER $NOJEKYLL_FILE
+git commit -m "Update build folder from $MAIN_BRANCH and add .nojekyll"
 if [ $? -ne 0 ]; then
   echo "Failed to commit the changes."
   exit 1
@@ -76,4 +84,4 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-echo "Build folder successfully copied from $MAIN_BRANCH to $TARGET_BRANCH, pushed, and switched back to $MAIN_BRANCH."
+echo "Build folder successfully copied from $MAIN_BRANCH to $TARGET_BRANCH, .nojekyll file added, pushed, and switched back to $MAIN_BRANCH."
