@@ -19,11 +19,11 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-# Copy the build folder to a temporary location
+# Copy the build folder contents to a temporary location
 TEMP_DIR=$(mktemp -d)
 cp -r $BUILD_FOLDER/* $TEMP_DIR
 if [ $? -ne 0 ]; then
-  echo "Failed to copy the build folder."
+  echo "Failed to copy the contents of the build folder."
   exit 1
 fi
 
@@ -34,10 +34,10 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-# Copy the build contents from the temporary directory to the current branch
-cp -r $TEMP_DIR/* $BUILD_FOLDER
+# Copy the contents of the temporary directory to the root of branch-2
+cp -r $TEMP_DIR/* .
 if [ $? -ne 0 ]; then
-  echo "Failed to copy the contents to the $TARGET_BRANCH branch."
+  echo "Failed to copy the contents to the root of the $TARGET_BRANCH branch."
   exit 1
 fi
 
@@ -49,8 +49,8 @@ if [ $? -ne 0 ]; then
 fi
 
 # Add and commit the changes (local)
-git add $BUILD_FOLDER $NOJEKYLL_FILE
-git commit -m "Update build folder from $MAIN_BRANCH and add .nojekyll"
+git add .nojekyll *
+git commit -m "Update build folder contents from $MAIN_BRANCH and add .nojekyll"
 if [ $? -ne 0 ]; then
   echo "Failed to commit the changes."
   exit 1
@@ -66,4 +66,4 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-echo "Build folder successfully copied from $MAIN_BRANCH to $TARGET_BRANCH, .nojekyll file added, and committed locally."
+echo "Build folder contents successfully copied from $MAIN_BRANCH to $TARGET_BRANCH, .nojekyll file added, and committed locally."
