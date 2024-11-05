@@ -1,4 +1,18 @@
-<h1>Welcome to SvelteKit, this has changed</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
-<p>New content</p>
-<p>Anothe rmodification</p>
+<script>
+    import { supported_langs } from '$lib/scripts/stores.js';
+    import { base } from '$app/paths';
+    import { onMount } from 'svelte';
+  
+    onMount(() => {
+      const defaultLang = 'en';
+      const browserLang = navigator.language.split('-')[0];
+      const lang = supported_langs.includes(browserLang) ? browserLang : defaultLang;
+      window.location.href = `${base}/${lang}`;
+    });
+</script>
+
+<svelte:head>
+  <meta name="robots" content="noindex" />
+</svelte:head>
+
+<p>Redirect...</p>
