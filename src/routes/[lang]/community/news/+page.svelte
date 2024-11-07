@@ -1,5 +1,3 @@
-<!-- The main about page where we give an overview of all of that is possible to do with arvest -->
-
 <div class="cont">
     <p>This page is currently under construction. Please return soon for more content.</p>
 </div>

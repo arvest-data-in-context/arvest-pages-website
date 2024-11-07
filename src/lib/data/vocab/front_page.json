@@ -1,0 +1,44 @@
+{
+    "short_description":{"en":"Data in context","fr":"Les données en contexte"},
+    "long_description":{"en":"Consult, compare, organize and annotate documents, images, videos and audio on a virtual desktop.","fr":"Consultez, comparez, organisez et annotez des documents, images, vidéos et sons sur un bureau virtuel."},
+    "start_creating":{"en":"Start creating","fr":"Commencer la création"},
+    "features":{
+        "create_collections":{
+            "button":{"en":"Learn more","fr":"Découvrir"},
+            "title":{"en":"Create multimodal collections","fr":"Créez des collections multimodales"},
+            "desc":{"en":"Gather all of your documents in one workspace, be they images, video, audio or documents.","fr":"Rassemblez tous vos documents dans un environnement de travail, que ce soit des images, des vidéos, de l'audio ou des documents."}
+        },
+        "create_annotations":{
+            "button":{"en":"Learn more","fr":"Découvrir"},
+            "title":{"en":"Annotate","fr":"Annotez"},
+            "desc":{"en":"Create all kind of annotations, from simple textual tags to complex visual overlays.","fr":"Créez toutes sortes d'annotations, des simples étiquettes textuelles jusqu'aux overlays visuels complexes."}
+        },
+        "navigate_networks":{
+            "button":{"en":"Learn more","fr":"Découvrir"},
+            "title":{"en":"Navigate networks","fr":"Naviguez des réseaux"},
+            "desc":{"en":"Navigate your collections and jump from detailed to overarching perspectives in a fluid environment.","fr":"Naviguez vos collections et sautez entre perspectives détaillées et élargies dans un environment fluide."}
+        },
+        "ml_workflows":{
+            "button":{"en":"More on the API","fr":"Découvrir l'API"},
+            "title":{"en":"ML workflows","fr":"Machine learning"},
+            "desc":{"en":"Thanks to Arvest's API, integrate the tool into your favorite machine learning workflows.","fr":"Grace à l'API d'Arvest, intégrez l'outil dans vos workflows machine learning préférés."}
+        },
+        "iiif_compliant":{
+            "button":{"en":"More about IIIF","fr":"A propos de IIIF"},
+            "title":{"en":"IIIF Compliant","fr":"Compatible IIIF"},
+            "desc":{"en":"Arvest if fully IIIF compliant, meaning you can bring in any number of IIIF resources and share your work with the community.","fr":"Arvest est 100% compatible IIIF, ce qui vous permet d'intégrer les contenus IIIF et de partager vos créations avec la communauté."}
+        },
+        "secure_data":{
+            "button":{"en":"Learn more","fr":"Découvrir"},
+            "title":{"en":"Secure data","fr":"Données securisées"},
+            "desc":{"en":"Share your projects with the world, or keep them private. Either way your data remains safe and secure.","fr":"Partagez vos projets avec les autres, ou gardez-les privés. Dans le deux cas vos données sont sécurisées."}
+        }
+    },
+    "presentation_widget":[
+        {"title":{"en":"A digital desk","fr":"Un bureau virtuel"},"content":{"en":"Arvest gives you a secure and dynamic digital workspace.","fr":"Arvest vous offre un environment de travail numérique sécurisé et dynamique."}},
+        {"title":{"en":"Gather your documents","fr":"Rassemblez vos documents"},"content":{"en":"Whether they're images, audio or images, Arvest allows you to bring many types of documents together in one space.","fr":"Que ce soit des images, de l'audio ou des vidéos, Arvest vous permet de rassembler divers types de documents en un lieu unique."}},
+        {"title":{"en":"Arrange and compose","fr":"Arrangez et composez"},"content":{"en":"Decompose your documents, stick them together, and arrange them on your virtual desk.","fr":"Décomposez vos documents, collez-les ensemble, et arrangez les sur votre bureau virtuel."}},
+        {"title":{"en":"Annotate","fr":"Annotez"},"content":{"en":"Augment your documents and projects with a host of annotation types.","fr":"Augementez vos documents et vos projets avec divers types d'annotations."}},
+        {"title":{"en":"Link your documents","fr":"Liez vos documents"},"content":{"en":"Create links between documents and annotations to create and navigate your collections as a network.","fr":"Créez des liens entre vos documents et vos annotations afin de créer et de naviguer vos collections en tant que réseau."}}
+    ]
+}

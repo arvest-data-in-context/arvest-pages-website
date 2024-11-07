@@ -1,0 +1,23 @@
+{
+    "menu":{"en":"Menu","fr":"Menu"},
+    "community":{"en":"Community","fr":"Communauté"},
+    "projects":{"en":"Projects","fr":"Projets"},
+    "forum":{"en":"Forum","fr":"Forum"},
+    "stage":{"en":"STAGE","fr":"STAGE"},
+    "learn":{"en":"Learn","fr":"Apprendre"},
+    "tutorials":{"en":"Tutorials","fr":"Tutoriels"},
+    "iiif":{"en":"IIIF","fr":"IIIF"},
+    "ml":{"en":"Machine Learning","fr":"Machine Learning"},
+    "api":{"en":"API","fr":"API"},
+    "reference":{"en":"Reference","fr":"Référence"},
+    "news":{"en":"News","fr":"Nouvelles"},
+    "about":{"en":"About","fr":"A propos"},
+    "about_arvest":{"en":"About Arvest","fr":"A propos d'Arvest"},
+    "team":{"en":"Team","fr":"Equipe"},
+    "accessibility":{"en":"Accessibility","fr":"Accesibilité"},
+    "credits":{"en":"Credits","fr":"Attribution"},
+    "connect":{"en":"Connect","fr":"Connexion"},
+    "demo":{"en":"Demo","fr":"Démo"},
+    "other_tools":{"en":"Other Tools","fr":"D'autre outils"},
+    "home":{"en":"Home","fr":"Acceuil"}
+}
