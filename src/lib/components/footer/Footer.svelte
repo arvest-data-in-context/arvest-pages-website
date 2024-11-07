@@ -28,19 +28,18 @@
             <ul class="menu_section">
                 <li><a href="{base}/{langVal}/learn" class="menu_top_link">{PageVocab.learn[langVal]}</a></li>
                 <li><a href="{base}/{langVal}/learn/tutorials" class="menu_lower_link">{PageVocab.tutorials[langVal]}</a></li>
-                <li><a href="{base}/{langVal}/learn/ml" class="menu_lower_link">{PageVocab.ml[langVal]}</a></li>
                 <li><a href="{base}/{langVal}/learn/iiif" class="menu_lower_link">{PageVocab.iiif[langVal]}</a></li>
-                <li><a href="{base}/{langVal}/learn/othertools" class="menu_lower_link">{PageVocab.other_tools[langVal]}</a></li>
             </ul>
     
             <ul class="menu_section">
                 <li><a href="{base}/{langVal}/api" class="menu_top_link">{PageVocab.api[langVal]}</a></li>
-                <li><a href="{base}/{langVal}/api/reference" class="menu_lower_link">{PageVocab.reference[langVal]}</a></li>
+                <li><a href="{base}/{langVal}/api/ml" class="menu_lower_link">{PageVocab.ml[langVal]}</a></li>
+                <li><a href="{base}/{langVal}/api/documentation" class="menu_lower_link">{PageVocab.reference[langVal]}</a></li>
             </ul>
     
             <ul class="menu_section">
                 <li><a href="{base}/{langVal}/about" class="menu_top_link">{PageVocab.about[langVal]}</a></li>
-                <li><a href="{base}/{langVal}/about/arvest" class="menu_lower_link">{PageVocab.about_arvest[langVal]}</a></li>
+                <li><a href="{base}/{langVal}/about/infrastructure" class="menu_lower_link">{PageVocab.about_arvest[langVal]}</a></li>
                 <li><a href="{base}/{langVal}/about/team" class="menu_lower_link">{PageVocab.team[langVal]}</a></li>
                 <li><a href="{base}/{langVal}/about/accessibility" class="menu_lower_link">{PageVocab.accessibility[langVal]}</a></li>
                 <li><a href="{base}/{langVal}/about/credits" class="menu_lower_link">{PageVocab.credits[langVal]}</a></li>
@@ -48,7 +47,6 @@
     
             <ul class="menu_section">
                 <li><a href="https://arvest-dev.tetras-libre.fr/" class="menu_top_link">{PageVocab.connect[langVal]}</a></li>
-                <li><a href="{base}/{langVal}/demo" class="menu_lower_link">{PageVocab.demo[langVal]}</a></li>
             </ul>
         </div>
         

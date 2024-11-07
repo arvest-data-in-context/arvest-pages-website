@@ -89,14 +89,14 @@
 <style>
     h1{
         color: var(--primary-text);
-        font-size: 2em;
+        font-size: 1.5em;
         padding-bottom: 0.2em;
-        width: 60%;
+        width: 100%;
     }
 
     #long_description{
         color: var(--secondary-text);
-        padding-bottom: 1em;
+        padding-bottom: 1.5em;
     }
 
     #top_section{
@@ -120,10 +120,10 @@
     /* LARGE SCREENS */
     @media (min-width: 1500px) {
         h1{
-            font-size: 2em;
+            font-size: 1.5em;
         }
         #long_description{
-            font-size: 1em;
+            font-size: 0.8em;
         }
         #main_button_resizer{
             font-size: 1em;
@@ -136,10 +136,10 @@
     /* MEDIUM SCREENS */
     @media (min-width: 1200px) and (max-width: 1499px)  {
         h1{
-            font-size: 2em;
+            font-size: 1.5em;
         }
         #long_description{
-            font-size: 1em;
+            font-size: 0.8em;
         }
         #main_button_resizer{
             font-size: 1em;
@@ -152,7 +152,7 @@
     /* SMALL SCREENS */
     @media (min-width: 700px) and (max-width: 1199px) {
         h1{
-            font-size: 2em;
+            font-size: 1.5em;
         }
         #long_description{
             font-size: 0.7em;
