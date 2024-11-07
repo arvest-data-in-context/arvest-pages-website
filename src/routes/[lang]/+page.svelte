@@ -82,7 +82,7 @@
         image_url_3 = "{base}/imgs/logos/padlock_logo_cropped.png"
         image_alt_3 = "secure padlock illustration"
         button_label_3 = {PageVocab.features.secure_data.button[langVal]}
-        button_url_3 = "{base}/{langVal}/about/arvest"
+        button_url_3 = "{base}/{langVal}/about/infrastructure"
     />
 </div>
 
