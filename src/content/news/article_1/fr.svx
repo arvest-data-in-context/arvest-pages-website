@@ -1,0 +1,13 @@
+---
+title: "Le site d'Arvest est déployé"
+date: "2024-10-18"
+description: "Aujourd'hui, nous avons déployé Arvest."
+tags: ["news", "release"]
+author: "Jacob Hart"
+---
+
+# Arvest.app est en ligne
+
+Voici le premier article
+
+[visitez la page d'acceuil](https://arvest.app)

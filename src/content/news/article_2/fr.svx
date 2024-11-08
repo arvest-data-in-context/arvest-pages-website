@@ -1,0 +1,20 @@
+---
+title: "Le DEUX"
+date: "2024-10-17"
+description: "This is another cool article."
+tags: ["news", "bob"]
+author: "Jacob Hart"
+---
+
+<script>
+  import TestComponent from '$lib/components/TestComponent.svelte';  // Importing a custom component
+</script>
+
+# 222 blan nl bla
+
+Blabla bla
+
+[a test link](https://www.google.com/)
+
+
+<TestComponent />

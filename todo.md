@@ -5,7 +5,7 @@
     - [ ] Update features with better text and images
 - News
     - [ ] Tags 
-        - [ ] Scientific publications tag
+- [ ] Scientific publications tag in projects
 - Credits
     - [x] Attribution -> Credits
     - [ ] Insert licence

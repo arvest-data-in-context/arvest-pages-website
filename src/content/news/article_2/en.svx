@@ -1,0 +1,20 @@
+---
+title: "My SECOND article"
+date: "2024-10-17"
+description: "This is another cool article."
+tags: ["news", "bob"]
+author: "Jacob Hart"
+---
+
+<script>
+  import TestComponent from '$lib/components/TestComponent.svelte';  // Importing a custom component
+</script>
+
+# My second News Article
+
+Blabla bla
+
+[a test link](https://www.google.com/)
+
+
+<TestComponent />
