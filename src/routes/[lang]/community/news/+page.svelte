@@ -14,14 +14,16 @@
     console.log(data.articles);
 </script>
 
-<div class="cont">
-    <BreadCrumbs
+<BreadCrumbs
     breadcrumbs={[
         { text: BCVocab.home[langVal], href: base + "/" + langVal },
         { text: BCVocab.community[langVal], href: base + "/" + langVal + "/community"},
         { text: BCVocab.news[langVal], href: base + "/" + langVal + "/community/news" }
       ]}
     />
+
+<div class="cont">
+    
 
     {#each data.articles as article}
     <div class="article_card">

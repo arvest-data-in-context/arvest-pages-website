@@ -1,6 +1,24 @@
-<div class="cont">
-    <h1>Credits</h1>
+<script>
+    import BreadCrumbs from '$lib/components/general_ui/BreadCrumbs.svelte';
+    import { base } from '$app/paths';
 
+    import { lang } from '$lib/scripts/stores.js';
+    import BCVocab from '$lib/data/vocab/footer.json';
+    let langVal;
+	lang.subscribe(value => {
+		langVal = value;
+	});
+</script>
+
+<BreadCrumbs
+    breadcrumbs={[
+        { text: BCVocab.home[langVal], href: base + "/" + langVal },
+        { text: BCVocab.about[langVal], href: base + "/" + langVal + "/about"},
+        { text: BCVocab.credits[langVal], href: base + "/" + langVal + "/about/credits"}
+      ]}
+    />
+
+<div class="cont">
     <p>
         This project has received funding from the European Research Council (ERC) under the European Union's Horizon Europe research and innovation program (grant agreement no. 101097091 - STAGE). Views and opinions expressed are, however, those of the author(s) only and do not necessarily reflect those of the European Union or ERC. Neither the European Union nor the granting authority can be held responsible for them.
     </p>
