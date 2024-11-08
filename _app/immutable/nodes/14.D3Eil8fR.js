@@ -1,0 +1,1 @@
+import{a as o,t}from"../chunks/disclose-version.P-hvbudZ.js";var a=t('<div class="cont svelte-1862p00"><p class="svelte-1862p00">We are currently in the process of setting up a <a href="https://www.discourse.org">discourse</a> forum. Check back soon!</p></div>');function p(e){var s=a();o(e,s)}export{p as component};
