@@ -15,6 +15,15 @@
 	lang.subscribe(value => {
 		langVal = value;
 	});
+
+    function handle_scroll_to(e){
+
+        let target_index = "scroll_to" + String(e.detail.current_slide)
+        const target = document.getElementById(target_index);
+        if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+        }
+    }
 </script>
 
 <!-- <h1>{data.vocab}</h1> -->
@@ -34,9 +43,23 @@
     </div>
 </div>
 
-<MainPresWidget />
+<MainPresWidget 
+    on:scroll_to={(e) => handle_scroll_to(e)}
+/>
 
 <div id="feature_section">
+    <!-- Digital desk -->
+    <FeatureCard
+        title = {PageVocab.features.digital_workspace.title[langVal]}
+        description = {PageVocab.features.digital_workspace.desc[langVal]}
+        image_url = "{base}/imgs/front_page_content/multimodal_collections.png"
+        image_alt = "multimodal collections screenshot"
+        button_label = {PageVocab.features.digital_workspace.button[langVal]}
+        button_url = "{base}/{langVal}/about"
+        scroll_to_index = 0
+    />
+
+    <!-- Multimoda documents -->
     <FeatureCard
         title = {PageVocab.features.create_collections.title[langVal]}
         description = {PageVocab.features.create_collections.desc[langVal]}
@@ -44,7 +67,21 @@
         image_alt = "multimodal collections screenshot"
         button_label = {PageVocab.features.create_collections.button[langVal]}
         button_url = "{base}/{langVal}/about"
+        scroll_to_index = 1
     />
+
+    <!-- Arrange and compose -->
+    <FeatureCard
+        title = {PageVocab.features.arrange_and_compose.title[langVal]}
+        description = {PageVocab.features.arrange_and_compose.desc[langVal]}
+        image_url = "{base}/imgs/front_page_content/multimodal_collections.png"
+        image_alt = "multimodal collections screenshot"
+        button_label = {PageVocab.features.arrange_and_compose.button[langVal]}
+        button_url = "{base}/{langVal}/about"
+        scroll_to_index = 2
+    />
+
+    <!-- Annotations -->
     <FeatureCard
         title = {PageVocab.features.create_annotations.title[langVal]}
         description = {PageVocab.features.create_annotations.desc[langVal]}
@@ -52,7 +89,10 @@
         image_alt = "annotations screenshot"
         button_label = {PageVocab.features.create_annotations.button[langVal]}
         button_url = "{base}/{langVal}/about"
+        scroll_to_index = 3
     />
+
+    <!-- Link your documents -->
     <FeatureCard
         title = {PageVocab.features.navigate_networks.title[langVal]}
         description = {PageVocab.features.navigate_networks.desc[langVal]}
@@ -60,6 +100,18 @@
         image_alt = "document networks screenshot"
         button_label = {PageVocab.features.navigate_networks.button[langVal]}
         button_url = "{base}/{langVal}/about"
+        scroll_to_index = 4
+    />
+
+    <!-- Share -->
+    <FeatureCard
+        title = {PageVocab.features.share.title[langVal]}
+        description = {PageVocab.features.share.desc[langVal]}
+        image_url = "{base}/imgs/front_page_content/document_networks.png"
+        image_alt = "document networks screenshot"
+        button_label = {PageVocab.features.share.button[langVal]}
+        button_url = "{base}/{langVal}/about"
+        scroll_to_index = 5
     />
 
     <MultiFeatureCard

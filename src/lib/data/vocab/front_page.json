@@ -3,6 +3,16 @@
     "long_description":{"en":"Consult, compare, organize and annotate documents, images, videos and audio on a virtual desktop.","fr":"Consultez, comparez, organisez et annotez des documents, images, vidéos et sons sur un bureau virtuel."},
     "start_creating":{"en":"Start creating","fr":"Commencer la création"},
     "features":{
+        "digital_workspace":{
+            "button":{"en":"Learn more","fr":"Découvrir"},
+            "title":{"en":"An online digital workspace","fr":"Un bureau virtuel connecté"},
+            "desc":{"en":"Arvest is a free to use online digital workspace - all you need is an email address to start creating.","fr":"Arvest est un bureau virtuel gratuit - il vous suffit d'une adresse mail pour commencer à créer."}
+        },
+        "arrange_and_compose":{
+            "button":{"en":"Learn more","fr":"Découvrir"},
+            "title":{"en":"Arrange your documents","fr":"Arrangez vos documents"},
+            "desc":{"en":"Arrange and compose your documents in one space for easy grouping and comparison.","fr":"Arrangez et composez vos doucments dans un même espace pour faciliter les regroupements et les comparaisons."}
+        },
         "create_collections":{
             "button":{"en":"Learn more","fr":"Découvrir"},
             "title":{"en":"Create multimodal collections","fr":"Créez des collections multimodales"},
@@ -17,6 +27,11 @@
             "button":{"en":"Learn more","fr":"Découvrir"},
             "title":{"en":"Navigate networks","fr":"Naviguez des réseaux"},
             "desc":{"en":"Navigate your collections and jump from detailed to overarching perspectives in a fluid environment.","fr":"Naviguez vos collections et sautez entre perspectives détaillées et élargies dans un environment fluide."}
+        },
+        "share":{
+            "button":{"en":"Learn more","fr":"Découvrir"},
+            "title":{"en":"Share with the world","fr":"Partagez avec le monde"},
+            "desc":{"en":"Work collaboratively, and share your projects with anyone in the world, ","fr":"Travaillez en collaboration et partagez vos projets avec n'importe qui dans le monde."}
         },
         "ml_workflows":{
             "button":{"en":"More on the API","fr":"Découvrir l'API"},
@@ -39,6 +54,7 @@
         {"title":{"en":"Gather your documents","fr":"Rassemblez vos documents"},"content":{"en":"Whether they're images, audio or images, Arvest allows you to bring many types of documents together in one space.","fr":"Que ce soit des images, de l'audio ou des vidéos, Arvest vous permet de rassembler divers types de documents en un lieu unique."}},
         {"title":{"en":"Arrange and compose","fr":"Arrangez et composez"},"content":{"en":"Decompose your documents, stick them together, and arrange them on your virtual desk.","fr":"Décomposez vos documents, collez-les ensemble, et arrangez les sur votre bureau virtuel."}},
         {"title":{"en":"Annotate","fr":"Annotez"},"content":{"en":"Augment your documents and projects with a host of annotation types.","fr":"Augementez vos documents et vos projets avec divers types d'annotations."}},
-        {"title":{"en":"Link your documents","fr":"Liez vos documents"},"content":{"en":"Create links between documents and annotations to create and navigate your collections as a network.","fr":"Créez des liens entre vos documents et vos annotations afin de créer et de naviguer vos collections en tant que réseau."}}
+        {"title":{"en":"Link your documents","fr":"Liez vos documents"},"content":{"en":"Create links between documents and annotations to create and navigate your collections as a network.","fr":"Créez des liens entre vos documents et vos annotations afin de créer et de naviguer vos collections en tant que réseau."}},
+        {"title":{"en":"Compose and share","fr":"Composez et partagez"},"content":{"en":"Create stories with your projects and share them with the world.","fr":"Créez des histoires avec vos projets et partagez-les avec le monde."}}
     ]
 }

@@ -1,12 +1,13 @@
 - Front page
-    - [ ] Add a "Share your work" slide
-    - [ ] Make lower content correspond to slides (and navigate to)
-    - [ ] Lower feature logos to make smaller on small screens
+    - [x] Add a "Share your work" slide
+    - [x] Make lower content correspond to slides (and navigate to)
+    - [x] Lower feature logos to make smaller on small screens
+    - [ ] Update features with better text and images
 - News
     - [ ] Tags 
         - [ ] Scientific publications tag
 - Credits
-    - [ ] Attribution -> Credits
+    - [x] Attribution -> Credits
     - [ ] Insert licence
     - [ ] Add SATT logo
     - [ ] Add Region Bretagne logo

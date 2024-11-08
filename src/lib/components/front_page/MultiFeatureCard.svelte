@@ -96,6 +96,10 @@
             width: 100%;
             padding-bottom: 0em;
         }
+
+        .feature_cont img{
+            width: 40%;
+        }
     }
 
     /* MEDIUM SCREENS */
@@ -106,6 +110,10 @@
         .feature_cont{
             width: 100%;
             padding-bottom: 0em;
+        }
+
+        .feature_cont img{
+            width: 40%;
         }
     }
 
@@ -118,6 +126,10 @@
             width: 100%;
             padding-bottom: 0em;
         }
+
+        .feature_cont img{
+            width: 40%;
+        }
     }
 
     /* VERY SMALL SCREENS */
@@ -128,6 +140,10 @@
         .feature_cont{
             width: 75%;
             padding-bottom: 1em;
+        }
+
+        .feature_cont img{
+            width: 20%;
         }
     }
 </style>

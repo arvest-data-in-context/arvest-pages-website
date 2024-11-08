@@ -1,4 +1,5 @@
 <script>
+    import { createEventDispatcher } from 'svelte'
     import { onMount } from 'svelte';
     import { base } from '$app/paths';
     let slide_idx = 0;
@@ -6,6 +7,9 @@
     let slides;
     let incr = false;
     let currentTimeout;
+    let back_img;
+
+    const dispatch = createEventDispatcher()
 
     // Language handling:
     import { lang } from '$lib/scripts/stores.js';
@@ -22,6 +26,12 @@
         process_slides();
 	})
 
+    function handle_nav_to(){
+        dispatch('scroll_to', {
+            current_slide: slide_idx
+        })
+    }
+
     function process_slides(){
         // Increment slide index.
         if(incr){
@@ -37,9 +47,18 @@
         let to_hide = [];
         let to_show = [];
 
+        let back_img_opacity = 1;
+
         if(slide_idx == 0){
             to_hide = slides;
-        }else if(slide_idx == 1){
+        }
+        else if(slide_idx == slides.length){
+            to_hide = slides.slice(0, -1);
+            to_show.push(slides[slides.length - 1])
+
+            back_img_opacity = 0;
+        }
+        else if(slide_idx == 1){
             to_show.push(slides[0]);
             to_hide.push(...slides.slice(1))
         }else if(slide_idx == 2){
@@ -67,6 +86,7 @@
         for(let i = 0; i < to_hide.length; i++){
             to_hide[i].style.opacity = "0";
         };
+        back_img.style.opacity = back_img_opacity;
 
         // Set timeout for next iteration
         currentTimeout = setTimeout(process_slides, freeze_time)
@@ -98,7 +118,7 @@
 <div class="main_cont">
     <div class="inner_cont">
         <div class="back_img">
-            <img src="{base}/imgs/table_illustrations/slide_1.png" alt="arvest empty desk illustration">
+            <img src="{base}/imgs/table_illustrations/slide_1.png" alt="arvest empty desk illustration" bind:this={back_img}>
         </div>
 
         <div class="slide">
@@ -124,11 +144,18 @@
                 <img src="{base}/imgs/table_illustrations/arrows.png" alt="arvest empty desk illustration">
             </div>
         </div>
+
+        <div class="slide">
+            <div class="slide_inner_cont">
+                <img src="{base}/imgs/table_illustrations/share.png" alt="arvest share your work illustration">
+            </div>
+        </div>
     </div>
     <div id="textual_content">
         <h2>{PageVocab.presentation_widget[slide_idx].title[langVal]}</h2>
         <p>{PageVocab.presentation_widget[slide_idx].content[langVal]}</p>
         <div class="navigator">
+            <button on:click={() => handle_nav_to()}>↓</button>
             <button on:click={() => handle_nav(-1)}>←</button>
             <button on:click={() => handle_nav(1)}>→</button>
         </div>
@@ -157,6 +184,8 @@
     .back_img img{
         width: 100%;
         height: auto;
+        opacity: 1;
+        transition-duration: 1000ms;
     }
 
     .slide{

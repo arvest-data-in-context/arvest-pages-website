@@ -7,8 +7,10 @@
     export let image_alt = "image";
     export let button_label = "Button";
     export let button_url = "/";
+    export let scroll_to_index = -1;
 </script>
 
+<div id={"scroll_to" + String(scroll_to_index)}></div>
 <div id="container">
     <div id="text_content">
         <h2>
