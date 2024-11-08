@@ -14,7 +14,12 @@
     // Update the language:
     function updateLang(){
         lang.set(setLang);
-        let new_url = base + "/" + setLang + $page.url.pathname.slice(3);
+
+        let clean = $page.url.pathname.replace(base, "")
+        let final = clean.slice(3)
+
+        //let new_url = base + "/" + setLang + $page.url.pathname.slice(3);
+        let new_url = base + "/" + setLang + final;
         //window.location.href = new_url;
 
         goto(new_url, { replaceState: true });
