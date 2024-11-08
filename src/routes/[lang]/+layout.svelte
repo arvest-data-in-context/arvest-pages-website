@@ -4,6 +4,7 @@
 	import './reset.css';
 	import './theme.css';
 	import { onMount, afterUpdate } from 'svelte';
+	import {beforeNavigate} from "$app/navigation"
 
 	import { base } from '$app/paths';
 	import { page } from '$app/stores';
@@ -32,6 +33,9 @@
 	afterUpdate(() => {
 		window.scrollY = 0
 		global_container.scrollTop = 0
+	});
+
+	beforeNavigate(() => {
 		top_nav_element.hide_hamburger();
 	});
 </script>

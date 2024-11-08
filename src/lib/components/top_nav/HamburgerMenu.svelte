@@ -7,7 +7,7 @@
 
     export const set_hamburger_state = (to_set) => {        
         revealed = to_set;
-
+        
         dispatch('update_hamburger', {
 			state: revealed
 		});
