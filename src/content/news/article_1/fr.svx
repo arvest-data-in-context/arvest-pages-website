@@ -4,6 +4,7 @@ date: "2024-10-18"
 description: "Aujourd'hui, nous avons déployé Arvest."
 tags: ["news", "release"]
 author: "Jacob Hart"
+image: "news/placeholder1.jpg"
 ---
 
 # Arvest.app est en ligne

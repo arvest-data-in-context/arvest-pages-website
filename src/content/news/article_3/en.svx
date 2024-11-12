@@ -4,6 +4,7 @@ date: "2024-10-17"
 description: "This is another cool article."
 tags: ["news", "bob"]
 author: "Jacob Hart"
+image: "news/placeholder3.png"
 ---
 
 <script>

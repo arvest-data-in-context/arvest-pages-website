@@ -27,7 +27,6 @@ export async function get_all_svx(content_path, lang_val){
 
   let parsed = []
   let article_keys = Object.keys(folderStructure);
-  console.log(lang_val)
 
   for(let i = 0; i < article_keys.length; i++){
     let this_key = article_keys[i]
@@ -53,8 +52,6 @@ export async function get_all_svx(content_path, lang_val){
   };
 
   parsed.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-  console.log(parsed)
 
   return parsed;
 }

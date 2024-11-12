@@ -44,7 +44,9 @@
 
 <style>
     .metadata{
-        padding-top: 2em;
+        margin-top: 2em;
+        padding: 0.3em;
+        background-color: rgb(236, 236, 236);
     }
 
     .metadata p{
