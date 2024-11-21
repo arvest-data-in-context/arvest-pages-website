@@ -2,7 +2,9 @@ export async function get_all_svx(content_path, lang_val){
   let content;
   if (content_path === "news") {
     content = import.meta.glob('/src/content/news/**/*.svx');
-  };
+  }else if(content_path === "projects") {
+    content = import.meta.glob('/src/content/projects/**/*.svx');
+  }
 
   const folderStructure = {};
 
@@ -12,7 +14,13 @@ export async function get_all_svx(content_path, lang_val){
       const { metadata } = await resolver();
       const slug = path.split('/').pop().replace('.svx', '');
 
-      const folderMatch = path.match(/\/news\/([^\/]+)\//);
+      let folderMatch;
+      if (content_path === "news") {
+        folderMatch = path.match(/\/news\/([^\/]+)\//);
+      }else if(content_path === "projects") {
+        folderMatch = path.match(/\/projects\/([^\/]+)\//);
+      }
+
       if (folderMatch) {
         const folderName = folderMatch[1];
 
