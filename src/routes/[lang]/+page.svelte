@@ -38,7 +38,7 @@
     <div id="main_button_resizer">
     <BigButton
         label = {PageVocab.start_creating[langVal]}
-        url = {"https://arvest-dev.tetras-libre.fr/"}
+        url = {base + "/" + langVal + "/connect"}
     />
     </div>
 </div>

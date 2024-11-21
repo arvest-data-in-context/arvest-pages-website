@@ -1,5 +1,6 @@
 <script>
     import { onMount } from 'svelte';
+    import { base } from '$app/paths';
 
     import SiteLogo from '$lib/components/top_nav/SiteLogo.svelte';
     import TopNavLink from '$lib/components/top_nav/TopNavLink.svelte';
@@ -145,7 +146,7 @@
                 <div class="extra_thin_connect_button">
                     <BigButton
                         label = {PageVocab.connect[langVal]}
-                        url = {"https://arvest-dev.tetras-libre.fr/"}
+                        url = {base + "/" + langVal + "/connect"}
                     />
                 </div>
             </div>
@@ -169,7 +170,7 @@
     <div class="connect_button_cont">
         <BigButton
             label = {PageVocab.connect[langVal]}
-            url = {"https://arvest-dev.tetras-libre.fr/"}
+            url = {base + "/" + langVal + "/connect"}
         />
     </div>
 

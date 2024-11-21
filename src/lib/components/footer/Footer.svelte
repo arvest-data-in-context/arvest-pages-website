@@ -46,7 +46,7 @@
             </ul>
     
             <ul class="menu_section">
-                <li><a href="https://arvest-dev.tetras-libre.fr/" class="menu_top_link">{PageVocab.connect[langVal]}</a></li>
+                <li><a href={base + "/" + langVal + "/connect"} class="menu_top_link">{PageVocab.connect[langVal]}</a></li>
             </ul>
         </div>
         
