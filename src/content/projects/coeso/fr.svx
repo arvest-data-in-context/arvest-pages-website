@@ -1,0 +1,20 @@
+---
+title: "Prototype d'Arvest et le projet COESO"
+date: "2024-11-21"
+description: "Découvrez une des premières vérsions d'Arvest et le cas d'étude COESO qui a mené son développement."
+tags: ["research"]
+author: "Jacob Hart"
+image: "projects/coeso-networks.png"
+---
+
+# Prototype d'Arvest et le projet COESO
+
+Le développement d'Arvest a débuté en 2023. Notre but initial était de créer une nouvelle version de notre outil [MemoRekall](https://memorekall.com/fr/) qui serait compatible avec le International Image Interoperability Framework ([IIIF](https://iiif.io/)), d'où le nom MemoRekall-IIIF. 
+
+Devleopment of Arvest began in 2023. Our initial goal was too create a new version of our tool [MemoRekall](https://memorekall.com/en/) that would be compatible with the International Image Interoperability Framework ([IIIF](https://iiif.io/)), hence the working name MemoRekall-IIIF. Afin d’ancrer le développement dans un cas d’étude sémantique réel, nous avons créé des exemples autour de la documentation de la collaboration entre une chorégraphe et une philosophe lors de [Dancing Philosophy](https://coeso.hypotheses.org/498), l’un des pilotes du projet H2020 [COESO](https://coeso.hypotheses.org/).
+
+## Cas d’étude sémantique : le projet COESO
+
+MemoRekall était une partie intégrante de Dancing Philosophy, pilote 2 du projet COESO. Dans un premier temps, MemoRekall a été utilisé pour documenter la collaboration entre la danseuse et la philosophe sous forme de capsules avec des vidéos annotées. Vous pouvez en apprendre plus sur ce projet [ici](https://memorekall.com/fr/coeso-fr/). Dans un second temps, la vidéo n’étant pas toujours le document principal autour duquel articuler les annotations et analyser la collaboration, nous avons décidé de proposer un nouveau développement de MemoRekall et de prendre pour base de travail l’environnement IIIF. Ce prototype s’intitulait MemoRekall-IIIF et nous nous référons à la première version de MemoRekall comme étant MemoRekall ‘legacy’. Au travers de cette étude de cas, nous avons souhaité montrer comment MemoRekall-IIIF permet non seulement d’annoter tous types de documents, dont des documents vidéo, mais également de mener une analyse sémantique.
+
+## Contenu Démo

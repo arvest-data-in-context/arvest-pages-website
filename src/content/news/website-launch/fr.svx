@@ -1,0 +1,14 @@
+---
+title: "Arvest.app est en ligne"
+date: "2024-11-21"
+description: "Le site d'Arvest est publié en ligne."
+tags: ["release"]
+author: "Jacob Hart"
+image: "news/website-launch.jpg"
+---
+
+# Arvest.app est en ligne
+
+Ce jour marque le lancement de [Arvest.app](https://arvest.app), la maison d'Arvest sur internet. Ce sera le meilleur endroit pour trouver les dernières nouvelles, découvrir les differents projets crées par la communauté, apprendre comment utiliser l'outil, et apprendre plus à propos de l'équipe et de la recherche qui se passe en coulisse.
+
+Nous allons déployer la première version d'Arvest au public pour la fin de l'année. Notre équipe de développement travaille actuellement à paufiner l'outil et pour s'assurer que la première itération de l'outil est aussi stable que possible avant de le partager avec le public. Nous allons également bientôt déployer un forum utilisateur où il sera possible de se connecter et discuter avec d'autres utilisateurs à propos d'Arvest. Revenez bientôt pour plus de contenu et pour le lancement officiel de l'outil.

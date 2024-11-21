@@ -6,6 +6,7 @@
 
     let langVal;
     import BCVocab from '$lib/data/vocab/footer.json';
+    import ArticleVocab from '$lib/data/vocab/articles.json';
     lang.subscribe(value => {
         langVal = value;
     });
@@ -22,18 +23,16 @@
       ]}
 />
 
-<!-- <h1>slug page</h1>
-<h2>{data.article.metadata.title}</h2>
-
-<svelte:component this={data.article.default} /> -->
-
 <div class="news_article_div">
+
+    <div class="article_top_image"><img src={base + "/" + data.article.metadata.image} alt="article main illustration"></div>
+
     <svelte:component this={data.article.default} />
 
     <div class="metadata">
-        <p>Author: {data.article.metadata.author}</p>
-        <p>Date: {data.article.metadata.date}</p>
-        <p>Tags: </p>
+        <p>{ArticleVocab.author[langVal]}: {data.article.metadata.author}</p>
+        <p>{ArticleVocab.date[langVal]}: {data.article.metadata.date}</p>
+        <p>{ArticleVocab.tags[langVal]}: </p>
         <ul>
             {#each data.article.metadata.tags as tag}
                 <li>- {tag}</li>
@@ -43,6 +42,31 @@
 </div>
 
 <style>
+    .article_top_image{
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 1em;
+    }
+
+    .article_top_image img{
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .article_top_image::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100px; /* Adjust height as needed for the fade */
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+        pointer-events: none; /* Allows interaction with the image beneath */
+    }
+
     .metadata{
         margin-top: 2em;
         padding: 0.3em;

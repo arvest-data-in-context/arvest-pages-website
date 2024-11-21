@@ -1,0 +1,18 @@
+---
+title: "Arvest prototype and the COESO Project"
+date: "2024-11-21"
+description: "Discover an early version of Arvest and the COESO case study that drove it's development."
+tags: ["research"]
+author: "Jacob Hart"
+image: "projects/coeso-networks.png"
+---
+
+# Arvest prototype and the COESO Project
+
+Devleopment of Arvest began in 2023. Our initial goal was too create a new version of our tool [MemoRekall](https://memorekall.com/en/) that would be compatible with the International Image Interoperability Framework ([IIIF](https://iiif.io/)), hence the working name MemoRekall-IIIF. To anchor development in a real semantic case study, we created a number of examples around the documentation of a collaboration between a choreographer and a philosopher in [Dancing Philosophy](https://coeso.hypotheses.org/498), one of the Pilots of the H2020 [COESO](https://coeso.hypotheses.org/) Project.
+
+## Semantic Analysis Case Study: the COESO Project
+
+MemoRekall was an integral part of Dancing Philosophy, Pilot 2 of the COESO Project. To begin, MemoRekall was used to document the collaboration between the dancer and the philosopher in the form of annotated video capsules. You can learn more about the project [here](https://memorekall.com/en/coeso-en/). In this second iteration of MemoRekall, we considered that video is not always the principal document around which one may need to articulate one’s annotations in order to analyze a collaboration. We decided to propose a new development of MemoRekall and take as a basis a IIIF-driven environment. We called this prototype MemoRekall-IIIF and refered to the first version of MemoRekall as MemoRekall ‘legacy’. With this case study, we wished to show how MemoRekall-IIIF allows for the annotation of all types of documents, including video, and also that it could support a semantic analysis.
+
+## Demo Content
