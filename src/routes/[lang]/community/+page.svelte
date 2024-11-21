@@ -34,7 +34,7 @@
 
 <div class="cont">
     <div class="section_div">
-        <img src={base + "/imgs/squares/squares1.png"} alt="checked squares">
+        <img src={base + "/imgs/squares/trame.png"} alt="checked squares">
 
         <div class="inner_part">
             <a href="{base}/{langVal}/community/projects"><h1>{BCVocab.projects[langVal]}</h1></a>
@@ -59,7 +59,7 @@
     </div>
 
     <div class="section_div">
-        <img src={base + "/imgs/squares/squares1.png"} alt="checked squares">
+        <img src={base + "/imgs/squares/trame.png"} alt="checked squares">
 
         <div class="inner_part">
             <a href="{base}/{langVal}/community/forum"><h1>{BCVocab.forum[langVal]}</h1></a>
@@ -75,7 +75,7 @@
     </div>
 
     <div class="section_div">
-        <img src={base + "/imgs/squares/squares1.png"} alt="checked squares">
+        <img src={base + "/imgs/squares/trame.png"} alt="checked squares">
 
         <div class="inner_part">
             <a href="{base}/{langVal}/community/news"><h1>{BCVocab.news[langVal]}</h1></a>
@@ -98,7 +98,7 @@
     </div>
 
     <div class="section_div">
-        <img src={base + "/imgs/squares/squares1.png"} alt="checked squares">
+        <img src={base + "/imgs/squares/trame.png"} alt="checked squares">
 
         <div class="inner_part">
             <a href="https://stage-to-data.huma-num.fr/"><h1>{BCVocab.stage[langVal]}</h1></a>
@@ -124,6 +124,7 @@
     }
 
     .section_div{
+        padding-top: 1em;
         padding-bottom: 1em;
         display: flex;
         gap: 0.5em;
@@ -153,15 +154,16 @@
     h1{
         padding-bottom: 0.4em;
         width: fit-content;
+        font-size: 0.7em;
     }
     h2{
         font-size: 0.4em;
-        padding-bottom: 1em;
+        padding-bottom: 0.5em;
         width: fit-content;
     }
 
     .button_resizer{
-        font-size: 0.6em;
+        font-size: 0.5em;
     }
 
     /* LARGE SCREENS */

@@ -4,6 +4,7 @@
 
     import { lang } from '$lib/scripts/stores.js';
     import BCVocab from '$lib/data/vocab/footer.json';
+    import PlaceholderVocab from '$lib/data/vocab/placeholder.json';
     let langVal;
 	lang.subscribe(value => {
 		langVal = value;
@@ -20,8 +21,7 @@
 
 
 <div class="cont">
-    
-    <p>We are currently in the process of setting up a <a href="https://www.discourse.org">discourse</a> forum. Check back soon!</p>
+    <p>{PlaceholderVocab.discourse.part_1[langVal]} <a href="https://www.discourse.org">discourse</a> {PlaceholderVocab.discourse.part_2[langVal]}</p>
 </div>
 
 <style>

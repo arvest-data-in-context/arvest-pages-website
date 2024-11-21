@@ -4,6 +4,7 @@
 
     import { lang } from '$lib/scripts/stores.js';
     import BCVocab from '$lib/data/vocab/footer.json';
+    import PlaceholderVocab from '$lib/data/vocab/placeholder.json';
     let langVal;
 	lang.subscribe(value => {
 		langVal = value;
@@ -19,7 +20,7 @@
     />
 
 <div class="cont">
-    <p>This page is currently under construction. Please return soon for more content.</p>
+    <p>{PlaceholderVocab.under_construction[langVal]}</p>
 </div>
 
 <style>

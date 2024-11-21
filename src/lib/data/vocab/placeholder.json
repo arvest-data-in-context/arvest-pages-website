@@ -1,0 +1,16 @@
+{
+    "under_construction" : {
+        "en" : "This page is currently under construction. Please return soon for more content.",
+        "fr" : "Cette page est actuellement sous construction. Veuillez revenir bientôt pour plus de contenu."
+    },
+    "discourse" : {
+        "part_1" : {
+            "en" : "We are currently in the process of setting up a",
+            "fr" : "Nous sommes actuellement en train de mettre en place un forum"
+        },
+        "part_2" : {
+            "en" : "forum. Check back soon!",
+            "fr" : ". Revenez bientôt!"
+        }
+    }
+}

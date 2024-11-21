@@ -1,0 +1,30 @@
+{
+    "about_arvest" : {
+        "blurb" : {
+            "en" : "Learn more about the technical infrastructure behind Arvest and your data.",
+            "fr" : "Apprendre plus à propos de l'infrastructure technique derrière Arvest et vos données."
+        },
+        "button" : {"en" : "Learn more", "fr" : "Découvrir"}
+    },
+    "team" : {
+        "blurb" : {
+            "en" : "Learn more about the people behind Arvest.",
+            "fr" : "Apprendre plus à propos des personnes derrière Arvest."
+        },
+        "button" : {"en" : "Learn more", "fr" : "Découvrir"}
+    },
+    "accessibility" : {
+        "blurb" : {
+            "en" : "Read our accessibility statement.",
+            "fr" : "Lire notre déclaration d'accessibilité."
+        },
+        "button" : {"en" : "Learn more", "fr" : "Lire"}
+    },
+    "credits" : {
+        "blurb" : {
+            "en" : "Read the credits for the Arvest website.",
+            "fr" : "Lire les crédits du site d'Arvest."
+        },
+        "button" : {"en" : "Learn more", "fr" : "Lire"}
+    }
+}

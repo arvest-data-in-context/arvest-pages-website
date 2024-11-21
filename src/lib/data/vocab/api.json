@@ -1,0 +1,16 @@
+{
+    "ml" : {
+        "blurb" : {
+            "en" : "Discover the Arvest API and how to integrate Arvest into complex computational workflows.",
+            "fr" : "Découvrez l'API d'Arvest et comment intégrer Arvest dans des chaînes de traitement computationnels complexes."
+        },
+        "button" : {"en" : "Discover the API", "fr" : "Découvrir l'API"}
+    },
+    "documentation" : {
+        "blurb" : {
+            "en" : "Read the Arvest API documentation.",
+            "fr" : "Lire la documentation de l'API d'Arvest."
+        },
+        "button" : {"en" : "Read the docs", "fr" : "Lire la doc"}
+    }
+}
