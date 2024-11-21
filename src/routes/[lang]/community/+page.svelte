@@ -2,7 +2,7 @@
     import BreadCrumbs from '$lib/components/general_ui/BreadCrumbs.svelte';
     import LowerMenu from '$lib/components/general_ui/LowerMenu.svelte';
     import BigButton from '$lib/components/general_ui/BigButton.svelte';
-    import ImageGrid from '$lib/components/ImageGrid.svelte';
+    import Articlecard from '$lib/components/general_ui/ArticleCard.svelte';
     import { base } from '$app/paths';
 
     import { lang } from '$lib/scripts/stores.js';
@@ -12,6 +12,8 @@
 	lang.subscribe(value => {
 		langVal = value;
 	});
+
+    export let data;
 </script>
 
 <BreadCrumbs
@@ -38,6 +40,13 @@
             <a href="{base}/{langVal}/community/projects"><h1>{BCVocab.projects[langVal]}</h1></a>
             <p>{CommunityVocab.projects.blurb[langVal]}</p>
 
+            <h2>{CommunityVocab.latest[langVal]}</h2>
+
+            <Articlecard
+                article={data.projects[0]}
+                type="projects"
+            />
+
             <div class="button_resizer">
                 <BigButton
                     url = {base + "/" + langVal + "/community/projects"}
@@ -46,8 +55,6 @@
 
                 
             </div>
-            
-            <!-- <ImageGrid /> -->
         </div>
     </div>
 
@@ -64,8 +71,6 @@
                     label = {CommunityVocab.forum.button[langVal]}
                 />
             </div>
-
-            <!-- <ImageGrid /> -->
         </div>
     </div>
 
@@ -76,14 +81,19 @@
             <a href="{base}/{langVal}/community/news"><h1>{BCVocab.news[langVal]}</h1></a>
             <p>{CommunityVocab.blog.blurb[langVal]}</p>
 
+            <h2>{CommunityVocab.latest[langVal]}</h2>
+
+            <Articlecard
+                article={data.news[0]}
+                type="news"
+            />
+
             <div class="button_resizer">
                 <BigButton
                     url = {base + "/" + langVal + "/community/news"}
                     label = {CommunityVocab.blog.button[langVal]}
                 />
             </div>
-
-            <!-- <ImageGrid /> -->
         </div>
     </div>
 
@@ -100,8 +110,6 @@
                     label = {CommunityVocab.stage.button[langVal]}
                 />
             </div>
-
-            <!-- <ImageGrid /> -->
         </div>
     </div>
 </div>
@@ -144,6 +152,11 @@
 
     h1{
         padding-bottom: 0.4em;
+        width: fit-content;
+    }
+    h2{
+        font-size: 0.4em;
+        padding-bottom: 1em;
         width: fit-content;
     }
 

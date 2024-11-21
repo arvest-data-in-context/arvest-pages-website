@@ -1,4 +1,5 @@
 {
+    "latest" : {"en" : "Latest", "fr" : "Plus recent"},
     "projects" : {
         "blurb" : {
             "en" : "Learn more about what people have been doing with Arvest.",
