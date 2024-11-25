@@ -1,15 +1,15 @@
 {
     "tutorials" : {
         "blurb" : {
-            "en" : "Learn how to use Arvest through a series of video and textual tutorials.",
-            "fr" : "Apprendre comment utiliser Arvest avec une séries de tutoriels vidéo et textuels."
+            "en" : "Learn how to use Arvest through a series of video and textual tutorials",
+            "fr" : "Apprenez à utiliser Arvest avec une série de tutoriels vidéos et textuels"
         },
         "button" : {"en" : "Follow the tutorials", "fr" : "Suivre les tutoriels"}
     },
     "iiif" : {
         "blurb" : {
-            "en" : "Learn more about IIIF, the standard at the base of Arvest.",
-            "fr" : "Apprendre plus à propos de IIIF, le standard qui est à la base d'Arvest."
+            "en" : "Learn more about IIIF, the standard at the base of Arvest",
+            "fr" : "En apprendre plus sur IIIF, le standard à la base d'Arvest"
         },
         "button" : {"en" : "Discover IIIF", "fr" : "Découvrir IIIF"}
     }

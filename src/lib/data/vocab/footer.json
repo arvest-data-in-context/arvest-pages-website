@@ -11,13 +11,13 @@
     "api":{"en":"API & ML","fr":"API & ML"},
     "reference":{"en":"Documentation","fr":"Documentation"},
     "news":{"en":"News","fr":"Blog"},
-    "about":{"en":"About","fr":"A propos"},
+    "about":{"en":"About","fr":"À propos"},
     "about_arvest":{"en":"Infrastructure","fr":"Infrastructure"},
-    "team":{"en":"Team","fr":"Equipe"},
-    "accessibility":{"en":"Accessibility","fr":"Accesibilité"},
-    "credits":{"en":"Credits","fr":"Credits"},
+    "team":{"en":"Team","fr":"Équipe"},
+    "accessibility":{"en":"Accessibility","fr":"Accessibilité"},
+    "credits":{"en":"Credits","fr":"Crédits"},
     "connect":{"en":"Connect","fr":"Connexion"},
     "demo":{"en":"Demo","fr":"Démo"},
-    "other_tools":{"en":"Other Tools","fr":"D'autre outils"},
-    "home":{"en":"Home","fr":"Acceuil"}
+    "other_tools":{"en":"Other Tools","fr":"Autres outils"},
+    "home":{"en":"Home","fr":"Accueil"}
 }

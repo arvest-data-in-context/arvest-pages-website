@@ -1,7 +1,7 @@
 {
     "under_construction" : {
         "en" : "This page is currently under construction. Please return soon for more content.",
-        "fr" : "Cette page est actuellement sous construction. Veuillez revenir bientôt pour plus de contenu."
+        "fr" : "Cette page est actuellement en construction. Veuillez revenir bientôt pour plus de contenus."
     },
     "discourse" : {
         "part_1" : {
@@ -14,7 +14,7 @@
         }
     },
     "connect" : {
-        "en" : "Arvest is stil under development, and will be released by the end of 2024. Please return soon!",
-        "fr" : "Arvest est toujours en developpement et sera déployé pour la fin de 2024. Veuillez revenir bientôt!"
+        "en" : "Arvest is still under development, and will be released by the end of 2024. Please return soon!",
+        "fr" : "Arvest est en cours de developpement et sera déployé fin 2024. Merci de revenir bientôt!"
     }
 }

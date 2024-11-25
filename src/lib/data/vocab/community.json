@@ -1,30 +1,30 @@
 {
-    "latest" : {"en" : "Latest", "fr" : "Plus recent"},
+    "latest" : {"en" : "Latest", "fr" : "Récent"},
     "projects" : {
         "blurb" : {
-            "en" : "Learn more about what people have been doing with Arvest.",
-            "fr" : "Découvrez ce que les gens ont fait avec Arvest."
+            "en" : "Learn more about what people have been doing with Arvest",
+            "fr" : "Découvrez ce que les gens ont réalisé avec Arvest"
         },
         "button" : {"en" : "Discover projects", "fr" : "Découvrir les projets"}
     },
     "forum" : {
         "blurb" : {
-            "en" : "Connect to the Arvest forum and discuss with other users.",
-            "fr" : "Connectez-vous au forum d'Arvest et discutez avec d'autres utilisateurs."
+            "en" : "Connect to the Arvest forum and discuss with other users",
+            "fr" : "Connectez-vous au forum d'Arvest et discutez avec d'autres utilisateurs"
         },
         "button" : {"en" : "Connect to the forum", "fr" : "Connexion au forum"}
     },
     "blog" : {
         "blurb" : {
-            "en" : "Learn about the latest developments in the Arvest ecosystem.",
-            "fr" : "Découvrez les derniers developpements dans le mode d'Arvest."
+            "en" : "Learn about the latest developments in the Arvest ecosystem",
+            "fr" : "Découvrez les derniers developpements d'Arvest"
         },
         "button" : {"en" : "Latest news", "fr" : "Lire le blog"}
     },
     "stage" : {
         "blurb" : {
-            "en" : "Arvest is developed as pat of the ERC-funded STAGE project. Click here to learn more about the project.",
-            "fr" : "Arvest est developpé dans le cadre du projet ERC STAGE. Cliquez ici pour en apprendre d'aventage."
+            "en" : "Arvest is developed as part of the ERC-funded STAGE project. Click here to learn more about the project.",
+            "fr" : "Arvest est developpé dans le cadre du projet ERC STAGE. Cliquez ici pour en apprendre d'avantage."
         },
         "button" : {"en" : "STAGE website", "fr" : "Site de STAGE"}
     }
