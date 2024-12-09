@@ -41,6 +41,7 @@
 </script>
 
 <svelte:head>
+<title>Arvest</title>
   <link rel="alternate" href={`${base}/en`} hreflang="en" />
   <link rel="alternate" href={`${base}/fr`} hreflang="fr" />
 </svelte:head>
