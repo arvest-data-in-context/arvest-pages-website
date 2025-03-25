@@ -12,5 +12,12 @@
             "fr" : "Lire la documentation de l'API d'Arvest"
         },
         "button" : {"en" : "Read the docs", "fr" : "Lire la doc"}
+    },
+    "git" : {
+        "blurb" : {
+            "en" : "Access the source code",
+            "fr" : "Accéder au code source"
+        },
+        "button" : {"en" : "Visit the repo", "fr" : "Ouvrir le repo"}
     }
 }

@@ -6,6 +6,8 @@
     import MultiFeatureCard from '$lib/components/front_page/MultiFeatureCard.svelte';
     import MainPresWidget from '$lib/components/front_page/main_pres_widget/MainPresWidget.svelte';
 
+    import BasicAnimation from '$lib/components/svg/BasicAnimation.svelte';
+
     import { base } from '$app/paths';
 
     // Language handling:
@@ -38,7 +40,7 @@
     <div id="main_button_resizer">
     <BigButton
         label = {PageVocab.start_creating[langVal]}
-        url = {base + "/" + langVal + "/connect"}
+        url = {"https://workspace.arvest.app/"}
     />
     </div>
 </div>
@@ -46,6 +48,8 @@
 <MainPresWidget 
     on:scroll_to={(e) => handle_scroll_to(e)}
 />
+
+<BasicAnimation />
 
 <div id="feature_section">
     <!-- Digital desk -->

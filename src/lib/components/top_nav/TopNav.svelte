@@ -146,7 +146,7 @@
                 <div class="extra_thin_connect_button">
                     <BigButton
                         label = {PageVocab.connect[langVal]}
-                        url = {base + "/" + langVal + "/connect"}
+                        url = {"https://workspace.arvest.app/"}
                     />
                 </div>
             </div>
@@ -170,7 +170,7 @@
     <div class="connect_button_cont">
         <BigButton
             label = {PageVocab.connect[langVal]}
-            url = {base + "/" + langVal + "/connect"}
+            url = {"https://workspace.arvest.app/"}
         />
     </div>
 

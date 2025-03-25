@@ -25,7 +25,8 @@
 <LowerMenu
     menu_items = {[
         {url : base + "/" + langVal + "/api/ml", label : BCVocab.ml[langVal]},
-        {url : base + "/" + langVal + "/api/documentation", label : BCVocab.reference[langVal]}
+        {url : base + "/" + langVal + "/api/documentation", label : BCVocab.reference[langVal]},
+        {url : "https://github.com/ARVEST-APP", label : BCVocab.git[langVal]}
     ]}
 />
 
@@ -59,6 +60,22 @@
                 <BigButton
                     url = {base + "/" + langVal + "/api/documentation"}
                     label = {APIVocab.documentation.button[langVal]}
+                />
+            </div>
+        </div>
+    </div>
+
+    <div class="section_div">
+        <img src={base + "/imgs/squares/trame.png"} alt="checked squares">
+
+        <div class="inner_part">
+            <a href="https://github.com/ARVEST-APP"><h1>{BCVocab.git[langVal]}</h1></a>
+            <p>{APIVocab.git.blurb[langVal]}</p>
+
+            <div class="button_resizer">
+                <BigButton
+                    url = {"https://github.com/ARVEST-APP"}
+                    label = {APIVocab.git.button[langVal]}
                 />
             </div>
         </div>

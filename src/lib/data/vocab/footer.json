@@ -10,6 +10,7 @@
     "ml":{"en":"Machine Learning","fr":"Machine Learning"},
     "api":{"en":"API & ML","fr":"API & ML"},
     "reference":{"en":"Documentation","fr":"Documentation"},
+    "git":{"en":"Git Repo","fr":"Repo Git"},
     "news":{"en":"News","fr":"Blog"},
     "about":{"en":"About","fr":"À propos"},
     "about_arvest":{"en":"Infrastructure","fr":"Infrastructure"},

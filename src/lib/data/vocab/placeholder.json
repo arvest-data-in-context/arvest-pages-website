@@ -14,7 +14,7 @@
         }
     },
     "connect" : {
-        "en" : "Arvest is still under development, and will be released by the end of 2024. Please return soon!",
-        "fr" : "Arvest est en cours de developpement et sera déployé fin 2024. Merci de revenir bientôt!"
+        "en" : "Arvest v1 is now available. Please connect here.",
+        "fr" : "Arvest v1 est désormais displonible. Veullez vous connecter ici."
     }
 }

@@ -35,6 +35,7 @@
                 <li><a href="{base}/{langVal}/api" class="menu_top_link">{PageVocab.api[langVal]}</a></li>
                 <li><a href="{base}/{langVal}/api/ml" class="menu_lower_link">{PageVocab.ml[langVal]}</a></li>
                 <li><a href="{base}/{langVal}/api/documentation" class="menu_lower_link">{PageVocab.reference[langVal]}</a></li>
+                <li><a href="https://github.com/ARVEST-APP" class="menu_lower_link">{PageVocab.git[langVal]}</a></li>
             </ul>
     
             <ul class="menu_section">
@@ -46,7 +47,7 @@
             </ul>
     
             <ul class="menu_section">
-                <li><a href={base + "/" + langVal + "/connect"} class="menu_top_link">{PageVocab.connect[langVal]}</a></li>
+                <li><a href="https://workspace.arvest.app/" class="menu_top_link">{PageVocab.connect[langVal]}</a></li>
             </ul>
         </div>
         
@@ -57,6 +58,9 @@
         <a class="logo_link" href="https://www.horizon-europe.gouv.fr/erc"><img src="{base}/imgs/logos/erc-black.png" alt="erc logo" /></a>
         <a class="logo_link" href="https://european-union.europa.eu/"><img src="{base}/imgs/logos/europe-black.png" alt="europe logo" /></a>
         <a class="logo_link" href="https://www.univ-rennes2.fr/"><img src="{base}/imgs/logos/R2-black.png" alt="rennes 2 logo" /></a>
+        <a class="logo_link" href="https://sites-recherche.univ-rennes2.fr/arts-pratiques-poetiques/"><img src="{base}/imgs/logos/app.png" alt="app rennes 2 logo" /></a>
+        <a class="logo_link" href="https://www.ouest-valorisation.fr/"><img src="{base}/imgs/logos/satt.png" alt="satt logo" /></a>
+        <a class="logo_link" href="https://www.huma-num.fr/"><img src="{base}/imgs/logos/hum-num.png" alt="huma num logo" /></a>
     </div>  
 
     <p id="copyright_notice">© 2023 - {currentYear} Arvest</p>
