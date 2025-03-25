@@ -52,7 +52,7 @@
     <FeatureCard
         title = {PageVocab.features.digital_workspace.title[langVal]}
         description = {PageVocab.features.digital_workspace.desc[langVal]}
-        image_url = "{base}/imgs/front_page_content/multimodal_collections.png"
+        image_url = "{base}/imgs/front_page_content/digital_desk.png"
         image_alt = "multimodal collections screenshot"
         button_label = {PageVocab.features.digital_workspace.button[langVal]}
         button_url = "{base}/{langVal}/about"
@@ -74,7 +74,7 @@
     <FeatureCard
         title = {PageVocab.features.arrange_and_compose.title[langVal]}
         description = {PageVocab.features.arrange_and_compose.desc[langVal]}
-        image_url = "{base}/imgs/front_page_content/multimodal_collections.png"
+        image_url = "{base}/imgs/front_page_content/configure_project.png"
         image_alt = "multimodal collections screenshot"
         button_label = {PageVocab.features.arrange_and_compose.button[langVal]}
         button_url = "{base}/{langVal}/about"
@@ -107,7 +107,7 @@
     <FeatureCard
         title = {PageVocab.features.share.title[langVal]}
         description = {PageVocab.features.share.desc[langVal]}
-        image_url = "{base}/imgs/front_page_content/document_networks.png"
+        image_url = "{base}/imgs/front_page_content/share_project.png"
         image_alt = "document networks screenshot"
         button_label = {PageVocab.features.share.button[langVal]}
         button_url = "{base}/{langVal}/about"
