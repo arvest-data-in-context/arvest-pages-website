@@ -11,3 +11,8 @@
     - [ ] Insert licence
     - [x] Add SATT logo
     - [ ] Add Region Bretagne logo
+- [ ] ML tutorials
+    - [ ] Automatic speech recognition using vosk. Derived from a case study in theatrical studies, video or audio can be decomposed into words, and annotations are created for each word detected.
+    - [ ] Image embedding projection with the Distant Viewing toolkit. Derived from a case study in history of art, a workflow similar to a tool like PixPlot. The user can take a corpus of still images and use an image embedding neural network model and dimensionality reduction algorithms such as UMAP or T-SNE to project them into a space where images that are close to each other are similar. An interactive Manifest is created of the projection, where clicking on the image in the projection will open the original image in Arvest.
+    - [ ] Video decomposition using the Distant Viewing toolkit. Derived from a case study in history, a large corpus of archival video footage we decomposed into shots and then projected into manifold spaces like described above in order to make navigation of the corpus easier.
+    - [ ] Actor-network analysis using networkx and link to other platforms. In the context of a case study around the archives of a music creation centre, we perform analysis on the contents of the archives that are stored on Nakala and Heurist. We can create network visualizations of the various records that can be navigated in Arvest, and when a node is linked to a media file, the file can be viewed directly.
