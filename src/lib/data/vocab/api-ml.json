@@ -1,7 +1,22 @@
 {
     "title" : {"en" : "Arvest API", "fr" : "API Arvest"},
+    "description" : {
+        "en" : "<p class=\"p_gloabl_wrap\">Arvest's open RESTful API allows you to integrate Arvest into complex machine learning workflows. Consult the full swagger documentation <a href=\"https://api.arvest.app/api\">here</a>, and the developer manual <a href=\"https://github.com/ARVEST-APP/documentation/blob/main/API-manual.md\">here</a>.</p><p class=\"p_gloabl_wrap\">We also provide a <a href=\"https://github.com/arvest-data-in-context/arvest-api\">python package</a> which allows you to easily integrate the API in your python scripts.</p>",
+        "fr" : "<p class=\"p_gloabl_wrap\">L'API RESTful ouverte d'Arvest vous permet d'intégrer Arvest dans des workflows complexes de machine learning. Consultez la documentation complète swagger <a href=\"https://api.arvest.app/api\">ici</a>, et le manuel de développeur <a href=\"https://github.com/ARVEST-APP/documentation/blob/main/API-manual.md\">ici</a>.</p><p class=\"p_gloabl_wrap\">Nous proposons également un <a href=\"https://github.com/arvest-data-in-context/arvest-api\">package python</a> qui vous permet d'intégrer facilement l'API dans vos scripts python.</p>"
+    },
+    "ml_notebooks" : {
+        "title" : {"en" : "ML Notebooks", "fr" : "Notebooks ML"},
+        "description" : {
+            "en" : "<p class=\"p_gloabl_wrap\">To help you in your machine learning journey, we are also in the process of building a collection of <a href=\"https://github.com/arvest-data-in-context/ml-notebooks\">Machine Learning Notebooks</a> which will take you through a number of typical digital humanities computational workflows. Going through these notebook, you will learn how to implement a large number of computational techniques, as well as how to integrate Arvest and IIIF into your workflows.</p>",
+            "fr" : "<p class=\"p_gloabl_wrap\">Pour vous aider dans votre parcours en machine learning, nous sommes également en train de constituer une collection de <a href=\"https://github.com/arvest-data-in-context/ml-notebooks\">Notebooks de Machine Learning</a>, qui vous guideront à travers plusieurs workflows computationnels typiques en humanités numériques. En explorant ces notebooks, vous apprendrez à implémenter de nombreuses techniques computationnelles, ainsi qu'à intégrer Arvest et IIIF dans vos workflows.</p>"
+        }
+    },
     "tutorials" : {
         "title" : {"en" : "Tutorials", "fr" : "Tutoriels"},
+        "description" : {
+            "en" : "You can do many powerful things thanks to Arvest’s open RESTful API. A great place to start is to take a look at one of these tutorials.",
+            "fr" : "Vous pouvez faire beaucoup de choses puissantes grâce à l'API RESTful ouverte d'Arvest. Un excellent point de départ est de consulter l'un de ces tutoriels."
+        },
         "speech_recognition" : {
             "title" : {"en" : "Automatic speech recognition", "fr" : "Reconnaisance vocale automatique"},
             "image" : "tutorials/ml-speech-recognition/ml-tut-speech-rec.png",
@@ -22,9 +37,5 @@
             "image" : "tutorials/ml-network-analysis/ml-tut-network.png",
             "url" : "ml-network-analysis"
         }
-    },
-    "description" : {
-        "en" : "You can do many powerful things thanks to Arvest’s open RESTful API. A great place to start is to take a look at one of these tutorials.",
-        "fr" : "Vous pouvez faire beaucoup de choses puissantes grâce à l'API RESTful ouverte d'Arvest. Un excellent point de départ est de consulter l'un de ces tutoriels."
     }
 }

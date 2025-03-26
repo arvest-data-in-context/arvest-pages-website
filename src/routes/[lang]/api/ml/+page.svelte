@@ -52,9 +52,19 @@
         </div>
     </div>
 
-    <p>{MLVocab.description[langVal]}</p>
+    <p>{MLVocab.tutorials.description[langVal]}</p>
 
     <h3>{MLVocab.title[langVal]}</h3>
+
+    <div>
+        {@html MLVocab.description[langVal]}
+    </div>
+
+    <h3>{MLVocab.ml_notebooks.title[langVal]}</h3>
+
+    <div>
+        {@html MLVocab.ml_notebooks.description[langVal]}
+    </div>
 </div>
 
 <style>
