@@ -1,0 +1,83 @@
+{
+    "title" : {"en" : "Infrastructure", "fr" : "Instrustructure"},
+    "django" : {
+        "title" : {"en" : "Django multi-user interface", "fr" : "Interface multi-utilisateur django"},
+        "description" : {
+            "en" : "The main Arvest app takes the form of a web app written in Django. This means that all you need is to create an account with an email address and you will have access to all of Arvest's functionalities. This web app is deployed on a virtual machine provided by Huma-Num, a French state-funded infrastructure for digital humanities.",
+            "fr" : "L'application principale d'Arvest prend la forme d'une application web développée en Django. Cela signifie que tout ce dont vous avez besoin est de créer un compte avec une adresse e-mail pour accéder à toutes les fonctionnalités d'Arvest. Cette application web est déployée sur une machine virtuelle fournie par Huma-Num, une infrastructure française financée par l'État pour les humanités numériques."
+        },
+        "img" : "imgs/infrastructure/_multi-user.png",
+        "link" : {
+            "url" : "https://github.com/ARVEST-APP/mirador-multi-user",
+            "label" : {"en" : "Repo", "fr" : "Repo"}
+        }
+    },
+    "mirador" : {
+        "title" : {"en" : "AV Mirador fork", "fr" : "Fork AV de Mirador"},
+        "description" : {
+            "en" : "The main workspace of the Arvest app is our own fork of the IIIF viewer Mirador. Among various things, this fork's main functionality is to add playback of audiovisual elements within Mirador.",
+            "fr" : "L'espace de travail principal de l'application Arvest est notre propre fork du visualiseur IIIF Mirador. Parmi ses différentes fonctionnalités, ce fork permet principalement d'ajouter la lecture d'éléments audiovisuels au sein de Mirador."
+        },
+        "img" : "imgs/infrastructure/_mirador-fork.png",
+        "link" : {
+            "url" : "https://github.com/ARVEST-APP/mirador-video",
+            "label" : {"en" : "Repo", "fr" : "Repo"}
+        }
+    },
+    "image_anno" : {
+        "title" : {"en" : "Image annotation plugin", "fr" : "Plugin d'annotation d'images"},
+        "description" : {
+            "en" : "We add to our fork of Mirador an image annotation plugin which can be used with any version of Mirador. The image annotation plugin allows you to add and display textual, tag and linked Manifest annotations within the viewer.",
+            "fr" : "Nous ajoutons à notre fork de Mirador un plugin d'annotation d'image qui peut être utilisé avec n'importe quelle version de Mirador. Ce plugin d'annotation d'image permet d'ajouter et d'afficher des annotations textuelles, des tags et des annotations de Manifest lié au sein du visualiseur."
+        },
+        "img" : "imgs/infrastructure/_image-annotation.png",
+        "link" : {
+            "url" : "https://github.com/ARVEST-APP/mirador-annotation-editor",
+            "label" : {"en" : "Repo", "fr" : "Repo"}
+        }
+    },
+    "av_anno" : {
+        "title" : {"en" : "AV annotation plugin", "fr" : "Plugin d'annotation AV"},
+        "description" : {
+            "en" : "On top of the image annotation plugin, we also provide an audiovisual content annotation editor which must be used with our AV fork of Mirador. This plugin allows you to create and display textual, tag, linked Manifest, image and overlay annotations within the viewer.",
+            "fr" : "En plus du plugin d'annotation d'image, nous proposons également un éditeur d'annotation de contenu audiovisuel, qui doit être utilisé avec notre fork AV de Mirador. Ce plugin permet de créer et d'afficher des annotations textuelles, des tags, des annotations de Manifest lié, des annotations d'image et des annotations d'overlay au sein du visualiseur."
+        },
+        "img" : "imgs/infrastructure/_video-annotation.png",
+        "link" : {
+            "url" : "https://github.com/ARVEST-APP/mirador-annotation-editor-video",
+            "label" : {"en" : "Repo", "fr" : "Repo"}
+        }
+    },
+    "storage" : {
+        "title" : {"en" : "Media and Manifest storage", "fr" : "Stockage de médias et des Manifests"},
+        "description" : {
+            "en" : "All of the content that you upload onto Arvest, be it media or Manifests, is stored at Huma-Num, a French state-funded infrastructure for digital humanities. You can make this content directly available to share witht he world, or keep it private. We also provide an instance of Peertube for large multimedia files (also hosted by Huma-num).",
+            "fr" : "Tout le contenu que vous stockez sur Arvest, qu'il s'agisse de médias ou de Manifests, est stocké chez Huma-Num, une infrastructure française financée par l'État pour les humanités numériques. Vous pouvez rendre ce contenu directement accessible pour le partager avec le monde, ou le garder privé. Nous fournissons également une instance de Peertube pour les fichiers multimédias volumineux (également hébergée par Huma-Num)."
+        },
+        "img" : "imgs/infrastructure/_media-stocking.png",
+        "link" : {
+            "url" : "https://peertube.arvest.app/",
+            "label" : {"en" : "Peertube instance", "fr" : "Instance Peertube"}
+        }
+    },
+    "world" : {
+        "title" : {"en" : "Share with the world", "fr" : "Partager avec les autres"},
+        "description" : {
+            "en" : "It is possible to share your content with the world - be it stocked media, Manifests or entire projects. You can generate links and permissions which allow you to keep a hand on who has access to your content.",
+            "fr" : "Il est possible de partager votre contenu avec le monde entier, qu'il s'agisse de médias stockés, de Manifests ou de projets complets. Vous pouvez générer des liens et des autorisations qui vous permettent de contrôler qui a accès à votre contenu."
+        },
+        "img" : "imgs/infrastructure/_earth.png"
+    },
+    "api" : {
+        "title" : {"en" : "REST API", "fr" : "REST API"},
+        "description" : {
+            "en" : "Almost everything in Arvest works with HTTP requests which means that we provide an open API that allows you to interact with the app from afar. We also provide a python package which easily lets you use the API for scripting.",
+            "fr" : "Presque tout dans Arvest fonctionne avec des requêtes HTTP, ce qui signifie que nous fournissons une API ouverte qui vous permet d'interagir avec l'application à distance. Nous proposons également un package Python qui vous permet d'utiliser facilement l'API pour vos scripts."
+        },
+        "img" : "imgs/infrastructure/_api.png",
+        "link" : {
+            "url" : "",
+            "label" : {"en" : "More about the API", "fr" : "Plus à propos de l'API"}
+        }
+    }
+}

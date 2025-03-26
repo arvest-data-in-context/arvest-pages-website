@@ -1,10 +1,11 @@
 <script>
     import BreadCrumbs from '$lib/components/general_ui/BreadCrumbs.svelte';
+    import TeamCard from '$lib/components/cards/TeamCard.svelte';
     import { base } from '$app/paths';
 
     import { lang } from '$lib/scripts/stores.js';
     import BCVocab from '$lib/data/vocab/footer.json';
-    import PlaceholderVocab from '$lib/data/vocab/placeholder.json';
+    import TeamVocab from '$lib/data/vocab/team.json';
     let langVal;
 	lang.subscribe(value => {
 		langVal = value;
@@ -20,7 +21,11 @@
     />
 
 <div class="cont">
-    <p>{PlaceholderVocab.under_construction[langVal]}</p>
+    {#each TeamVocab.members as member}
+        <TeamCard
+            member_data = {member}
+        />
+    {/each}
 </div>
 
 <style>

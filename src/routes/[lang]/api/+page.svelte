@@ -86,6 +86,9 @@
     .inner_part{
         width: 100%;
     }
+    .inner_part p {
+        color: var(--secondary-text);
+    }
     .cont{
         padding-bottom: 3em;
         width: 100%;

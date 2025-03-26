@@ -1,0 +1,24 @@
+{
+    "team" : {"en" : "Team", "fr" : "Equipe"},
+    "site" : {"en" : "Website", "fr" : "Site web"},
+    "members" : [
+        {
+            "name" : "Clarisse Bardiot",
+            "description" : {
+                "en" : "Clarisse Bardiot, STAGE project PI, is Professor of history of contemporary theatre and digital humanities at Rennes 2 University. Her research focuses on performing arts digital traces, creative processes analysis, the history and aesthetics of digital performance, the preservation of digital works, and experimental publishing. She is the author of Performing Arts and Digital Humanities. From Traces to Data (Wiley / Iste, 2021).",
+                "fr" : "Clarisse Bardiot, PI du projet STAGE, est professeur d'histoire du théâtre contemporain et d'humanités numériques à l'Université Rennes 2. Ses recherches portent sur les traces numériques des arts du spectacle, l'analyse des processus créatifs, l'histoire et l'esthétique de la performance numérique, la préservation des œuvres numériques et l'édition expérimentale. Elle est l'auteur de Performing Arts and Digital Humanities. From Traces to Data (Wiley / Iste, 2021)."
+            },
+            "site" : "http://www.clarissebardiot.info/",
+            "img" : "imgs/team/cb.jpg"
+        },
+        {
+            "name" : "Jacob Hart",
+            "description" : {
+                "en" : "Jacob Hart is currently a postdoctoral researcher on the MemoRekall Project at Université Rennes 2, France. He obtained his PhD in musicology at the University of Huddersfield (UK) in 2021 where I was a member of the ERC-funded FluCoMa Project (Fluid Corpus Manipulation). His research centres around tracking the creative process of techno-fluent composers and developing new approaches to computational musicology.",
+                "fr" : "Jacob Hart est actuellement chercheur postdoctoral dans le cadre du projet MemoRekall à l'Université Rennes 2, France. Il a obtenu son doctorat en musicologie à l'université de Huddersfield (Royaume-Uni) en 2021, où il était membre du projet FluCoMa (Fluid Corpus Manipulation) financé par l'ERC. Ses recherches portent sur le suivi du processus créatif des compositeurs techno-fluents et le développement de nouvelles approches de la musicologie computationnelle."
+            },
+            "site" : "https://jacob-hart.com/",
+            "img" : "imgs/team/jh.jpg"
+        }
+    ]
+}
