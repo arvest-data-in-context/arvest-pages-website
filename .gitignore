@@ -11,7 +11,7 @@ build
 # OS
 .DS_Store
 Thumbs.db
-
+*.DS-Store
 # Env
 .env
 .env.*
