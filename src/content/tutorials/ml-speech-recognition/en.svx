@@ -1,0 +1,10 @@
+---
+title: "Machine learning tutorial: Automatic speech recognition"
+date: "2025-03-26"
+description: "Use vosk to perform automatic speech recognition on video or audio and view the results in Arvest."
+tags: ["machine-learning", "api"]
+author: "Jacob Hart"
+image: "tutorials/ml-speech-recognition/ml-tut-speech-rec.png"
+---
+
+# Machine learning tutorial: Automatic speech recognition

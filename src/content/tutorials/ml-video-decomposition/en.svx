@@ -1,0 +1,12 @@
+---
+title: "Machine learning tutorial: Video decomposition"
+date: "2025-03-26"
+description: "Use the Distant Viewing Toolkit to deocmpose video and see the results in Arvest."
+tags: ["machine-learning", "api"]
+author: "Jacob Hart"
+image: "tutorials/ml-video-decomposition/ml-tut-video-decomp.png"
+---
+
+# Machine learning tutorial: Video decomposition
+
+Coming soon!

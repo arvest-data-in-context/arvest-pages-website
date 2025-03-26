@@ -1,0 +1,12 @@
+---
+title: "Machine learning tutorial: Image embedding projections"
+date: "2025-03-26"
+description: "Use image embeddings and diemnsionality reduction to project image collections into a space and browse in Arvest."
+tags: ["machine-learning", "api"]
+author: "Jacob Hart"
+image: "tutorials/ml-image-embedding/ml-tut-embedding.png"
+---
+
+# Machine learning tutorial: Image embedding projections
+
+Coming soon!
