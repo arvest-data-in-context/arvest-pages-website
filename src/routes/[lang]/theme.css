@@ -35,6 +35,19 @@ p{
 	font-family: 'Input-Mono-Narrow-Thin', monospace;
 }
 
+.p_gloabl_wrap{
+	font-size: 0.4em;
+    color: var(--secondary-text);
+	font-family: 'Input-Mono-Narrow-Thin', monospace;
+	padding-bottom: 1em;
+}
+
+.p_gloabl_wrap a{
+	color: var(--secondary-text);
+	font-family: 'Input-Mono-Narrow-Thin', monospace;
+	font-style: normal;
+}
+
 
 .news_article_div h1{
 	color: var(--primary-text);

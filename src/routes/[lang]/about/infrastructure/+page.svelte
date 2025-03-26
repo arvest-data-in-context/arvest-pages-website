@@ -102,7 +102,7 @@
             <p>{InfrastructureVocab.api.description[langVal]}</p>
             <div class="button_resizer">
                 <BigButton
-                    url = "{base}/{langVal}/api/documentation"
+                    url = "{base}/{langVal}/api"
                     label = {InfrastructureVocab.api.link.label[langVal]}
                 />
             </div>
