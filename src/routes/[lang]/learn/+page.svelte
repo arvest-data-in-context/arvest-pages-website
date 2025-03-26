@@ -2,6 +2,7 @@
     import BreadCrumbs from '$lib/components/general_ui/BreadCrumbs.svelte';
     import LowerMenu from '$lib/components/general_ui/LowerMenu.svelte';
     import BigButton from '$lib/components/general_ui/BigButton.svelte';
+    import TutorialCard from '$lib/components/general_ui/TutorialCard.svelte';
     import { base } from '$app/paths';
 
     import { lang } from '$lib/scripts/stores.js';
@@ -36,6 +37,12 @@
         <div class="inner_part">
             <a href="{base}/{langVal}/learn/tutorials"><h1>{BCVocab.tutorials[langVal]}</h1></a>
             <p>{LearnVocab.tutorials.blurb[langVal]}</p>
+
+            <h2>{LearnVocab.latest[langVal]}</h2>
+
+            <TutorialCard
+                article={data.tutorials[0]}
+            />
 
             <div class="button_resizer">
                 <BigButton

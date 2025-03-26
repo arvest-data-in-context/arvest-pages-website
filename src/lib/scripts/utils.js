@@ -4,6 +4,8 @@ export async function get_all_svx(content_path, lang_val){
     content = import.meta.glob('/src/content/news/**/*.svx');
   }else if(content_path === "projects") {
     content = import.meta.glob('/src/content/projects/**/*.svx');
+  }else if(content_path === "tutorials") {
+    content = import.meta.glob('/src/content/tutorials/**/*.svx');
   }
 
   const folderStructure = {};
@@ -19,6 +21,8 @@ export async function get_all_svx(content_path, lang_val){
         folderMatch = path.match(/\/news\/([^\/]+)\//);
       }else if(content_path === "projects") {
         folderMatch = path.match(/\/projects\/([^\/]+)\//);
+      }else if(content_path === "tutorials") {
+        folderMatch = path.match(/\/tutorials\/([^\/]+)\//);
       }
 
       if (folderMatch) {

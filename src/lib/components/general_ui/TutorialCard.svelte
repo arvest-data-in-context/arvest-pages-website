@@ -1,42 +1,30 @@
 <script>
-    import BreadCrumbs from '$lib/components/general_ui/BreadCrumbs.svelte';
     import { base } from '$app/paths';
+    export let article;
     import { onMount } from 'svelte';
+    let img_cont;
+
 
     import { lang } from '$lib/scripts/stores.js';
-    import BCVocab from '$lib/data/vocab/footer.json';
     let langVal;
 	lang.subscribe(value => {
 		langVal = value;
 	});
 
-    export let data;
-
     onMount(() => {
-        const cards = document.getElementsByClassName("image_container");
-        for(let i = 0; i < cards.length; i++){
-            let idx = Number(cards[i].id.split("img_cont_")[1]);
-            let img_url = "url('" + base + "/" + data.articles[idx].image + "')";
-            cards[i].style.backgroundImage = img_url;
-            cards[i].style.backgroundSize = "cover";
-            cards[i].style.backgroundPosition = "center"; 
-        }
+
+        let img_url = "url('" + base + "/" + article.image + "')";
+        img_cont.style.backgroundImage = img_url;
+        img_cont.style.backgroundSize = "cover";
+        img_cont.style.backgroundPosition = "center"; 
+
     });
 </script>
 
-<BreadCrumbs
-    breadcrumbs={[
-        { text: BCVocab.home[langVal], href: base + "/" + langVal },
-        { text: BCVocab.learn[langVal], href: base + "/" + langVal + "/learn"},
-        { text: BCVocab.tutorials[langVal], href: base + "/" + langVal + "/learn/tutorials" }
-      ]}
-    />
-
 <div class="cont">
-    {#each data.articles as article, index}
     <a class="article_card" href={base}{`/${langVal}/learn/tutorials/${article.slug}`}>
        
-        <div class="image_container" id="img_cont_{index}"></div>
+        <div class="image_container" bind:this={img_cont}></div>
         
         <div class="text_part">
             <h2>{article.title}</h2>
@@ -51,15 +39,9 @@
             </div>
         </div>
     </a>
-    {/each}
 </div>
 
 <style>
-
-    .cont{
-        padding-bottom: 3em;
-    }
-
     .lower_part{
         display: flex;
         flex-wrap: wrap;
@@ -72,7 +54,7 @@
 
     .desc{
         padding-bottom: 0.5em;
-        font-size: 0.4em;
+        font-size: 0.2em;
     }
 
     .tag_box{
@@ -87,11 +69,11 @@
     p{
         font-size: 0.5em;
         color: var(--secondary-text);
-        font-size: 0.5em;
+        font-size: 0.3em;
     }
 
     .article_card{
-        margin-top: 0.5em;
+        margin-top: 0.1em;
         margin-bottom: 0.5em;
         transition-duration: 500ms;
         border: black dashed 1px;
@@ -126,7 +108,7 @@
 
     h2{
         color: var(--primary-text);
-        font-size: 0.5em;
+        font-size: 0.3em;
         padding-bottom: 0.3em;
     }
 

@@ -1,0 +1,30 @@
+{
+    "title" : {"en" : "Arvest API", "fr" : "API Arvest"},
+    "tutorials" : {
+        "title" : {"en" : "Tutorials", "fr" : "Tutoriels"},
+        "speech_recognition" : {
+            "title" : {"en" : "Automatic speech recognition", "fr" : "Reconnaisance vocale automatique"},
+            "image" : "tutorials/ml-speech-recognition/ml-tut-speech-rec.png",
+            "url" : "ml-speech-recognition"
+        },
+        "embedding" : {
+            "title" : {"en" : "Image embedding projections", "fr" : "Projections d'embeddings d'images"},
+            "image" : "tutorials/ml-image-embedding/ml-tut-embedding.png",
+            "url" : "ml-image-embedding"
+        },
+        "video_decompo" : {
+            "title" : {"en" : "Video decomposition", "fr" : "Décomposition de vidéo"},
+            "image" : "tutorials/ml-video-decomposition/ml-tut-video-decomp.png",
+            "url" : "ml-video-decomposition"
+        },
+        "network_analysis" : {
+            "title" : {"en" : "Network analysis", "fr" : "Analyse de réseaux"},
+            "image" : "tutorials/ml-network-analysis/ml-tut-network.png",
+            "url" : "ml-network-analysis"
+        }
+    },
+    "description" : {
+        "en" : "You can do many powerful things thanks to Arvest’s open RESTful API. A great place to start is to take a look at one of these tutorials.",
+        "fr" : "Vous pouvez faire beaucoup de choses puissantes grâce à l'API RESTful ouverte d'Arvest. Un excellent point de départ est de consulter l'un de ces tutoriels."
+    }
+}
