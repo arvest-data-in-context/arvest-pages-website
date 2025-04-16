@@ -13,5 +13,6 @@
         },
         "button" : {"en" : "Discover IIIF", "fr" : "Découvrir IIIF"}
     },
-    "latest"  : {"en" : "Latest", "fr" : "Récent"}
+    "latest"  : {"en" : "Latest", "fr" : "Récent"},
+    "head"  : {"en" : "Learn", "fr" : "Apprendre"}
 }

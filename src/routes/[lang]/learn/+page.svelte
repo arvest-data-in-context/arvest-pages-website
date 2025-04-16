@@ -16,6 +16,10 @@
     export let data;
 </script>
 
+<svelte:head>
+    <title>Arvest | {BCVocab.learn[langVal]}</title>
+</svelte:head>
+
 <BreadCrumbs
     breadcrumbs={[
         { text: BCVocab.home[langVal], href: base + "/" + langVal },

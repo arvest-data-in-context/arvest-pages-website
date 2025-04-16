@@ -24,6 +24,10 @@
     });
 </script>
 
+<svelte:head>
+    <title>Arvest | {BCVocab.projects[langVal]}</title>
+</svelte:head>
+
 <BreadCrumbs
     breadcrumbs={[
         { text: BCVocab.home[langVal], href: base + "/" + langVal },
@@ -99,6 +103,7 @@
         display: flex;
         align-items: stretch;
         height: 100%;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
     }
 
     .text_part{

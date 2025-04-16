@@ -26,6 +26,10 @@
     }
 </script>
 
+<svelte:head>
+    <title>Arvest | {PageVocab.short_description[langVal]}</title>
+</svelte:head>
+
 <!-- <h1>{data.vocab}</h1> -->
 
 <div id="top_section">

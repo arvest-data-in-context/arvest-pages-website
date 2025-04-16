@@ -10,6 +10,10 @@
 	});
 </script>
 
+<svelte:head>
+    <title>Arvest | {BCVocab.accessibility[langVal]}</title>
+</svelte:head>
+
 <BreadCrumbs
     breadcrumbs={[
         { text: BCVocab.home[langVal], href: base + "/" + langVal },

@@ -12,8 +12,18 @@
 </script>
 
 <svelte:head>
-  <title>Arvest</title>
+  <title>Arvest | Data in Context</title>
   <meta name="robots" content="noindex" />
 </svelte:head>
 
-<p>Redirect... </p>
+<div id="top_section">
+    <h1>
+        Arvest
+    </h1>
+    <p id="long_description">
+      Consult, compare, organize and annotate documents, including images, videos and audio, on a virtual desktop.
+    </p>
+    <p>
+      Redirecting...
+    </p>
+</div>

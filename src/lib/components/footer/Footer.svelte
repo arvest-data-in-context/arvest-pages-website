@@ -48,6 +48,7 @@
     
             <ul class="menu_section">
                 <li><a href="https://workspace.arvest.app/" class="menu_top_link">{PageVocab.connect[langVal]}</a></li>
+                <li><a href="https://peertube.arvest.app/" class="menu_lower_link">Peertube</a></li>
             </ul>
         </div>
         

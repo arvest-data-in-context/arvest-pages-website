@@ -14,6 +14,10 @@
     import BreadCrumbs from '$lib/components/general_ui/BreadCrumbs.svelte';
 </script>
 
+<svelte:head>
+    <title>{data.article.metadata.title}</title>
+</svelte:head>
+
 <BreadCrumbs
     breadcrumbs={[
         { text: BCVocab.home[langVal], href: base + "/" + langVal },
