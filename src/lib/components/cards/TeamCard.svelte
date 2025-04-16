@@ -49,6 +49,8 @@
     img{
         width: auto;
         height: 100px;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
     }
 
     /* LARGE SCREENS */

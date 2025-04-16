@@ -60,6 +60,8 @@
 
     img{
         width: 100%;
+        border-radius: 5px;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
     }
 
     #button_resizer{

@@ -1,10 +1,10 @@
 {
     "title" : {"en" : "Infrastructure", "fr" : "Instrustructure"},
     "django" : {
-        "title" : {"en" : "Django multi-user interface", "fr" : "Interface multi-utilisateur django"},
+        "title" : {"en" : "NestJS multi-user interface", "fr" : "Interface multi-utilisateur NestJS"},
         "description" : {
-            "en" : "The main Arvest app takes the form of a web app written in Django. This means that all you need is to create an account with an email address and you will have access to all of Arvest's functionalities. This web app is deployed on a virtual machine provided by Huma-Num, a French state-funded infrastructure for digital humanities.",
-            "fr" : "L'application principale d'Arvest prend la forme d'une application web développée en Django. Cela signifie que tout ce dont vous avez besoin est de créer un compte avec une adresse e-mail pour accéder à toutes les fonctionnalités d'Arvest. Cette application web est déployée sur une machine virtuelle fournie par Huma-Num, une infrastructure française financée par l'État pour les humanités numériques."
+            "en" : "The main Arvest app takes the form of a web app written in NestJS. This means that all you need is to create an account with an email address and you will have access to all of Arvest's functionalities. This web app is deployed on a virtual machine provided by Huma-Num, a French state-funded infrastructure for digital humanities.",
+            "fr" : "L'application principale d'Arvest prend la forme d'une application web développée en NestJS. Cela signifie que tout ce dont vous avez besoin est de créer un compte avec une adresse e-mail pour accéder à toutes les fonctionnalités d'Arvest. Cette application web est déployée sur une machine virtuelle fournie par Huma-Num, une infrastructure française financée par l'État pour les humanités numériques."
         },
         "img" : "imgs/infrastructure/_multi-user.png",
         "link" : {

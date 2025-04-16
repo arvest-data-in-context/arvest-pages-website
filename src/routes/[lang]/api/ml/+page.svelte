@@ -87,6 +87,7 @@
     .tutorial_link img{
         width: 100%;
         margin-bottom: 0.1em;
+        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
     }
 
     .tutorial_link p{
