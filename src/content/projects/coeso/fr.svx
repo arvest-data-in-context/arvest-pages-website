@@ -1,7 +1,7 @@
 ---
 title: "Prototype d'Arvest et le projet COESO"
 date: "2024-11-21"
-description: "Découvrez une des premières vérsions d'Arvest et le cas d'étude COESO qui a mené son développement."
+description: "Découvrez une des premières versions d'Arvest et le cas d'étude COESO qui a mené à son développement."
 tags: ["research"]
 author: "Jacob Hart"
 image: "projects/coeso/coeso-networks.png"
@@ -11,17 +11,17 @@ image: "projects/coeso/coeso-networks.png"
     import Image from '$lib/components/articles/Image.svelte';
 </script>
 
-# Prototype d'Arvest et le projet COESO
+# Le prototype d'Arvest et le projet COESO
 
-Le développement d'Arvest a débuté en 2023. Notre but initial était de créer une nouvelle version de notre outil [MemoRekall](https://memorekall.com/fr/) qui serait compatible avec le International Image Interoperability Framework ([IIIF](https://iiif.io/)), d'où le nom MemoRekall-IIIF. 
+Le développement d'Arvest a débuté en 2023. Notre but initial était de créer une nouvelle version de notre outil [MemoRekall](https://memorekall.com/fr/) qui serait compatible avec le standard ([IIIF](https://iiif.io/)) (International Image Interoperability Framework), d'où le nom MemoRekall-IIIF. 
 
-Devleopment of Arvest began in 2023. Our initial goal was too create a new version of our tool [MemoRekall](https://memorekall.com/en/) that would be compatible with the International Image Interoperability Framework ([IIIF](https://iiif.io/)), hence the working name MemoRekall-IIIF. Afin d’ancrer le développement dans un cas d’étude sémantique réel, nous avons créé des exemples autour de la documentation de la collaboration entre une chorégraphe et une philosophe lors de [Dancing Philosophy](https://coeso.hypotheses.org/498), l’un des pilotes du projet H2020 [COESO](https://coeso.hypotheses.org/).
+Afin d’ancrer le développement dans un cas d’étude réel, nous avons créé des exemples autour de la documentation de la collaboration entre une chorégraphe et une philosophe lors de [Dancing Philosophy](https://coeso.hypotheses.org/498), l’un des pilotes du projet H2020 [COESO](https://coeso.hypotheses.org/).
 
-## Cas d’étude sémantique : le projet COESO
+## Cas d’étude sémantique : Dancing Philosophy
 
-MemoRekall était une partie intégrante de Dancing Philosophy, pilote 2 du projet COESO. Dans un premier temps, MemoRekall a été utilisé pour documenter la collaboration entre la danseuse et la philosophe sous forme de capsules avec des vidéos annotées. Vous pouvez en apprendre plus sur ce projet [ici](https://memorekall.com/fr/coeso-fr/). Dans un second temps, la vidéo n’étant pas toujours le document principal autour duquel articuler les annotations et analyser la collaboration, nous avons décidé de proposer un nouveau développement de MemoRekall et de prendre pour base de travail l’environnement IIIF. Ce prototype s’intitulait MemoRekall-IIIF et nous nous référons à la première version de MemoRekall comme étant MemoRekall ‘legacy’. Au travers de cette étude de cas, nous avons souhaité montrer comment MemoRekall-IIIF permet non seulement d’annoter tous types de documents, dont des documents vidéo, mais également de mener une analyse sémantique.
+MemoRekall était une partie intégrante de Dancing Philosophy, pilote 2 du projet COESO. Dans un premier temps, MemoRekall a été utilisé pour documenter la collaboration entre la danseuse et la philosophe sous forme de capsules avec des vidéos annotées. Vous pouvez en apprendre plus sur ce projet [ici](https://memorekall.com/fr/coeso-fr/). Dans un second temps, la vidéo n’étant pas toujours le document principal autour duquel articuler les annotations et analyser la collaboration, nous avons décidé de proposer un nouveau développement de MemoRekall et de prendre pour base de travail l’environnement IIIF. Ce prototype s’intitulait MemoRekall-IIIF. Nous nous référons à la première version de MemoRekall comme étant MemoRekall ‘legacy’. Au travers de cette étude de cas, nous avons souhaité montrer comment MemoRekall-IIIF permet non seulement d’annoter tous types de documents, dont des documents vidéo, mais également de mener une analyse sémantique.
 
-## Contenu Démo
+## Démonstrateur
 
 <Image
     src = "projects/coeso/networks.png"
@@ -29,11 +29,11 @@ MemoRekall était une partie intégrante de Dancing Philosophy, pilote 2 du proj
     width = "100%"
 />
 
-Ce travail a produit un réseau de manifestes IIIF. Dans [cette démo](https://coeso.tetras-libre.fr/), vous pouvez parcourir une collection de manifestes IIIF de natures variées. Nous avons inclus une grande diversité de documents issus de Dancing Philosophy : des captations vidéo de performances et d’ateliers, des enregistrements audios, des documents écrits, la Kinétographie Laban, des photos etc. D’un point de vue technique, nous sommes partis du viewer IIIF [Mirador](https://projectmirador.org/) qui permet de créer des annotations pour des images. Nous y avons ajouté la possibilité d’annoter tous types de documents, dont la vidéo. Par ailleurs, nous avons créé des manifestes particuliers, soit des composites qui s’offrent comme des outils puissants pour la navigation sémiotique et fluide des collections multimodales.
+Ce travail a produit un réseau de manifestes IIIF. Dans [cette démo](https://coeso.tetras-libre.fr/), vous pouvez parcourir une collection de manifestes IIIF de natures variées. Nous avons inclu une grande diversité de documents issus de Dancing Philosophy : des captations vidéo de performances et d’ateliers, des enregistrements audio, des documents écrits, une Kinétographie Laban, des photos, etc. D’un point de vue technique, nous sommes partis du viewer IIIF [Mirador](https://projectmirador.org/) qui permet de créer des annotations pour des images. Nous y avons ajouté la possibilité d’annoter tous types de documents, dont la vidéo. Par ailleurs, nous avons créé des manifestes particuliers, soit des composites qui s’offrent comme des outils puissants pour la navigation sémiotique de collections multimodales.
 
 Dans les manifestes _01 Manual Network Configuration_ et _02 Automatic Network Configuration_, vous trouverez des visualisations en réseau d’une même collection de documents. Le premier a été créé de manière manuelle, le deuxième en utilisant un algorithme simple qui crée des liens à partir des métadonnées du document. Ces visualisations sont interactives, et vous pouvez ouvrir chaque document directement dans Mirador en cliquant dessus.
 
-Dans les manifestes 03-06 nous montrons un exemple d’une capsule MemoRekall ‘legacy’ qui a été transposée dans ce nouvel environnement. Il est important pour nous d’assurer une rétrocompatibilité avec la version précédente de MemoRekall, et ces manifestes démontrent que cela peut être fait de manière très simple avec un traitement du fichier XML généré par MemoRekall ‘legacy’. Nous avons également exploré comment ces transpositions peuvent être augmentées dans le nouvel environnement par des visualisations en réseau et différents types d’annotations.
+Dans les manifestes 03-06 nous montrons un exemple d’une capsule MemoRekall ‘legacy’ qui a été transposée dans ce nouvel environnement. Il est important pour nous d’assurer une rétrocompatibilité avec la version précédente de MemoRekall. Ces manifestes démontrent que cela peut être fait de manière très simple avec un traitement du fichier XML généré par MemoRekall ‘legacy’. Nous avons également exploré comment ces transpositions peuvent être augmentées dans le nouvel environnement par des visualisations en réseau et différents types d’annotations.
 
 Dans le manifeste _07 Composite Collaboration Analytics Compass_ une autre visualisation du corpus est générée par les données issues de notre analyse sémantique sur la collaboration entre la danseuse et la chorégraphe à partir des [travaux de Dominique Boullier](https://zenodo.org/records/5599052#.ZCwfGuxBxeU). Chaque document est positionné sur une “boussole” qui indique la typologie de leur nature collaborative (voir l’article). 
 

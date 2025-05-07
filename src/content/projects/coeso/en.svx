@@ -13,11 +13,11 @@ image: "projects/coeso/coeso-networks.png"
 
 # Arvest prototype and the COESO Project
 
-Devleopment of Arvest began in 2023. Our initial goal was too create a new version of our tool [MemoRekall](https://memorekall.com/en/) that would be compatible with the International Image Interoperability Framework ([IIIF](https://iiif.io/)), hence the working name MemoRekall-IIIF. To anchor development in a real semantic case study, we created a number of examples around the documentation of a collaboration between a choreographer and a philosopher in [Dancing Philosophy](https://coeso.hypotheses.org/498), one of the Pilots of the H2020 [COESO](https://coeso.hypotheses.org/) Project.
+Development of Arvest began in 2023. Our initial goal was to create a new version of our tool [MemoRekall](https://memorekall.com/en/) that would be compatible with the International Image Interoperability Framework ([IIIF](https://iiif.io/)), hence the working name MemoRekall-IIIF. To anchor development in a real semantic case study, we created a number of examples around the documentation of a collaboration between a choreographer and a philosopher in [Dancing Philosophy](https://coeso.hypotheses.org/498), one of the Pilots of the H2020 [COESO](https://coeso.hypotheses.org/) Project.
 
-## Semantic Analysis Case Study: the COESO Project
+## Semantic Analysis Case Study: Dancing Philosophy
 
-MemoRekall was an integral part of Dancing Philosophy, Pilot 2 of the COESO Project. To begin, MemoRekall was used to document the collaboration between the dancer and the philosopher in the form of annotated video capsules. You can learn more about the project [here](https://memorekall.com/en/coeso-en/). In this second iteration of MemoRekall, we considered that video is not always the principal document around which one may need to articulate one’s annotations in order to analyze a collaboration. We decided to propose a new development of MemoRekall and take as a basis a IIIF-driven environment. We called this prototype MemoRekall-IIIF and refered to the first version of MemoRekall as MemoRekall ‘legacy’. With this case study, we wished to show how MemoRekall-IIIF allows for the annotation of all types of documents, including video, and also that it could support a semantic analysis.
+MemoRekall was an integral part of Dancing Philosophy, Pilot 2 of the COESO Project. To begin, MemoRekall was used to document the collaboration between the dancer and the philosopher in the form of annotated video capsules. You can learn more about the project [here](https://memorekall.com/en/coeso-en/). In this second iteration of MemoRekall, we considered that video is not always the principal document around which one may need to articulate one’s annotations in order to analyze a collaboration. We decided to propose a new development of MemoRekall and take as a basis a IIIF-driven environment. We called this prototype MemoRekall-IIIF and referred to the first version of MemoRekall as MemoRekall ‘legacy’. With this case study, we wished to show how MemoRekall-IIIF allows for the annotation of all types of documents, including videos, and also that it could support a semantic analysis.
 
 ## Demo Content
 
@@ -27,7 +27,7 @@ MemoRekall was an integral part of Dancing Philosophy, Pilot 2 of the COESO Proj
     width = "100%"
 />
 
-This work produced a IIIF manifest network. In this [live demo](https://coeso.tetras-libre.fr/), you can browse a collection of IIIF manifests of varying natures. We included a diverse number of documents from Dancing Philosophy: video recordings of performances and workshops, audio recordings, written documents, Laban Kinetography, photos etc. From a technical point of view, we built upon the [Mirador](https://projectmirador.org/) IIIF viewer interface that allows the user to create annotations for image documents. We added the possibility to annotate all types of documents, including video. In addition to this, we also shaped composite and bespoke manifests that offer themselves as powerful tools for semiotic and fluid navigation of multimodal collections.
+This work produced a IIIF manifest network. In this [live demo](https://coeso.tetras-libre.fr/), you can browse a collection of IIIF manifests of varying natures. We included a diverse number of documents from Dancing Philosophy: video recordings of performances and workshops, audio recordings, written documents, Laban Kinetography, photos etc. From a technical point of view, we built upon the [Mirador](https://projectmirador.org/) IIIF viewer interface that allows the user to create annotations for image documents. We added the possibility to annotate all types of documents, including video. In addition to this, we also shaped composite and bespoke manifests that offer themselves as powerful tools for the semiotic and fluid navigation of multimodal collections.
 
 In manifests _01 Manual Network Configuration_ and _02 Automatic Network Configuration_, you will find network visualizations of a same collection of documents. The first was made manually, the second using a simple algorithm that created links by processing the documents’ metadata. These visualizations are interactive, and you can open each document straight in the Mirador viewer by clicking on it.
 
@@ -45,7 +45,7 @@ This work allowed us to understand how important it will be to offer simple yet 
     width = "100%"
 />
 
-You can also experiment in the live [sandbox](https://iiif.tetras-libre.fr/) and create your own annotations. This is an empty version of the tool with a few example documents loaded. The possibilities werelimited to simple annotations, and the sandbox was open to all meaning that you will see annotations made by other users and other users will see yours (these regularly get cleaned-up). This live demo allowed the user to get familiar with the MemoRekall-IIIF interface, and get a feel for the tools that will become available.
+You can also experiment in the live [sandbox](https://iiif.tetras-libre.fr/) and create your own annotations. This is an empty version of the tool with a few example documents loaded. The possibilities were limited to simple annotations, and the sandbox was open to all meaning that you will see annotations made by other users and other users will see yours (these regularly get cleaned-up). This live demo allowed the user to get familiar with the MemoRekall-IIIF interface, and get a feel for the tools that will become available.
 
 ## Source Code and Documentation
 

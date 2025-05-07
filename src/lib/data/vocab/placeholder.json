@@ -5,7 +5,7 @@
     },
     "discourse" : {
         "part_1" : {
-            "en" : "We are currently in the process of setting up a",
+            "en" : "We are currently in the process of setting up a ",
             "fr" : "Nous sommes actuellement en train de mettre en place un forum"
         },
         "part_2" : {
@@ -15,6 +15,6 @@
     },
     "connect" : {
         "en" : "Arvest v1 is now available. Please connect here.",
-        "fr" : "Arvest v1 est désormais displonible. Veullez vous connecter ici."
+        "fr" : "Arvest v1 est désormais displonible. Veuillez vous connecter ici."
     }
 }
