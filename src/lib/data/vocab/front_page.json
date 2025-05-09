@@ -30,8 +30,8 @@
         },
         "share":{
             "button":{"en":"Learn more","fr":"Découvrir"},
-            "title":{"en":"Share with the world","fr":"Partagez avec le monde"},
-            "desc":{"en":"Work collaboratively, and share your projects with anyone in the world ","fr":"Travaillez en collaboration et partagez vos projets avec n'importe qui dans le monde"}
+            "title":{"en":"Share with the world","fr":"Partagez vos projets"},
+            "desc":{"en":"Work collaboratively, and share your projects with anyone in the world ","fr":"Travaillez en collaboration et partagez vos projets"}
         },
         "ml_workflows":{
             "button":{"en":"More on the API","fr":"Découvrir l'API"},
@@ -41,7 +41,7 @@
         "iiif_compliant":{
             "button":{"en":"More about IIIF","fr":"A propos de IIIF"},
             "title":{"en":"IIIF Compliant","fr":"Compatible IIIF"},
-            "desc":{"en":"Arvest is fully IIIF compliant, meaning you can bring in any number of IIIF resources and share your work with the community","fr":"Arvest est 100% compatible IIIF, ce qui vous permet d'intégrer les contenus IIIF et de partager vos créations avec la communauté"}
+            "desc":{"en":"Arvest is fully IIIF compliant, meaning you can bring in any number of IIIF resources and share your work with the community","fr":"Arvest est 100% compatible IIIF, ce qui vous permet d'intégrer des contenus issus des bibliothèques et des musées."}
         },
         "secure_data":{
             "button":{"en":"Learn more","fr":"Découvrir"},

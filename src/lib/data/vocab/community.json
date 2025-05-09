@@ -17,7 +17,7 @@
     "blog" : {
         "blurb" : {
             "en" : "Learn about the latest developments in the Arvest ecosystem",
-            "fr" : "Découvrez les derniers developpements d'Arvest"
+            "fr" : "Découvrez les derniers développements d'Arvest"
         },
         "button" : {"en" : "Latest news", "fr" : "Lire le blog"}
     },

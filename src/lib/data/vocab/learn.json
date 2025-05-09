@@ -2,7 +2,7 @@
     "tutorials" : {
         "blurb" : {
             "en" : "Learn how to use Arvest through a series of video and textual tutorials",
-            "fr" : "Apprenez à utiliser Arvest avec une série de tutoriels vidéos et textuels"
+            "fr" : "Apprenez à utiliser Arvest grâce à une série de tutoriels vidéos et textuels"
         },
         "button" : {"en" : "Follow the tutorials", "fr" : "Suivre les tutoriels"}
     },
