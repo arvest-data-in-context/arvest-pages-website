@@ -5,6 +5,7 @@
     export let project_hash = "1834a259897721d2c76a1fb0553f7e1fd19d4d3a";
     export let width = "100%";
     export let title = "Arvest project" 
+    export let zoom = "0.7";
 
     let iframe_el;
 
@@ -20,6 +21,8 @@
 
     function resize_el(){
         if (iframe_el) {
+            iframe_el.style.zoom = zoom;
+
             const width = iframe_el.offsetWidth;
             const height = width * 9 / 16; // for 16:9 ratio
             iframe_el.style.height = `${height}px`;
