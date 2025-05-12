@@ -5,7 +5,7 @@
 	lang.subscribe(value => {
 		langVal = value;
 	});
-    export let img_src = base + "/imgs/logos/arvest_logo_cut.png";
+    export let img_src = base + "/imgs/logos/new_arvest_logo.png";
     export let alt_text = "arvest logo";
     export let site_name = "Arvest";
 </script>
@@ -13,7 +13,7 @@
 <div>
     <a href="{base}/{langVal}">
         <img src={img_src} alt={alt_text}>
-        <p>{site_name}</p>
+        <!-- <p>{site_name}</p> -->
     </a>
 </div>
 
@@ -22,7 +22,7 @@
         display: flex;
         text-decoration: none;
         color: var(--primary-text);
-        height: 1.5em;
+        height: 3em;
         align-content: center;
         align-items: center;
         gap: 0.5em;

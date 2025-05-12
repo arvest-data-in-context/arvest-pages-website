@@ -5,6 +5,8 @@
     import TutorialCard from '$lib/components/general_ui/TutorialCard.svelte';
     import { base } from '$app/paths';
 
+    import Youtube from '$lib/components/articles/Youtube.svelte';
+
     import { lang } from '$lib/scripts/stores.js';
     import BCVocab from '$lib/data/vocab/footer.json';
     import LearnVocab from '$lib/data/vocab/learn.json';
@@ -32,6 +34,11 @@
         {url : base + "/" + langVal + "/learn/tutorials", label : BCVocab.tutorials[langVal]},
         {url : base + "/" + langVal + "/learn/iiif", label : BCVocab.iiif[langVal]}
     ]}
+/>
+
+<Youtube
+    width = "75%"
+    youtube_src = "zQOm8V22wI4"
 />
 
 <div class="cont">

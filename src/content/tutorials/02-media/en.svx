@@ -1,0 +1,19 @@
+---
+title: "Basic tutorial #02: Media"
+date: "2025-05-11"
+description: "Learn how to upload media onto Arvest, and how to link to media that already exists onine."
+tags: ["basics", "gui"]
+author: "Jacob Hart"
+image: "tutorials/basic-02/a02-thumb.png"
+---
+
+<script>
+    import Youtube from '$lib/components/articles/Youtube.svelte';
+</script>
+
+# Basic tutorial #02: Media
+
+<Youtube
+    youtube_src = "RIdYvurh9nw"
+    width = "75%"
+/>

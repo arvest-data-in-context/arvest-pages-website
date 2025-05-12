@@ -1,0 +1,19 @@
+---
+title: "Basic tutorial #04: Projects"
+date: "2025-05-09"
+description: "Learn how to create projects in Arvest and the basics of the workspace."
+tags: ["basics", "gui"]
+author: "Jacob Hart"
+image: "tutorials/basic-04/a04-thumb.png"
+---
+
+<script>
+    import Youtube from '$lib/components/articles/Youtube.svelte';
+</script>
+
+# Basic tutorial #04: Projects
+
+<Youtube
+    youtube_src = "rFxTE_Ua1vU"
+    width = "75%"
+/>

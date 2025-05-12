@@ -9,4 +9,6 @@ image: "tutorials/ml-video-decomposition/ml-tut-video-decomp.png"
 
 # Machine learning tutorial: Video decomposition
 
-Coming soon!
+Full video tutorial coming soon.
+
+In the meantime, you can find the python notebooks [here](https://github.com/arvest-data-in-context/ml-notebooks/blob/main/docs/workflows/README.md).

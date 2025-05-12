@@ -23,6 +23,7 @@
                 <li><a href="{base}/{langVal}/community/forum" class="menu_lower_link">{PageVocab.forum[langVal]}</a></li>
                 <li><a href="{base}/{langVal}/community/news" class="menu_lower_link">{PageVocab.news[langVal]}</a></li>
                 <li><a href="https://stage-to-data.huma-num.fr/" class="menu_lower_link">{PageVocab.stage[langVal]}</a></li>
+                <li><a href="{base}/{langVal}/community/contact" class="menu_lower_link">{PageVocab.contact[langVal]}</a></li>
             </ul>
     
             <ul class="menu_section">

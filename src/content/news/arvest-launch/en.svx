@@ -1,0 +1,27 @@
+---
+title: "Arvest launched"
+date: "2025-05-13"
+description: "The first version of Arvest is now up and running."
+tags: ["release"]
+author: "Jacob Hart"
+image: "news/website-launch.jpg"
+---
+
+<script>
+    import Youtube from '$lib/components/articles/Youtube.svelte';
+</script>
+
+# Arvest launched
+
+Today marks the official release of the first version of Arvest. This means that you can sign up today [here](https://workspace.arvest.app/), and start creating!
+
+As well as our official release, we also provide a set of in depth tutorials which you can find [here](https://arvest.app/en/learn/tutorials), or you can watch our quickstart guide down below to get up and running as quickly as possible.
+
+<Youtube
+    youtube_src = "zQOm8V22wI4"
+    width = "75%"
+/>
+
+For those who are interested in machine learning and how to integrate Arvest into more complex workflows, you can check out some of the python notebook examples that incorporate the Arvest API [here](https://arvest.app/en/api/ml).
+
+Arvest is still a work in progress, and we shall be working on it over the next few years to make it as stable and streamlined as possible. In the meantime, if you have any questions or want to get in touch, please don't hesitiate to [contact us](https://arvest.app/en/community/contact).

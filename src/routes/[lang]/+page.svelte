@@ -5,6 +5,7 @@
     import FeatureCard from '$lib/components/front_page/FeatureCard.svelte';
     import MultiFeatureCard from '$lib/components/front_page/MultiFeatureCard.svelte';
     import MainPresWidget from '$lib/components/front_page/main_pres_widget/MainPresWidget.svelte';
+    import Youtube from '$lib/components/articles/Youtube.svelte';
 
     import { base } from '$app/paths';
 
@@ -118,6 +119,11 @@
         scroll_to_index = 5
     />
 
+    <Youtube
+        width = "100%"
+        youtube_src = "zQOm8V22wI4"
+    />
+
     <MultiFeatureCard
         title_1 = {PageVocab.features.iiif_compliant.title[langVal]}
         description_1 = {PageVocab.features.iiif_compliant.desc[langVal]}
@@ -201,7 +207,7 @@
             font-size: 1em;
         }
         #top_section{
-            padding-top: 1em;
+            padding-top: 2em;
         }
     }
 

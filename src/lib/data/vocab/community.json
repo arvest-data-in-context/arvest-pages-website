@@ -14,6 +14,13 @@
         },
         "button" : {"en" : "Connect to the forum", "fr" : "Connexion au forum"}
     },
+    "contact" : {
+        "blurb" : {
+            "en" : "Feel free to get in touch!",
+            "fr" : "N'hésitez pas de nous contacter!"
+        },
+        "button" : {"en" : "Contact us", "fr" : "Contactez-nous"}
+    },
     "blog" : {
         "blurb" : {
             "en" : "Learn about the latest developments in the Arvest ecosystem",

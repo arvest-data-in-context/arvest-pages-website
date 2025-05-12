@@ -1,0 +1,19 @@
+---
+title: "Basic tutorial #03: Manifests"
+date: "2025-05-10"
+description: "Learn how to create Manifests from your media in Arvest, and how to link to Manifests that exist online."
+tags: ["basics", "gui"]
+author: "Jacob Hart"
+image: "tutorials/basic-03/a03-thumb.png"
+---
+
+<script>
+    import Youtube from '$lib/components/articles/Youtube.svelte';
+</script>
+
+# Basic tutorial #03: Manifests
+
+<Youtube
+    youtube_src = "EVI8NjxYyFE"
+    width = "75%"
+/>

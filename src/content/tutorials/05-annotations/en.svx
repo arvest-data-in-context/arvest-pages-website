@@ -1,0 +1,19 @@
+---
+title: "Basic tutorial #05: Annotations"
+date: "2025-05-08"
+description: "Learn how to create lots of different kinds of annotations in Arvest."
+tags: ["basics", "gui"]
+author: "Jacob Hart"
+image: "tutorials/basic-05/a05-thumb.png"
+---
+
+<script>
+    import Youtube from '$lib/components/articles/Youtube.svelte';
+</script>
+
+# Basic tutorial #05: Annotations
+
+<Youtube
+    youtube_src = "ufbsNsQFo2E"
+    width = "75%"
+/>

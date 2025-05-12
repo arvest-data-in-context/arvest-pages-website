@@ -9,4 +9,6 @@ image: "tutorials/ml-image-embedding/ml-tut-embedding.png"
 
 # Machine learning tutorial: Image embedding projections
 
-Coming soon!
+Full video tutorial coming soon.
+
+In the meantime, you can find the python notebooks [here](https://github.com/arvest-data-in-context/ml-notebooks/blob/main/docs/workflows/README.md).

@@ -217,6 +217,7 @@
     }
 
     .top_right_content{
+        margin-top: 0.8em;
         position: fixed;
         top:0;
         right:0;
@@ -230,7 +231,7 @@
     }
 
     #nav_padding{
-        height: 100px;
+        height: 150px;
     }
 
     #hamburger_menu{

@@ -1,0 +1,16 @@
+{
+    "general" : {
+        "title" : {"en" : "General feedback and questions", "fr" : "Commentaires généraux et questions"},
+        "content" : {
+            "en" : "<p>If you have any questions or feedback, then please don't hesitate to get in touch with as here: <a href=\"mailto:contact@arvest.app\">contact [at] arvest [dot] app</a>.</p>",
+            "fr" : "<p>Si vous avez des questions ou des commentaires, n'hésitez pas à nous contacter ici : <a href=\"mailto:contact@arvest.app\">contact [at] arvest [point] app</a>.</p>"
+        }
+    },
+    "bugs" : {
+        "title" : {"en" : "Bug and Error Reporting", "fr" : "Signalement de Bugs et d'Erreurs"},
+        "content" : {
+            "en" : "<p>Have you found a bug or an error? Please feel free to open an issue on the corresponding repo on github <a href=\"https://github.com/ARVEST-APP\">here</a>.<br>Not sure which repo to post in? No worries, post your issue <a href=\"https://github.com/ARVEST-APP/mirador-multi-user/issues\">here</a> and we'll take care of the rest.</p>",
+            "fr" : "<p>Vous avez trouvé un bug ou une erreur ? N'hésitez pas à ouvrir un ticket sur le repo correspondant sur GitHub <a href=\"https://github.com/ARVEST-APP\">ici</a>.<br>Vous ne savez pas dans quel repo publier ? Pas de souci, signalez votre problème <a href=\"https://github.com/ARVEST-APP/mirador-multi-user/issues\">ici</a> et nous nous occuperons du reste.</p>"
+        }
+    }
+}
