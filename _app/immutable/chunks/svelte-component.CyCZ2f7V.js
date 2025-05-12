@@ -1,0 +1,1 @@
+import{b as c,E as s,e as i,h as r,d as h,n as d,g as p}from"./runtime.CfrI8ngH.js";function u(t,f,o){r&&h();var n=t,a,e;c(()=>{a!==(a=f())&&(e&&(d(e),e=null),a&&(e=i(()=>o(n,a))))},s),r&&(n=p)}export{u as c};
