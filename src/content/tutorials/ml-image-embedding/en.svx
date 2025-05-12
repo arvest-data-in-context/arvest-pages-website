@@ -9,6 +9,14 @@ image: "tutorials/ml-image-embedding/ml-tut-embedding.png"
 
 # Machine learning tutorial: Image embedding projections
 
+<script>
+    import ArvestProject from '$lib/components/articles/ArvestProject.svelte';
+</script>
+
+<ArvestProject
+    project_hash = "5d24337745e79799ac7b2d51b50327e69b3fb0df"
+/>
+
 Full video tutorial coming soon.
 
 In the meantime, you can find the python notebooks [here](https://github.com/ARVEST-APP/ml-notebooks/blob/main/docs/workflows/README.md).
