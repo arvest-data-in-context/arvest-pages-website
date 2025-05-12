@@ -11,4 +11,4 @@ image: "tutorials/ml-image-embedding/ml-tut-embedding.png"
 
 Full video tutorial coming soon.
 
-In the meantime, you can find the python notebooks [here](https://github.com/arvest-data-in-context/ml-notebooks/blob/main/docs/workflows/README.md).
+In the meantime, you can find the python notebooks [here](https://github.com/ARVEST-APP/ml-notebooks/blob/main/docs/workflows/README.md).

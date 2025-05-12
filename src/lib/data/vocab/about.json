@@ -26,5 +26,12 @@
             "fr" : "Lire les crédits du site d'Arvest"
         },
         "button" : {"en" : "Learn more", "fr" : "Lire"}
+    },
+    "contact" : {
+        "blurb" : {
+            "en" : "Feel free to get in touch!",
+            "fr" : "N'hésitez pas à nous contacter!"
+        },
+        "button" : {"en" : "Contact us", "fr" : "Contactez-nous"}
     }
 }

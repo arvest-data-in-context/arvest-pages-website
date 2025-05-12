@@ -90,6 +90,9 @@
     .inner_part p {
         color: var(--secondary-text);
     }
+    .inner_part a {
+        width: 100%;
+    }
     .cont{
         padding-bottom: 3em;
         width: 100%;

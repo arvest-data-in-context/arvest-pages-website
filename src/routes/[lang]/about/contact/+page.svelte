@@ -18,8 +18,8 @@
 <BreadCrumbs
     breadcrumbs={[
         { text: BCVocab.home[langVal], href: base + "/" + langVal },
-        { text: BCVocab.community[langVal], href: base + "/" + langVal + "/community"},
-        { text: BCVocab.contact[langVal], href: base + "/" + langVal + "/community/contact"}
+        { text: BCVocab.about[langVal], href: base + "/" + langVal + "/about"},
+        { text: BCVocab.contact[langVal], href: base + "/" + langVal + "/about/contact"}
       ]}
     />
 

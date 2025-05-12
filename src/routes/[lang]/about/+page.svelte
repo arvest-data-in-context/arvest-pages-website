@@ -31,7 +31,8 @@
         {url : base + "/" + langVal + "/about/infrastructure", label : BCVocab.about_arvest[langVal]},
         {url : base + "/" + langVal + "/about/team", label : BCVocab.team[langVal]},
         {url : base + "/" + langVal + "/about/accessibility", label : BCVocab.accessibility[langVal]},
-        {url : base + "/" + langVal + "/about/credits", label : BCVocab.credits[langVal]}
+        {url : base + "/" + langVal + "/about/credits", label : BCVocab.credits[langVal]},
+        {url : base + "/" + langVal + "/about/contact", label : BCVocab.contact[langVal]}
     ]}
 />
 
@@ -103,6 +104,22 @@
             </div>
         </div>
     </div>
+
+    <div class="section_div">
+        <img src={base + "/imgs/squares/trame.png"} alt="checked squares">
+
+        <div class="inner_part">
+            <a href="{base}/{langVal}/about/contact"><h1>{BCVocab.contact[langVal]}</h1></a>
+            <p>{AboutVocab.contact.blurb[langVal]}</p>
+
+            <div class="button_resizer">
+                <BigButton
+                    url = {base + "/" + langVal + "/about/contact"}
+                    label = {AboutVocab.contact.button[langVal]}
+                />
+            </div>
+        </div>
+    </div>
 </div>
 
 <style>
@@ -111,6 +128,9 @@
     }
     .inner_part p {
         color: var(--secondary-text);
+    }
+    .inner_part a {
+        width: 100%;
     }
     .cont{
         padding-bottom: 3em;

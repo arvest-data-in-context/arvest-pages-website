@@ -32,8 +32,7 @@
         {url : base + "/" + langVal + "/community/projects", label : BCVocab.projects[langVal]},
         {url : base + "/" + langVal + "/community/forum", label : BCVocab.forum[langVal]},
         {url : base + "/" + langVal + "/community/news", label : BCVocab.news[langVal]},
-        {url : "https://stage-to-data.huma-num.fr/", label : BCVocab.stage[langVal]},
-        {url : base + "/" + langVal + "/community/contact", label : BCVocab.contact[langVal]},
+        {url : "https://stage-to-data.huma-num.fr/", label : BCVocab.stage[langVal]}
     ]}
 />
 
@@ -117,22 +116,6 @@
             </div>
         </div>
     </div>
-
-    <div class="section_div">
-        <img src={base + "/imgs/squares/trame.png"} alt="checked squares">
-
-        <div class="inner_part">
-            <a href="{base}/{langVal}/community/contact"><h1>{BCVocab.contact[langVal]}</h1></a>
-            <p>{CommunityVocab.contact.blurb[langVal]}</p>
-
-            <div class="button_resizer">
-                <BigButton
-                    url = {base + "/" + langVal + "/community/contact"}
-                    label = {CommunityVocab.contact.button[langVal]}
-                />
-            </div>
-        </div>
-    </div>
 </div>
 
 <style>
@@ -141,6 +124,9 @@
     }
     .inner_part p {
         color: var(--secondary-text);
+    }
+    .inner_part a {
+        width: 100%;
     }
     .cont{
         padding-bottom: 3em;
