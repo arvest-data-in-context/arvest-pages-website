@@ -9,9 +9,14 @@ image: "projects/coeso/coeso-networks.png"
 
 <script>
     import Image from '$lib/components/articles/Image.svelte';
+    import ArvestProject from '$lib/components/articles/ArvestProject.svelte';
 </script>
 
 # Arvest prototype and the COESO Project
+
+<ArvestProject
+    project_hash = "1834a259897721d2c76a1fb0553f7e1fd19d4d3a"
+/>
 
 Development of Arvest began in 2023. Our initial goal was to create a new version of our tool [MemoRekall](https://memorekall.com/en/) that would be compatible with the International Image Interoperability Framework ([IIIF](https://iiif.io/)), hence the working name MemoRekall-IIIF. To anchor development in a real semantic case study, we created a number of examples around the documentation of a collaboration between a choreographer and a philosopher in [Dancing Philosophy](https://coeso.hypotheses.org/498), one of the Pilots of the H2020 [COESO](https://coeso.hypotheses.org/) Project.
 
