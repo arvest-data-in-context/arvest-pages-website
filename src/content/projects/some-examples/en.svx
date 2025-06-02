@@ -1,0 +1,47 @@
+---
+title: "Some example projects"
+date: "2025-06-01"
+description: "Here we go over some quick example projects to show you the kinds of things that are possible with Arvest."
+tags: ["research", "event"]
+author: "Jacob Hart"
+image: "projects/examples/network.png"
+---
+
+<script>
+    import Image from '$lib/components/articles/Image.svelte';
+    import ArvestProject from '$lib/components/articles/ArvestProject.svelte';
+</script>
+
+# Some example projects
+
+Let's take a look at three example projects to see the kinds of things that are possible with Arvest.
+
+## A digital publication
+
+In 2024, we organized an international conference around annotation and the digital humanities in Rennes, France called [Reimagining Annotation for Multimodal cultural Heritage](https://reimagining-amch.sciencesconf.org/). We used Arvest for the digital publication of this conference. Here, you can browse an interactive conference programme, access links to all of the elements mentioned by the presenters as they say them, and watch presentations and access slides side by side.
+
+<ArvestProject
+    project_hash = "27ff704000d7fb984b5815cdb90f8eb2c06561e1"
+/>
+
+Open the project in a new tab [here](https://workspace.arvest.app/mirador/27ff704000d7fb984b5815cdb90f8eb2c06561e1/workspace.json).
+
+## Augmented theatre programmes
+
+The ERC-funded [STAGE project](https://stage-to-data.huma-num.fr/) takes a close and distant look at the programmes of the Festival d'Avignon, a contemporary theatre festival in Avignon, France. In this example project, we can browse digitized historical theatre programmes, and view some of the distant viewing network visualizations of the people involved with the festival across its history.
+
+<ArvestProject
+    project_hash = "67496070537a40e46d133c0f07805f658bd7436c"
+/>
+
+Open the project in a new tab [here](https://workspace.arvest.app/mirador/67496070537a40e46d133c0f07805f658bd7436c/workspace.json).
+
+## Machine learning image discovery
+
+In this example, we have used machine learning to proejct a collection of images into a 2-dimensional space, organized by similarity. Thanks to the annotations, this visualization becomes interactive, allowing the user to navigate straight to the image in question. Learn how to do this yourself by following [this tutorial](https://arvest.app/en/learn/tutorials/ml-image-embedding).
+
+<ArvestProject
+    project_hash = "5d24337745e79799ac7b2d51b50327e69b3fb0df"
+/>
+
+Open the project in a new tab [here](https://workspace.arvest.app/mirador/5d24337745e79799ac7b2d51b50327e69b3fb0df/workspace.json).
