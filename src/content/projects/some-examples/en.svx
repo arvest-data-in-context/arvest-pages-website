@@ -14,7 +14,7 @@ image: "projects/examples/network.png"
 
 # Some example projects
 
-Let's take a look at three example projects to see the kinds of things that are possible with Arvest.
+Let's take a look at four example projects to see the kinds of things that are possible with Arvest.
 
 ## A digital publication
 
@@ -45,3 +45,39 @@ In this example, we have used machine learning to proejct a collection of images
 />
 
 Open the project in a new tab [here](https://workspace.arvest.app/mirador/5d24337745e79799ac7b2d51b50327e69b3fb0df/workspace.json).
+
+## Dance analysis
+
+Here is a basic example that mixes various different close and distant reading perspectives. Here we have taken a number of different snapshots in order to present the project in different states.
+
+**_Presentation of the piece_**. Here we present the piece with a number of different types of elements, a multi-page programme, the music that accompanies the piece, and a video recording extract.
+
+<ArvestProject
+    project_hash = "de09a8e891d2ecc7d02da7e737fd93c9c018b2b7"
+/>
+
+Open in a new tab [here](https://workspace.arvest.app/mirador/de09a8e891d2ecc7d02da7e737fd93c9c018b2b7/workspace.json).
+
+**_Programme comparison_**. Next we compare three different programmes that are linked to different productions of the piece, and how the cast is described in each programme.
+
+<ArvestProject
+    project_hash = "3e5892e554493cde3e4d48c3e893e53f19748baf"
+/>
+
+Open in a new tab [here](https://workspace.arvest.app/mirador/3e5892e554493cde3e4d48c3e893e53f19748baf/workspace.json).
+
+**_Movement comparison_**. Here we have two video recordings of the piece, and we mark the moment where two different dancers interpret the same movement.
+
+<ArvestProject
+    project_hash = "f488847723b4b277e8d80efdbba3df7927e19e46"
+/>
+
+Open in a new tab [here](https://workspace.arvest.app/mirador/f488847723b4b277e8d80efdbba3df7927e19e46/workspace.json).
+
+**_Distant perspectives_**. Here we have two interactive different distant reading interfaces that allow us to explore the video recordings across different productions and via different modalities.
+
+<ArvestProject
+    project_hash = "6b9ee9fdb1b7277739c1a28de719f996a3f9ceae"
+/>
+
+Open in a new tab [here](https://workspace.arvest.app/mirador/6b9ee9fdb1b7277739c1a28de719f996a3f9ceae/workspace.json).
