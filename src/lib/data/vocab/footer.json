@@ -21,5 +21,6 @@
     "demo":{"en":"Demo","fr":"Démo"},
     "other_tools":{"en":"Other Tools","fr":"Autres outils"},
     "home":{"en":"Home","fr":"Accueil"},
-    "contact":{"en":"Contact","fr":"Contact"}
+    "contact":{"en":"Contact","fr":"Contact"},
+    "cite":{"en":"Cite","fr":"Citer"}
 }

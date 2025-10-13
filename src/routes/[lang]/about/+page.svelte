@@ -28,6 +28,7 @@
 
 <LowerMenu
     menu_items = {[
+        {url : base + "/" + langVal + "/about/cite", label : BCVocab.cite[langVal]},
         {url : base + "/" + langVal + "/about/infrastructure", label : BCVocab.about_arvest[langVal]},
         {url : base + "/" + langVal + "/about/team", label : BCVocab.team[langVal]},
         {url : base + "/" + langVal + "/about/accessibility", label : BCVocab.accessibility[langVal]},
@@ -37,6 +38,24 @@
 />
 
 <div class="cont">
+    <div class="section_div">
+        <img src={base + "/imgs/squares/trame.png"} alt="checked squares">
+
+        <div class="inner_part">
+            <a href="{base}/{langVal}/about/cite"><h1>{BCVocab.cite[langVal]}</h1></a>
+            <p>{AboutVocab.cite.blurb[langVal]}</p>
+
+            <div class="button_resizer">
+                <BigButton
+                    url = {base + "/" + langVal + "/about/cite"}
+                    label = {AboutVocab.cite.button[langVal]}
+                />
+
+                
+            </div>
+        </div>
+    </div>
+
     <div class="section_div">
         <img src={base + "/imgs/squares/trame.png"} alt="checked squares">
 

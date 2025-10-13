@@ -1,0 +1,21 @@
+{  
+    "main" : {
+        "title" : {"en" : "Citing Arvest", "fr" : "Citer Arvest"},
+        "desc" : {
+            "en" : "Arvest is a tool that emerges from a 15-year research project led by Clarisse Bardiot that investigates tools, digital traces and the performing arts. Most recently, Arvest emerges from Bardiot's ERC-funded Project STAGE. If you wish to cite the tool in your scholarly writing, please use one of the following references.",
+            "fr" : "Arvest est un outil issu d’un projet de recherche mené depuis plus quinze ans par Clarisse Bardiot, qui explore les outils, les traces numériques et les arts du spectacle. Plus récemment, Arvest est né du projet ERC STAGE. Si vous souhaitez citer cet outil dans vos travaux accadémiques, veuillez utiliser l’une des références suivantes."
+        }
+    },
+    "jdh" : {
+        "title" : {"en" : "Journal of Digital History article", "fr" : "Article Journal of Digital History"},
+        "link" : "https://journalofdigitalhistory.org/en/article/8X2RX68Qavxr",
+        "desc" : {
+            "en" : "<p class=\"cite_text\">Our article <strong>In search of an interpretative environment for digital traces: the building of Arvest</strong> gives a full account of the development of Arvest, both from technical and from a theoretical perspectives.</p>",
+            "fr" : "<p class=\"cite_text\">Notre article <strong>À la recherche d’un environnement interprétatif pour les traces numériques : la construction d’Arvest</strong> rend compte en détail du développement d’Arvest, tant du point de vue technique que du point de vue théorique.</p>"
+        },
+        "reference" : {
+            "en": "Bardiot, Clarisse, Jacob Hart, and David Rouquet. “In Search of an Interpretative Environment for Digital Traces: The Building of Arvest.” Sec. Jdh003. Journal of Digital History, no. jdh003 (June 2024). https://journalofdigitalhistory.org/en/article/8X2RX68Qavxr.",
+            "fr": "Bardiot, Clarisse, Jacob Hart, et David Rouquet. « In Search of an Interpretative Environment for Digital Traces: The Building of Arvest ». Sect. Jdh003. Journal of Digital History, nᵒ jdh003 (juin 2024). https://journalofdigitalhistory.org/en/article/8X2RX68Qavxr."
+        }
+    }
+}

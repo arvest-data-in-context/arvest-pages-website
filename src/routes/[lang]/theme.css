@@ -81,3 +81,12 @@ p{
 	font-size: 1em;
 	font-weight: bold;
 }
+
+.cite_text{
+	font-size: 0.7em;
+	line-height: 1.3em;
+}
+.cite_text strong{
+	font-weight: bold;
+	text-decoration: underline;
+}
