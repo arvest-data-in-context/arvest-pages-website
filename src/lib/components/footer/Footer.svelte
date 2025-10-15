@@ -40,7 +40,7 @@
     
             <ul class="menu_section">
                 <li><a href="{base}/{langVal}/about" class="menu_top_link">{PageVocab.about[langVal]}</a></li>
-                <li><a href="{base}/{langVal}/about/infrastructure" class="menu_lower_link">{PageVocab.cite[langVal]}</a></li>
+                <li><a href="{base}/{langVal}/about/cite" class="menu_lower_link">{PageVocab.cite[langVal]}</a></li>
                 <li><a href="{base}/{langVal}/about/infrastructure" class="menu_lower_link">{PageVocab.about_arvest[langVal]}</a></li>
                 <li><a href="{base}/{langVal}/about/team" class="menu_lower_link">{PageVocab.team[langVal]}</a></li>
                 <li><a href="{base}/{langVal}/about/accessibility" class="menu_lower_link">{PageVocab.accessibility[langVal]}</a></li>
