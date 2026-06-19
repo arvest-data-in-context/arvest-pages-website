@@ -19,6 +19,15 @@
             },
             "site" : "https://jacob-hart.com/",
             "img" : "imgs/team/jh.jpg"
+        },
+        {
+            "name" : "Erell Choulette",
+            "description" : {
+                "en" : "Erell Choulette is a computer engineer and UX designer. A double graduate of the University of Technology of Compiègne, her academic background combining artificial intelligence, cognitive sciences, and philosophy has been enriched by international experiences. She joined the team after working at IRISA on the Triangle project.",
+                "fr" : "Erell Choulette est ingénieure en informatique et UX designeuse. Doublement diplômée de l'Université de Technologie de Compiègne, son parcours académique, alliant intelligence artificielle, sciences cognitives et philosophie, été enrichi d'expériences à l'international. Elle a rejoint l'équipe après avoir travaillé à l'Irisa sur le projet Triangle."
+            },
+            "site" : "",
+            "img" : "imgs/team/ec.jpg"
         }
     ]
 }
