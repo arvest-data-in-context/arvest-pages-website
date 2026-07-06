@@ -257,8 +257,10 @@
     .new_version_setion{
         width: 80%;
         margin-top: 2em;
-        margin-left: 10%;
+        padding-left: 10%;
         margin-bottom: 1em;
+
+        border-left: 5px solid #801880;
     }
 
     .new_version_setion h2{
