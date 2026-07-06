@@ -2,6 +2,7 @@
     export let data; // PAGE DATA HERE
 
     import BigButton from '$lib/components/general_ui/BigButton.svelte';
+    import BigButtonPurple from '$lib/components/general_ui/BigButtonPurple.svelte';
     import FeatureCard from '$lib/components/front_page/FeatureCard.svelte';
     import MultiFeatureCard from '$lib/components/front_page/MultiFeatureCard.svelte';
     import MainPresWidget from '$lib/components/front_page/main_pres_widget/MainPresWidget.svelte';
@@ -32,6 +33,16 @@
 </svelte:head>
 
 <!-- <h1>{data.vocab}</h1> -->
+
+<div class="new_version_setion">
+    <h2>{PageVocab.v2.title[langVal]}</h2>
+    <p>{PageVocab.v2.description[langVal]}</p>
+
+    <BigButtonPurple
+        label = {PageVocab.v2.link[langVal]}
+        url = {"https://workspace.arvest.app/playground/"}
+    />
+</div>
 
 <div id="top_section">
     <h1>
@@ -241,5 +252,23 @@
         #top_section{
             padding-top: 3em;
         }
+    }
+
+    .new_version_setion{
+        width: 80%;
+        margin-top: 2em;
+        margin-left: 10%;
+        margin-bottom: 1em;
+    }
+
+    .new_version_setion h2{
+        font-size: 1em;
+        margin-bottom: 0.5em;
+    }
+
+    .new_version_setion p{
+        font-size: 0.6em;
+        margin-bottom: 1em;
+        color: rgb(130, 130, 130);
     }
 </style>

@@ -1,4 +1,9 @@
 {
+    "v2" : {
+        "title" : {"en" : "Arvest v2 is coming!", "fr" : "Arvest v2 arrive !"},
+        "description" : {"en" : "Version 2 of Arvest is on its way. You can already try out the new version (which is still in development) with your existing account here.", "fr" : "La version 2 d'Arvest arrive bientôt. Vous pouvez déjà essayer la nouvelle version (qui est toujours en développement) avec votre compte existant ici."},
+        "link" : {"en" : "Arvest v2 Beta ->", "fr" : "Arvest v2 Beta ->"}
+    },
     "short_description":{"en":"Data in Context","fr":"Les données en contexte"},
     "long_description":{"en":"Consult, compare, organize and annotate documents, including images, videos and audio, on a virtual desktop","fr":"Consultez, comparez, organisez et annotez des documents, dont des images, des vidéos et des sons, sur un bureau virtuel"},
     "start_creating":{"en":"Start creating","fr":"Commencer la création"},
