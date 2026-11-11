@@ -1,0 +1,1 @@
+import{o as c,E as i,v as s,h as r,i as h,w as p,x as d}from"./runtime.Buieu2QD.js";function u(o,t,f){r&&h();var n=o,a,e;c(()=>{a!==(a=t())&&(e&&(p(e),e=null),a&&(e=s(()=>f(n,a))))},i),r&&(n=d)}export{u as c};

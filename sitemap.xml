@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://arvest.app/en</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/fr</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/en/community/projects</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/community/projects"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/community/projects"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/community/projects"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/fr/community/projects</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/community/projects"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/community/projects"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/community/projects"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/en/community/news</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/community/news"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/community/news"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/community/news"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/fr/community/news</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/community/news"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/community/news"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/community/news"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/en/learn/tutorials</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/learn/tutorials"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/learn/tutorials"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/learn/tutorials"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/fr/learn/tutorials</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/learn/tutorials"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/learn/tutorials"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/learn/tutorials"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/en/learn/iiif</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/learn/iiif"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/learn/iiif"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/learn/iiif"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/fr/learn/iiif</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/learn/iiif"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/learn/iiif"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/learn/iiif"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/en/api/ml</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/api/ml"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/api/ml"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/api/ml"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/fr/api/ml</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/api/ml"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/api/ml"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/api/ml"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/en/api/documentation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/api/documentation"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/api/documentation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/api/documentation"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/fr/api/documentation</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/api/documentation"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/api/documentation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/api/documentation"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/en/ecosystem</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/ecosystem"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/ecosystem"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/ecosystem"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/fr/ecosystem</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/ecosystem"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/ecosystem"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/ecosystem"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/en/browser-extension</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/browser-extension"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/browser-extension"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/browser-extension"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/fr/browser-extension</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/browser-extension"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/browser-extension"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/browser-extension"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/en/mmm</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/mmm"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/mmm"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/mmm"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/fr/mmm</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/mmm"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/mmm"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/mmm"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/en/lapa-editor</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/lapa-editor"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/lapa-editor"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/lapa-editor"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/fr/lapa-editor</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/lapa-editor"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/lapa-editor"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/lapa-editor"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/en/about/infrastructure</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/about/infrastructure"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/about/infrastructure"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/about/infrastructure"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/fr/about/infrastructure</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/about/infrastructure"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/about/infrastructure"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/about/infrastructure"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/en/about/team</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/about/team"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/about/team"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/about/team"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/fr/about/team</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/about/team"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/about/team"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/about/team"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/en/about/cite</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/about/cite"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/about/cite"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/about/cite"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/fr/about/cite</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/about/cite"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/about/cite"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/about/cite"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/en/about/accessibility</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/about/accessibility"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/about/accessibility"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/about/accessibility"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/fr/about/accessibility</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/about/accessibility"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/about/accessibility"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/about/accessibility"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/en/about/credits</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/about/credits"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/about/credits"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/about/credits"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/fr/about/credits</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/about/credits"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/about/credits"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/about/credits"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/en/about/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/about/contact"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/about/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/about/contact"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/fr/about/contact</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/about/contact"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/about/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/about/contact"/>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/en/community/news/arvest-launch</loc>
+    <lastmod>2025-05-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/community/news/arvest-launch"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/community/news/arvest-launch"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/community/news/arvest-launch"/>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/fr/community/news/arvest-launch</loc>
+    <lastmod>2025-05-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/community/news/arvest-launch"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/community/news/arvest-launch"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/community/news/arvest-launch"/>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/en/community/news/website-launch</loc>
+    <lastmod>2024-11-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/community/news/website-launch"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/community/news/website-launch"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/community/news/website-launch"/>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/fr/community/news/website-launch</loc>
+    <lastmod>2024-11-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/community/news/website-launch"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/community/news/website-launch"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/community/news/website-launch"/>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/en/community/projects/coeso</loc>
+    <lastmod>2024-11-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/community/projects/coeso"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/community/projects/coeso"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/community/projects/coeso"/>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/fr/community/projects/coeso</loc>
+    <lastmod>2024-11-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://arvest.app/en/community/projects/coeso"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://arvest.app/fr/community/projects/coeso"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://arvest.app/en/community/projects/coeso"/>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/en/community/projects/some-examples</loc>
+    <lastmod>2025-06-01</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/en/learn/tutorials/01-introduction-and-overview</loc>
+    <lastmod>2025-05-12</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/en/learn/tutorials/02-media</loc>
+    <lastmod>2025-05-11</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/en/learn/tutorials/03-manifests</loc>
+    <lastmod>2025-05-10</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/en/learn/tutorials/04-projects</loc>
+    <lastmod>2025-05-09</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/en/learn/tutorials/05-annotations</loc>
+    <lastmod>2025-05-08</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/en/learn/tutorials/ml-image-embedding</loc>
+    <lastmod>2025-03-26</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/en/learn/tutorials/ml-network-analysis</loc>
+    <lastmod>2025-03-26</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/en/learn/tutorials/ml-speech-recognition</loc>
+    <lastmod>2025-03-26</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://arvest.app/en/learn/tutorials/ml-video-decomposition</loc>
+    <lastmod>2025-03-26</lastmod>
+    <priority>0.5</priority>
+  </url>
+</urlset>
