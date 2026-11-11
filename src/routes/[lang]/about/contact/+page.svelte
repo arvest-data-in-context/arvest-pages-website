@@ -1,4 +1,7 @@
 <script>
+    import Seo from '$lib/components/Seo.svelte';
+    import SeoVocab from '$lib/data/vocab/seo.json';
+    import AboutVocab from '$lib/data/vocab/about.json';
     import BreadCrumbs from '$lib/components/general_ui/BreadCrumbs.svelte';
     import { base } from '$app/paths';
 
@@ -11,41 +14,34 @@
 	});
 </script>
 
-<svelte:head>
-    <title>Arvest | {BCVocab.contact[langVal]}</title>
-</svelte:head>
+<Seo
+    title={BCVocab.contact[langVal]}
+    description={SeoVocab.contact[langVal]}
+/>
 
 <BreadCrumbs
     breadcrumbs={[
         { text: BCVocab.home[langVal], href: base + "/" + langVal },
-        { text: BCVocab.about[langVal], href: base + "/" + langVal + "/about"},
+        { text: BCVocab.about[langVal] },
         { text: BCVocab.contact[langVal], href: base + "/" + langVal + "/about/contact"}
       ]}
     />
 
 
-<div class="cont">
+<header class="page_head">
+    <h1>{BCVocab.contact[langVal]}</h1>
+</header>
+
+<div class="prose">
     <h2>{ContactVocab.general.title[langVal]}</h2>
-    <p>{@html ContactVocab.general.content[langVal]}</p>
+    <div>{@html ContactVocab.general.content[langVal]}</div>
 
     <h2>{ContactVocab.bugs.title[langVal]}</h2>
-    <p>{@html ContactVocab.bugs.content[langVal]}</p>
+    <div>{@html ContactVocab.bugs.content[langVal]}</div>
 </div>
 
 <style>
-    .cont{
-        padding-bottom: 5em;
-        margin-top: 2em;
-    }
-
-    p{
-        font-size: 0.5em;
-        width: 75%;
-        margin-bottom: 3em;
-    }
-
-    h2{
-        font-size: 0.8em;
-        margin-bottom: 0.5em;
+    .prose h2:first-child{
+        padding-top: 0;
     }
 </style>

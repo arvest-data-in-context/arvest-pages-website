@@ -7,7 +7,6 @@ author: "Jacob Hart"
 image: "news/website-launch.jpg"
 ---
 
-# Arvest.app is online
 
 Today marks the launch of [Arvest.app](https://arvest.app), Arvest's home on the internet. This shall be the place to find all of the latest news, learn about the different projects that people have been creating with the tool, learn how to use the tool, and learn more about the team and the research that is going on behind the scenes. 
 

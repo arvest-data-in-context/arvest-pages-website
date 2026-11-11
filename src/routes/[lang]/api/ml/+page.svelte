@@ -1,6 +1,9 @@
 <script>
+    import Seo from '$lib/components/Seo.svelte';
+    import APIVocab from '$lib/data/vocab/api.json';
     import BreadCrumbs from '$lib/components/general_ui/BreadCrumbs.svelte';
     import { base } from '$app/paths';
+    import BigButton from '$lib/components/general_ui/BigButton.svelte';
 
     import { lang } from '$lib/scripts/stores.js';
     import BCVocab from '$lib/data/vocab/footer.json';
@@ -11,141 +14,80 @@
 	});
 </script>
 
-<svelte:head>
-    <title>Arvest | {BCVocab.ml[langVal]}</title>
-</svelte:head>
+<Seo
+    title={BCVocab.ml[langVal]}
+    description={APIVocab.ml.blurb[langVal]}
+/>
 
 <BreadCrumbs
     breadcrumbs={[
         { text: BCVocab.home[langVal], href: base + "/" + langVal },
-        { text: BCVocab.api[langVal], href: base + "/" + langVal + "/api"},
+        { text: BCVocab.api[langVal] },
         { text: BCVocab.ml[langVal], href: base + "/" + langVal + "/api/ml"}
       ]}
     />
 
-<div class="cont">
-    <div>
-        <div class="tutorial_link_wrap">
-            <a class="tut-link-ml" href="{base}/{langVal}/learn/tutorials/{MLVocab.tutorials.speech_recognition.url}">
-                <div class="tutorial_link">
-                    <img src="{base}/{MLVocab.tutorials.speech_recognition.image}" alt="speech recognition screenshot"/>
-                    <p>{MLVocab.tutorials.speech_recognition.title[langVal]}</p>
-                </div>
-            </a>
+<header class="page_head">
+    <h1>{BCVocab.ml[langVal]}</h1>
+    <p class="lede">{APIVocab.ml.blurb[langVal]}.</p>
+    <BigButton label={APIVocab.documentation.button[langVal] + " →"} url="{base}/{langVal}/api/documentation" kind="primary" />
+</header>
 
-            <a class="tut-link-ml" href="{base}/{langVal}/learn/tutorials/{MLVocab.tutorials.embedding.url}">
-                <div class="tutorial_link">
-                    <img src="{base}/{MLVocab.tutorials.embedding.image}" alt="embedding screenshot"/>
-                    <p>{MLVocab.tutorials.embedding.title[langVal]}</p>
-                </div>
-            </a>
+<div class="tutorial_link_wrap">
+        <a class="card tut_card" href="{base}/{langVal}/learn/tutorials/{MLVocab.tutorials.speech_recognition.url}">
+            <img src="{base}/{MLVocab.tutorials.speech_recognition.image}" alt="speech recognition screenshot" loading="lazy"/>
+            <span>{MLVocab.tutorials.speech_recognition.title[langVal]}</span>
+        </a>
+        <a class="card tut_card" href="{base}/{langVal}/learn/tutorials/{MLVocab.tutorials.embedding.url}">
+            <img src="{base}/{MLVocab.tutorials.embedding.image}" alt="embedding screenshot" loading="lazy"/>
+            <span>{MLVocab.tutorials.embedding.title[langVal]}</span>
+        </a>
+        <a class="card tut_card" href="{base}/{langVal}/learn/tutorials/{MLVocab.tutorials.video_decompo.url}">
+            <img src="{base}/{MLVocab.tutorials.video_decompo.image}" alt="video decomposition screenshot" loading="lazy"/>
+            <span>{MLVocab.tutorials.video_decompo.title[langVal]}</span>
+        </a>
+        <a class="card tut_card" href="{base}/{langVal}/learn/tutorials/{MLVocab.tutorials.network_analysis.url}">
+            <img src="{base}/{MLVocab.tutorials.network_analysis.image}" alt="network analysis screenshot" loading="lazy"/>
+            <span>{MLVocab.tutorials.network_analysis.title[langVal]}</span>
+        </a>
+</div>
 
-            <a class="tut-link-ml" href="{base}/{langVal}/learn/tutorials/{MLVocab.tutorials.video_decompo.url}">
-                <div class="tutorial_link">
-                    <img src="{base}/{MLVocab.tutorials.video_decompo.image}" alt="video decomposition screenshot"/>
-                    <p>{MLVocab.tutorials.video_decompo.title[langVal]}</p>
-                </div>
-            </a>
-
-            <a class="tut-link-ml" href="{base}/{langVal}/learn/tutorials/{MLVocab.tutorials.network_analysis.url}">
-                <div class="tutorial_link">
-                    <img src="{base}/{MLVocab.tutorials.network_analysis.image}" alt="network analysis screenshot"/>
-                    <p>{MLVocab.tutorials.network_analysis.title[langVal]}</p>
-                </div>
-            </a>
-        </div>
-    </div>
-
+<div class="prose">
     <p>{MLVocab.tutorials.description[langVal]}</p>
 
-    <h3>{MLVocab.title[langVal]}</h3>
+    <h2>{MLVocab.title[langVal]}</h2>
+    {@html MLVocab.description[langVal]}
 
-    <div>
-        {@html MLVocab.description[langVal]}
-    </div>
-
-    <h3>{MLVocab.ml_notebooks.title[langVal]}</h3>
-
-    <div>
-        {@html MLVocab.ml_notebooks.description[langVal]}
-    </div>
+    <h2>{MLVocab.ml_notebooks.title[langVal]}</h2>
+    {@html MLVocab.ml_notebooks.description[langVal]}
 </div>
 
 <style>
     .tutorial_link_wrap{
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        gap: 0.5em;
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr));
+        gap: 1.25rem;
+        margin-bottom: 2rem;
+    }
+
+    .tut_card{
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .tut_card img{
+        display: block;
         width: 100%;
-        margin-bottom: 0.5em;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        border-bottom: 1.5px solid var(--primary-text);
     }
 
-    .tutorial_link{
-        width: 100%;
-    }
-
-    .tutorial_link:hover{
-        cursor: pointer;
-    }
-
-    .tutorial_link img{
-        width: 100%;
-        margin-bottom: 0.1em;
-        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
-    }
-
-    .tutorial_link p{
-        width: 100%;
-        font-size: 0.3em;
-        text-decoration: underline;
-    }
-    
-
-
-    .cont{
-        padding-bottom: 5em;
-    }
-
-
-    p{
-        margin-top: 1em;
-        font-size: 0.4em;
-        color: var(--secondary-text);
-        font-family: 'Input-Mono-Narrow-Thin', monospace;
-    }
-
-
-    h3{
-        font-size: 0.8em;
-        margin-bottom: 0.3em;
-        margin-top: 1em;
-    }
-
-    /* LARGE SCREENS */
-    @media (min-width: 1500px) {
-        .tutorial_link_wrap{
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-        }
-    }
-
-    /* MEDIUM SCREENS */
-    @media (min-width: 1200px) and (max-width: 1499px)  {
-        .tutorial_link_wrap{
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-        }
-    }
-
-    /* SMALL SCREENS */
-    @media (min-width: 700px) and (max-width: 1199px) {
-        .tutorial_link_wrap{
-            grid-template-columns: 1fr 1fr;
-        }
-    }
-
-    /* VERY SMALL SCREENS */
-    @media (max-width: 699px) {
-        .tutorial_link_wrap{
-            grid-template-columns: 1fr 1fr;
-        }
+    .tut_card span{
+        padding: 0.7rem 0.85rem 0.8rem;
+        font-family: var(--font-display);
+        font-size: 1.15rem;
+        line-height: 1.2;
     }
 </style>

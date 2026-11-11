@@ -32,18 +32,28 @@ export async function entries() {
     return paths;
 }
 
+// The languages an article exists in (its <lang>.svx files).
+function langsOf(slug) {
+    const langs = [];
+    for (const path in modules) {
+        const m = path.match(/\/projects\/([^\/]+)\/([^\/]+)\.svx$/);
+        if (m && m[1] === slug) langs.push(m[2]);
+    }
+    return supported_langs.filter(l => langs.includes(l));
+}
+
 export async function load({ params }) {
     const { slug, lang } = params;
     
     try{
         const article = await import(`../../../../../content/projects/${slug}/${lang}.svx`);
         const this_slug = slug;
-        return { article, this_slug };
+        return { article, this_slug, content_lang: lang, langs: langsOf(slug) };
     }catch(error){
         try{
             const article = await import(`../../../../../content/projects/${slug}/en.svx`);
             const this_slug = slug;
-            return { article, this_slug };
+            return { article, this_slug, content_lang: "en", langs: langsOf(slug) };
         }catch(error){
             console.log(error)
         }

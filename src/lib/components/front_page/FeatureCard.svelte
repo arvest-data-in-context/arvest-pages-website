@@ -8,135 +8,77 @@
     export let button_label = "Button";
     export let button_url = "/";
     export let scroll_to_index = -1;
+    export let number = 0;
+    export let flip = false;
+    export let demo = null;     // an animated demo (front_page/demos) instead of the picture
 </script>
 
-<div id={"scroll_to" + String(scroll_to_index)}></div>
-<div id="container">
-    <div id="text_content">
-        <h2>
-            {title}
-        </h2>
-        <p id="desc">
-            {description}
-        </p>
-
-        <div id="button_resizer">
-        <BigButton
-            label = {button_label}
-            url = {button_url}
-        />
-        </div>
+<section class="feature" class:flip id={"scroll_to" + String(scroll_to_index)}>
+    <div class="text_content">
+        {#if number}<span class="eyebrow">{String(number).padStart(2, "0")}</span>{/if}
+        <h2>{title}</h2>
+        <p class="desc">{description}</p>
+        {#if button_label}<BigButton label={button_label} url={button_url} kind="quiet" />{/if}
     </div>
-    <img src={image_url} alt={image_alt}>
-</div>
+    {#if demo}
+        <svelte:component this={demo} label={image_alt} />
+    {:else}
+        <img class="framed" src={image_url} alt={image_alt} loading="lazy">
+    {/if}
+</section>
 
 <style>
-    #container{
-        padding-top: 3em;
-        padding-bottom: 3em;
-        width: 100%;
+    .feature {
         display: grid;
-        gap: 1em;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr);
+        gap: clamp(1.5rem, 4vw, 3.5rem);
+        align-items: center;
+        padding: clamp(2rem, 5vw, 3.5rem) 0;
+        border-top: 1px solid var(--line-soft);
+        scroll-margin-top: calc(var(--nav-h) + 1rem);
     }
 
-    #text_content{
-        width: 100%;
-        height: fit-content;
+    .flip {
+        grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
     }
 
-    h2{
-        color: var(--primary-text);
-        font-size: 0.7em;
-        padding-bottom: 0.5em;
-        width: 100%;
+    .flip .text_content {
+        order: 2;
     }
 
-    #desc{
+    .text_content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+    }
+
+    .eyebrow {
+        color: var(--primary);
+    }
+
+    h2 {
+        font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.2rem);
+    }
+
+    .desc {
         color: var(--secondary-text);
-        font-size: 0.5em;
-        padding-bottom: 1em;
+        line-height: 1.55;
+        margin-bottom: 0.5rem;
     }
 
-    img{
-        width: 100%;
-        border-radius: 5px;
-        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+    img {
+        height: auto;
     }
 
-    #button_resizer{
-        font-size: 0.6em;
-    }
-
-    /* LARGE SCREENS */
-    @media (min-width: 1500px) {
-        #container{
-            grid-template-columns: 1fr 2fr;
-            padding-top: 3em;
-            padding-bottom: 3em;
-        }
-        #desc{
-            font-size: 0.5em;
-        }
-        h2{
-            font-size: 0.7em;
-        }
-        #button_resizer{
-            font-size: 0.6em;
-        }
-    }
-
-    /* MEDIUM SCREENS */
-    @media (min-width: 1200px) and (max-width: 1499px)  {
-        #container{
-            grid-template-columns: 1fr 2fr;
-            padding-top: 3em;
-            padding-bottom: 3em;
-        }
-        #desc{
-            font-size: 0.5em;
-        }
-        h2{
-            font-size: 0.7em;
-        }
-        #button_resizer{
-            font-size: 0.6em;
-        }
-    }
-
-    /* SMALL SCREENS */
-    @media (min-width: 700px) and (max-width: 1199px) {
-        #container{
+    @media (max-width: 860px) {
+        .feature,
+        .flip {
             grid-template-columns: 1fr;
-            padding-top: 2em;
-            padding-bottom: 2em;
+            gap: 1.25rem;
         }
-        #desc{
-            font-size: 0.4em;
-        }
-        h2{
-            font-size: 0.6em;
-        }
-        #button_resizer{
-            font-size: 0.6em;
-        }
-    }
-
-    /* VERY SMALL SCREENS */
-    @media (max-width: 699px) {
-        #container{
-            grid-template-columns: 1fr;
-            padding-top: 2em;
-            padding-bottom: 2em;
-        }
-        #desc{
-            font-size: 0.3em;
-        }
-        h2{
-            font-size: 0.5em;
-        }
-        #button_resizer{
-            font-size: 0.4em;
+        .flip .text_content {
+            order: 0;
         }
     }
 </style>

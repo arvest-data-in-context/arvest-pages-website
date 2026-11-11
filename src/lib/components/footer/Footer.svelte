@@ -3,6 +3,8 @@
     import { base } from '$app/paths';
     import { lang } from '$lib/scripts/stores.js';
     import PageVocab from '$lib/data/vocab/footer.json';
+    import TopVocab from '$lib/data/vocab/top_nav.json';
+    import { SECTIONS } from '$lib/scripts/nav.js';
     let langVal;
 	lang.subscribe(value => {
 		langVal = value;
@@ -12,204 +14,164 @@
 </script>
 
 <footer>
-    <nav>
-        <h2>{PageVocab.menu[langVal]}</h2>
+    <div class="inner">
+    <nav aria-label="Footer">
+        <h2 class="visually_hidden">{PageVocab.menu[langVal]}</h2>
         
 
         <div id="menus">
-            <ul class="menu_section">
-                <li><a href="{base}/{langVal}/community" class="menu_top_link">{PageVocab.community[langVal]}</a></li>
-                <li><a href="{base}/{langVal}/community/projects" class="menu_lower_link">{PageVocab.projects[langVal]}</a></li>
-                <li><a href="{base}/{langVal}/community/forum" class="menu_lower_link">{PageVocab.forum[langVal]}</a></li>
-                <li><a href="{base}/{langVal}/community/news" class="menu_lower_link">{PageVocab.news[langVal]}</a></li>
-                <li><a href="https://stage-to-data.huma-num.fr/" class="menu_lower_link">{PageVocab.stage[langVal]}</a></li>
-            </ul>
-    
-            <ul class="menu_section">
-                <li><a href="{base}/{langVal}/learn" class="menu_top_link">{PageVocab.learn[langVal]}</a></li>
-                <li><a href="{base}/{langVal}/learn/tutorials" class="menu_lower_link">{PageVocab.tutorials[langVal]}</a></li>
-                <li><a href="{base}/{langVal}/learn/iiif" class="menu_lower_link">{PageVocab.iiif[langVal]}</a></li>
-            </ul>
-    
-            <ul class="menu_section">
-                <li><a href="{base}/{langVal}/api" class="menu_top_link">{PageVocab.api[langVal]}</a></li>
-                <li><a href="{base}/{langVal}/api/ml" class="menu_lower_link">{PageVocab.ml[langVal]}</a></li>
-                <li><a href="{base}/{langVal}/api/documentation" class="menu_lower_link">{PageVocab.reference[langVal]}</a></li>
-                <li><a href="https://github.com/ARVEST-APP" class="menu_lower_link">{PageVocab.git[langVal]}</a></li>
-            </ul>
-    
-            <ul class="menu_section">
-                <li><a href="{base}/{langVal}/about" class="menu_top_link">{PageVocab.about[langVal]}</a></li>
-                <li><a href="{base}/{langVal}/about/cite" class="menu_lower_link">{PageVocab.cite[langVal]}</a></li>
-                <li><a href="{base}/{langVal}/about/infrastructure" class="menu_lower_link">{PageVocab.about_arvest[langVal]}</a></li>
-                <li><a href="{base}/{langVal}/about/team" class="menu_lower_link">{PageVocab.team[langVal]}</a></li>
-                <li><a href="{base}/{langVal}/about/accessibility" class="menu_lower_link">{PageVocab.accessibility[langVal]}</a></li>
-                <li><a href="{base}/{langVal}/about/credits" class="menu_lower_link">{PageVocab.credits[langVal]}</a></li>
-                <li><a href="{base}/{langVal}/about/contact" class="menu_lower_link">{PageVocab.contact[langVal]}</a></li>
-            </ul>
-    
-            <ul class="menu_section">
-                <li><a href="https://workspace.arvest.app/" class="menu_top_link">{PageVocab.connect[langVal]}</a></li>
-                <li><a href="https://peertube.arvest.app/" class="menu_lower_link">Peertube</a></li>
-            </ul>
+            {#each SECTIONS as section}
+                <div class="menu_section">
+                    <span class="menu_top_link">{TopVocab[section.key][langVal]}</span>
+                    <ul>
+                        {#each section.items as item}
+                            <li><a href={item.external ? item.href : `${base}/${langVal}${item.href}`} class="menu_lower_link">{PageVocab[item.label][langVal]}</a></li>
+                        {/each}
+                    </ul>
+                </div>
+            {/each}
+
+            <div class="menu_section">
+                <span class="menu_top_link">{PageVocab.connect[langVal]}</span>
+                <ul>
+                    <li><a href="https://workspace.arvest.app/" class="menu_lower_link">Arvest</a></li>
+                    <li><a href="https://peertube.arvest.app/" class="menu_lower_link">PeerTube</a></li>
+                </ul>
+            </div>
         </div>
         
     </nav>
 
     <div id="logo_container">
-        <a class="logo_link" href="https://creativecommons.org/"><img src="{base}/imgs/logos/cc-black.png" alt="creative commons logo" /></a>
-        <a class="logo_link" href="https://www.horizon-europe.gouv.fr/erc"><img src="{base}/imgs/logos/erc-black.png" alt="erc logo" /></a>
-        <a class="logo_link" href="https://european-union.europa.eu/"><img src="{base}/imgs/logos/europe-black.png" alt="europe logo" /></a>
-        <a class="logo_link" href="https://www.univ-rennes2.fr/"><img src="{base}/imgs/logos/R2-black.png" alt="rennes 2 logo" /></a>
-        <a class="logo_link" href="https://sites-recherche.univ-rennes2.fr/arts-pratiques-poetiques/"><img src="{base}/imgs/logos/app.png" alt="app rennes 2 logo" /></a>
-        <a class="logo_link" href="https://www.ouest-valorisation.fr/"><img src="{base}/imgs/logos/satt.png" alt="satt logo" /></a>
-        <a class="logo_link" href="https://www.huma-num.fr/"><img src="{base}/imgs/logos/hum-num.png" alt="huma num logo" /></a>
+        <a class="logo_link" href="https://creativecommons.org/"><img loading="lazy" src="{base}/imgs/logos/cc-black.png" alt="creative commons logo" /></a>
+        <a class="logo_link" href="https://www.horizon-europe.gouv.fr/erc"><img loading="lazy" src="{base}/imgs/logos/erc-black.png" alt="erc logo" /></a>
+        <a class="logo_link" href="https://european-union.europa.eu/"><img loading="lazy" src="{base}/imgs/logos/europe-black.png" alt="europe logo" /></a>
+        <a class="logo_link" href="https://www.univ-rennes2.fr/"><img loading="lazy" src="{base}/imgs/logos/R2-black.png" alt="rennes 2 logo" /></a>
+        <a class="logo_link" href="https://sites-recherche.univ-rennes2.fr/arts-pratiques-poetiques/"><img loading="lazy" src="{base}/imgs/logos/app.png" alt="app rennes 2 logo" /></a>
+        <a class="logo_link" href="https://www.ouest-valorisation.fr/"><img loading="lazy" src="{base}/imgs/logos/satt.png" alt="satt logo" /></a>
+        <a class="logo_link" href="https://www.huma-num.fr/"><img loading="lazy" src="{base}/imgs/logos/hum-num.png" alt="huma num logo" /></a>
     </div>  
 
-    <p id="copyright_notice">© 2023 - {currentYear} Arvest</p>
+    <div class="foot_line">
+        <a class="brand" href="{base}/{langVal}"><img src="{base}/favicon.svg" alt="" width="22" height="22"><span>Arvest</span></a>
+        <p id="copyright_notice">© 2023 - {currentYear} Arvest</p>
+    </div>
+    </div>
 </footer>
 
 <style>
     footer{
         width: 100%;
-        background-color: transparent;
-        padding-top: 2em;
-        padding-bottom: 2em;
-        padding-left: 7em;
-        padding-right: 7em;
+        background: var(--surface-soft);
+        border-top: 1.5px solid var(--primary-text);
+    }
+
+    .inner{
+        max-width: calc(var(--page-max) + 2 * var(--gutter));
+        margin: 0 auto;
+        padding: 2.5rem var(--gutter) 1.5rem;
+    }
+
+    .visually_hidden{
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
     }
 
     #menus{
         display: grid;
-        gap: 1em;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        font-size: 1em;
-        width: 100%;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+        gap: 1.75rem 1.5rem;
+    }
+
+    .menu_section ul{
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
     }
 
     a{
         text-decoration: none;
-        font-family: 'Input-Mono-Narrow-Thin', monospace;
     }
 
-    .menu_section{
-        width: 100%;
-        font-size: 0.8em;
-    }
-
-    h2{
-        padding-bottom: 1em;
-        color: var(--primary-text);
-        font-size: 1em;
-    }
-
+    /* The section: a small grey title in capitals, as the tool's column titles. */
     .menu_top_link{
+        display: inline-block;
+        margin-bottom: 0.3rem;
+        font-size: 0.78rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
         color: var(--primary-text);
     }
 
-    .menu_top_link:hover{
-        text-decoration: underline;
-    }
 
     .menu_lower_link{
         color: var(--secondary-text);
+        font-size: 0.95rem;
     }
 
     .menu_lower_link:hover{
-        cursor: pointer;
-        color: var(--primary-text);
-    }
-
-    li{
-        padding-bottom: 0.3em;
-    }
-
-    #copyright_notice{
-        width: 100%;
-        text-align: center;
-        padding-top: 5em;
-        font-size: 0.5em;
+        color: var(--primary);
     }
 
     #logo_container{
-        padding-top: 3em;
         display: flex;
-        width: 100%;
-        gap: 2em;
         flex-wrap: wrap;
+        align-items: center;
+        gap: 1.25rem 2rem;
+        margin-top: 2.5rem;
+        padding-top: 1.75rem;
+        border-top: 1px solid var(--line-soft);
     }
+
+    .logo_link{
+        display: inline-flex;
+        opacity: 0.85;
+        transition: opacity 0.12s;
+    }
+
     .logo_link:hover{
-        cursor: pointer;
-    }
-    img{
-        height: 50px;
+        opacity: 1;
     }
 
-    /* LARGE SCREENS */
-    @media (min-width: 1500px) {
-        footer{
-            padding-left: 14em;
-            padding-right: 14em;
-        }
-        #menus{
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        }
-        .menu_section{
-            font-size: 0.8em;
-        }
-        h2{
-            font-size: 1em;
-        }
+    #logo_container img{
+        height: 44px;
+        width: auto;
     }
 
-    /* MEDIUM SCREENS */
-    @media (min-width: 1200px) and (max-width: 1499px)  {
-        footer{
-            padding-left: 7em;
-            padding-right: 7em;
-        }
-        #menus{
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        }
-        .menu_section{
-            font-size: 0.8em;
-        }
-        h2{
-            font-size: 1em;
-        }
+    .foot_line{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        margin-top: 2rem;
     }
 
-    /* SMALL SCREENS */
-    @media (min-width: 700px) and (max-width: 1199px) {
-        footer{
-            padding-left: 3em;
-            padding-right: 3em;
-        }
-        #menus{
-            grid-template-columns: 1fr 1fr 1fr;
-        }
-        .menu_section{
-            font-size: 0.7em;
-        }
-        h2{
-            font-size: 0.8em;
-        }
+    .brand{
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        color: var(--primary);
+        font-family: var(--font-display);
+        font-size: 1.35rem;
+        line-height: 1;
     }
 
-    /* VERY SMALL SCREENS */
-    @media (max-width: 699px) {
-        footer{
-            padding-left: 1em;
-            padding-right: 1em;
-        }
+    #copyright_notice{
+        font-size: 0.85rem;
+        color: var(--secondary-text);
+    }
+
+    @media (max-width: 600px){
         #menus{
             grid-template-columns: 1fr 1fr;
         }
-        .menu_section{
-            font-size: 0.6em;
-        }
-        h2{
-            font-size: 0.7em;
+        #logo_container img{
+            height: 36px;
         }
     }
 </style>

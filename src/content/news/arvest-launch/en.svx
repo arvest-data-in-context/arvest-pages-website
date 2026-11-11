@@ -11,7 +11,6 @@ image: "news/website-launch.jpg"
     import Youtube from '$lib/components/articles/Youtube.svelte';
 </script>
 
-# Arvest launched
 
 Today marks the official release of the first version of Arvest. This means that you can sign up today [here](https://workspace.arvest.app/), and start creating!
 

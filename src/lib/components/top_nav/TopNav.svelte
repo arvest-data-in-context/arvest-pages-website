@@ -1,363 +1,475 @@
 <script>
-    import { onMount } from 'svelte';
+    // The top bar, as the tool's (playground TopNav): white, a 1.5px black lower edge;
+    // Arvest (Steinbeck, purple), then each section as a pill opening a small card menu of
+    // its pages (the section of the page shown is purple); at the right the language and
+    // Connect. Narrow: one menu card with every page, grouped by section.
     import { base } from '$app/paths';
+    import { page } from '$app/stores';
+    import { onMount } from 'svelte';
 
-    import SiteLogo from '$lib/components/top_nav/SiteLogo.svelte';
-    import TopNavLink from '$lib/components/top_nav/TopNavLink.svelte';
-    import BigButton from '$lib/components/general_ui/BigButton.svelte';
     import LangSelect from '$lib/components/top_nav/LangSelect.svelte';
-    import HamburgerMenu from '$lib/components/top_nav/HamburgerMenu.svelte';
+    import { SECTIONS } from '$lib/scripts/nav.js';
 
-    let small_screen = false;
-    let hamburger_revealed = false;
-    let scrolled = false;
-    let show_border = false;
-    let hamburger_element;
-
-    // Language handling:
     import { lang } from '$lib/scripts/stores.js';
     import PageVocab from '$lib/data/vocab/top_nav.json';
+    import Labels from '$lib/data/vocab/footer.json';
     let langVal;
-	lang.subscribe(value => {
-		langVal = value;
-	});
-
-    export const hide_hamburger = () => {
-        //hangle_hamburger_state_change({"detail" : {"state" : false}})
-        //hamburger_revealed = false;
-        hamburger_element.set_hamburger_state(false)
-    }
-
-    const updateScreenWidth = () => {
-        if(window.innerWidth < 1300){
-            if(small_screen == false){
-                small_screen = true;
-            }
-        }
-        else{
-            if(small_screen == true){
-                small_screen = false;
-            }
-            hamburger_element.set_hamburger_state(false);
-        }
-    };
-
-    onMount(() => {
-        updateScreenWidth();
-
-        window.addEventListener('resize', () => {
-            updateScreenWidth()
-        });
-
-        handle_border_show();
+    lang.subscribe(value => {
+        langVal = value;
     });
 
-    function handle_border_show(){
-        if(hamburger_revealed == true){
-            show_border = true;
-        }
-        else{
-            if(scrolled == true){
-                show_border = true;
-            }
-            else{
-                show_border = false;
-            }
-        };
-    }
+    let menu_open = false;     // the narrow screen's menu
+    let open = null;           // the section whose menu is open (wide screens)
+    let close_timer;
+    let scrolled = false;
+    let bar;
 
-    function hangle_hamburger_state_change(e){
-        hamburger_revealed = e.detail.state;
-        handle_border_show();
+    // "/community/news/arvest-launch" for /en/community/news/arvest-launch
+    $: rest = "/" + $page.url.pathname.replace(base, "").split("/").slice(2).join("/");
+    // the section whose address this is, or one of whose pages it is (the tools' pages sit
+    // at the top level: /mmm belongs to Going further)
+    $: current = SECTIONS.find(s => rest.startsWith("/" + s.key + "/") || rest === "/" + s.key
+        || s.items.some(i => !i.external && (rest === i.href || rest.startsWith(i.href + "/"))))?.key || "";
+
+    const href_of = (item) => item.external ? item.href : `${base}/${langVal}${item.href}`;
+    const is_here = (item, rest) => !item.external && (rest === item.href || rest.startsWith(item.href + "/"));
+
+    export const hide_hamburger = () => {
+        menu_open = false;
+        open = null;
     };
 
     export const handle_scroll = (scroll_state) => {
         scrolled = scroll_state;
-        handle_border_show();
+    };
+
+    // Hover opens (mouse), with a short delay before closing so the pointer can reach the menu.
+    function enter(key, e) {
+        if (e.pointerType && e.pointerType !== "mouse") return;
+        clearTimeout(close_timer);
+        open = key;
     }
+    function leave(e) {
+        if (e.pointerType && e.pointerType !== "mouse") return;
+        clearTimeout(close_timer);
+        close_timer = setTimeout(() => (open = null), 180);
+    }
+    function toggle(key) {
+        clearTimeout(close_timer);
+        open = open === key ? null : key;
+    }
+
+    function on_key(e) {
+        if (e.key === "Escape") {
+            if (open) {
+                const btn = bar?.querySelector(`[data-section="${open}"]`);
+                open = null;
+                btn?.focus();
+            }
+            menu_open = false;
+        }
+    }
+
+    function on_click_outside(e) {
+        if (open && bar && !bar.contains(e.target)) open = null;
+    }
+
+    // Leaving a menu with the keyboard closes it.
+    function focus_out(e) {
+        if (!e.currentTarget.contains(e.relatedTarget)) open = null;
+    }
+
+    onMount(() => () => clearTimeout(close_timer));
 </script>
 
-<header class:show_border={show_border}>
-    <nav>
-        <SiteLogo />
+<svelte:window on:keydown={on_key} on:click={on_click_outside} />
 
-        {#if small_screen == false}
-            <ul>
-                <li>
-                    <TopNavLink 
-                        label = {PageVocab.community[langVal]}
-                        url = {"/community"}
-                    />
+<header class:scrolled class:menu_open>
+    <nav class="bar" aria-label="Main" bind:this={bar}>
+        <a class="brand" href="{base}/{langVal}" aria-label="Arvest, home">
+            <img src="{base}/favicon.svg" alt="" width="30" height="30">
+            <span>Arvest</span>
+        </a>
+
+        <ul class="links">
+            {#each SECTIONS as s}
+                <li
+                    class="section"
+                    on:pointerenter={(e) => enter(s.key, e)}
+                    on:pointerleave={leave}
+                    on:focusout={focus_out}
+                >
+                    <button
+                        type="button"
+                        class="section_button"
+                        class:current={current === s.key}
+                        class:open={open === s.key}
+                        data-section={s.key}
+                        aria-expanded={open === s.key}
+                        aria-controls="menu_{s.key}"
+                        on:click={() => toggle(s.key)}
+                    >
+                        {PageVocab[s.key][langVal]}
+                        <svg class="chevron" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" /></svg>
+                    </button>
+
+                    <ul class="dropdown card" id="menu_{s.key}" hidden={open !== s.key}>
+                        {#each s.items as item}
+                            <li>
+                                <a
+                                    href={href_of(item)}
+                                    class:here={is_here(item, rest)}
+                                    aria-current={is_here(item, rest) ? "page" : undefined}
+                                    on:click={() => (open = null)}
+                                >
+                                    {Labels[item.label][langVal]}
+                                    {#if item.external}<span class="ext" aria-hidden="true">↗</span>{/if}
+                                </a>
+                            </li>
+                        {/each}
+                    </ul>
                 </li>
-                <li>
-                    <TopNavLink 
-                        label = {PageVocab.learn[langVal]}
-                        url = {"/learn"}
-                    />
-                </li>
-                <li>
-                    <TopNavLink 
-                        label = {PageVocab.api[langVal]}
-                        url = {"/api"}
-                    />
-                </li>
-                <li>
-                    <TopNavLink 
-                        label = {PageVocab.about[langVal]}
-                        url = {"/about"}
-                    />
-                </li>
-            </ul>
-        {/if}
+            {/each}
+        </ul>
+
+        <div class="right">
+            <div class="lang_wide"><LangSelect /></div>
+            <a class="connect" href="https://workspace.arvest.app/">{PageVocab.connect[langVal]}</a>
+
+            <button
+                class="menu_button"
+                aria-expanded={menu_open}
+                aria-controls="nav_menu"
+                aria-label={menu_open ? "Close the menu" : "Open the menu"}
+                on:click={() => (menu_open = !menu_open)}
+            >
+                {#if menu_open}
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+                {:else}
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+                {/if}
+            </button>
+        </div>
     </nav>
 
-    {#if hamburger_revealed}
-        <div id="hamburger_menu">
-            <ul>
-                <li>
-                    <TopNavLink 
-                        label = {PageVocab.community[langVal]}
-                        url = {"/community"}
-                    />
-                </li>
-                <li>
-                    <TopNavLink 
-                        label = {PageVocab.learn[langVal]}
-                        url = {"/learn"}
-                    />
-                </li>
-                <li>
-                    <TopNavLink 
-                        label = {PageVocab.api[langVal]}
-                        url = {"/api"}
-                    />
-                </li>
-                <li>
-                    <TopNavLink 
-                        label = {PageVocab.about[langVal]}
-                        url = {"/about"}
-                    />
-                </li>
-            </ul>
-
-            <div class="right_ham_cont">
+    {#if menu_open}
+        <div class="menu card" id="nav_menu">
+            <div class="groups">
+                {#each SECTIONS as s}
+                    <div class="group">
+                        <span class="eyebrow" class:current_group={current === s.key}>{PageVocab[s.key][langVal]}</span>
+                        <ul>
+                            {#each s.items as item}
+                                <li>
+                                    <a href={href_of(item)} class:here={is_here(item, rest)} aria-current={is_here(item, rest) ? "page" : undefined}>
+                                        {Labels[item.label][langVal]}
+                                        {#if item.external}<span class="ext" aria-hidden="true">↗</span>{/if}
+                                    </a>
+                                </li>
+                            {/each}
+                        </ul>
+                    </div>
+                {/each}
+            </div>
+            <div class="menu_foot">
                 <LangSelect />
-
-                <div class="extra_thin_connect_button">
-                    <BigButton
-                        label = {PageVocab.connect[langVal]}
-                        url = {"https://workspace.arvest.app/"}
-                    />
-                </div>
+                <a class="connect in_menu" href="https://workspace.arvest.app/">{PageVocab.connect[langVal]}</a>
             </div>
         </div>
     {/if}
 </header>
 
-<div class="top_right_content">
-    {#if small_screen == false}
-    <div class="lang_wrap">
-        <LangSelect />
-    </div>    
-    {/if}
-    <div id="hams" class="{small_screen ? "unhide_hams" : "hide_hams"}">
-        <HamburgerMenu 
-            bind:this={hamburger_element}
-            on:update_hamburger={hangle_hamburger_state_change}
-        />
-    </div>
-    
-    <div class="connect_button_cont">
-        <BigButton
-            label = {PageVocab.connect[langVal]}
-            url = {"https://workspace.arvest.app/"}
-        />
-    </div>
-
-</div>
-
-<div id="nav_padding"></div>
+<div class="nav_space" aria-hidden="true"></div>
 
 <style>
-    .lang_wrap{
-        font-size: 1em;
-        align-self: baseline;
-    }
-    .connect_button_cont{
-        font-size: 1em;
-        align-self: baseline;
-    }
-
-    header{
-        width: 100%;
-        padding-left: 12em;
-        padding-right: 12em;
-        padding-top: 0.7em;
-        padding-bottom: 0.7em;
-        background-color: var(--background-color-1);
+    header {
         position: fixed;
-        z-index: 10;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: var(--surface);
+        border-bottom: 1.5px solid var(--primary-text);
     }
 
-    .show_border{
-        border-bottom: solid grey 1px;
-    }
-
-    nav{
-        width: 100%;
+    .bar {
         display: flex;
         align-items: center;
-        gap: 1em;
+        gap: 1rem;
+        height: var(--nav-h);
+        max-width: calc(var(--page-max) + 2 * var(--gutter));
+        margin: 0 auto;
+        padding: 0 var(--gutter);
     }
 
-    ul{
+    .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        flex: none;
+        color: var(--primary);
+        text-decoration: none;
+        font-family: var(--font-display);
+        font-size: 1.75rem;
+        line-height: 1;
+    }
+
+    .brand img {
+        width: 30px;
+        height: 30px;
+        flex: none;
+    }
+
+    .links {
         display: flex;
         align-items: center;
-        gap: 1em;
+        gap: 0.2rem;
+        min-width: 0;
     }
 
-    .top_right_content{
-        margin-top: 0.8em;
-        position: fixed;
-        top:0;
-        right:0;
+    .section {
+        position: relative;
+    }
+
+    /* The section: a pill; purple when the page shown is in it. */
+    .section_button {
+        display: inline-flex;
         align-items: center;
-        display: flex;
-        gap: 0.5em;
-        flex-wrap: wrap;
-        padding-right: 10em;
-        padding-top: 0.75em;
-        z-index: 10;
+        gap: 0.35em;
+        padding: 0.3em 0.7em 0.3em 0.85em;
+        border: none;
+        border-radius: 999px;
+        background: none;
+        color: var(--primary-text);
+        font-family: var(--font-ui);
+        font-size: 1rem;
+        line-height: 1.45;
+        white-space: nowrap;
+        cursor: pointer;
+        transition: background-color 0.12s, color 0.12s;
     }
 
-    #nav_padding{
-        height: 150px;
+    .section_button:hover,
+    .section_button.open {
+        background: var(--primary-tint);
+        color: var(--primary);
     }
 
-    #hamburger_menu{
-        width: 100%;
-        margin-top: 1em;
+    .section_button.current {
+        background: var(--primary);
+        color: var(--on-primary);
+    }
+
+    .chevron {
+        width: 0.75em;
+        height: 0.75em;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.6;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        transition: transform 0.15s;
+    }
+
+    .open .chevron {
+        transform: rotate(180deg);
+    }
+
+    /* Its pages: a small card menu under the pill (the tool's ⋯ menus). The padding above
+       is a bridge, so the pointer can travel from the pill to the menu. */
+    .dropdown {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        z-index: 2;
+        min-width: 220px;
+        padding: 0.4rem;
+        border-width: 1.5px;
+        box-shadow: var(--panel-shadow);
+    }
+
+    .dropdown::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -12px;
+        height: 12px;
+    }
+
+    .dropdown[hidden] {
+        display: none;
+    }
+
+    .dropdown a,
+    .menu .group a {
         display: flex;
+        align-items: baseline;
         justify-content: space-between;
+        gap: 1rem;
+        padding: 0.45em 0.75em;
+        border-radius: 6px;
+        color: var(--primary-text);
+        text-decoration: none;
+        white-space: nowrap;
+        transition: background-color 0.12s, color 0.12s;
     }
 
-    #hamburger_menu ul{
-        display: inline;
+    .dropdown a:hover,
+    .menu .group a:hover {
+        background: var(--primary-tint);
+        color: var(--primary);
     }
 
-    #hamburger_menu ul li{
-        padding-bottom: 0.5em;
+    /* The page shown: purple text and a purple left edge (as a selected row in the tool). */
+    .dropdown a.here,
+    .menu .group a.here {
+        color: var(--primary);
+        background: var(--primary-tint);
+        box-shadow: inset 3px 0 0 var(--primary);
     }
 
-    .right_ham_cont{
-        margin-right: 3.7em;
-        font-size: 1em;
-        
-        height: 100%;
-        display: inline;
+    .ext {
+        color: var(--secondary-text);
+        font-size: 0.85em;
     }
 
-    .extra_thin_connect_button{
-        margin-top: 0.5em;
-        font-size: 0.8em;
+    .right {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin-left: auto;
+        flex: none;
+    }
+
+    .connect {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.35em 1em;
+        border-radius: 999px;
+        background: var(--primary);
+        color: var(--on-primary);
+        font-family: var(--font-ui-regular);
+        font-size: 0.9rem;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+
+    .connect:hover {
+        background: var(--hover-primary);
+    }
+
+    /* Round icon button, as the tool's (profile, help, settings). */
+    .menu_button {
         display: none;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        border: none;
+        border-radius: 50%;
+        background: none;
+        color: var(--primary-text);
+        cursor: pointer;
     }
 
-    .hide_hams{
-        display: none;
-    }
-    .unhide_hams{
-        display: block;
-    }
-
-    /* LARGE SCREENS */
-    @media (min-width: 1500px) {
-        header{
-            padding-left: 12em;
-            padding-right: 12em;
-        }
-        .top_right_content{
-            padding-right: 10em;
-        }
-        .right_ham_cont{
-            margin-right: 3.7em;
-        }
-        #hamburger_menu ul li{
-            font-size: 1em;
-        }
+    .menu_button:hover,
+    .menu_open .menu_button {
+        background: var(--primary-tint);
+        color: var(--primary);
     }
 
-    /* MEDIUM SCREENS */
-    @media (min-width: 1301px) and (max-width: 1499px)  {
-        header{
-            padding-left: 6em;
-            padding-right: 6em;
-        }
-        .top_right_content{
-            padding-right: 5em;
-        }
-        .right_ham_cont{
-            margin-right: 3.7em;
-        }
-        #hamburger_menu ul li{
-            font-size: 1em;
-        }
+    .menu_button svg {
+        width: 24px;
+        height: 24px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.7;
+        stroke-linecap: round;
     }
 
-    /* SMALL SCREENS */
-    @media (min-width: 700px) and (max-width: 1300px) {
-        header{
-            padding-left: 2em;
-            padding-right: 2em;
-        }
-        .top_right_content{
-            padding-right: 2em;
-        }
-        .right_ham_cont{
-            margin-right: 3.7em;
-        }
-        #hamburger_menu ul li{
-            font-size: 0.7em;
-        }
+    /* Narrow screens: every page in one card, by section. */
+    .menu {
+        position: absolute;
+        top: calc(var(--nav-h) + 8px);
+        right: var(--gutter);
+        width: min(380px, calc(100vw - 2 * var(--gutter)));
+        max-height: calc(100vh - var(--nav-h) - 16px);
+        max-height: calc(100dvh - var(--nav-h) - 16px);
+        overflow-y: auto;
+        padding: 0.9rem 0.75rem 0.75rem;
     }
 
-    /* VERY SMALL SCREENS */
-    @media (min-width: 500px) and (max-width: 699px) {
-        header{
-            padding-left: 1em;
-            padding-right: 1em;
-        }
-        .top_right_content{
-            padding-right: 0.9em;
-        }
-        .right_ham_cont{
-            margin-right: 1.8em;
-        }
-        #hamburger_menu ul li{
-            font-size: 0.7em;
-        }
+    .groups {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem 0.5rem;
     }
 
-    /* EXTRA THIN SCREENS */
-    @media (max-width: 499px) {
-        header{
-            padding-left: 1em;
-            padding-right: 1em;
-        }
-        .top_right_content{
-            padding-right: 0.9em;
-        }
-        .right_ham_cont{
-            margin-right: 1.8em;
-        }
-        #hamburger_menu ul li{
-            font-size: 0.7em;
-        }
-        .connect_button_cont{
+    .group .eyebrow {
+        padding: 0 0.75rem 0.3rem;
+    }
+
+    .group .eyebrow.current_group {
+        color: var(--primary);
+    }
+
+    .menu .group a {
+        padding: 0.4em 0.75em;
+        white-space: normal;
+    }
+
+    .menu_foot {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        margin-top: 0.9rem;
+        padding: 0.75rem 0.25rem 0.1rem;
+        border-top: 1px solid var(--line-soft);
+    }
+
+    .nav_space {
+        height: var(--nav-h);
+    }
+
+    /* Tighter pills before going to the menu. */
+    /* Five sections are wide (French most of all): below 1180px the brand is the A alone
+       and the buttons tighter; below 1060px the sections go into the menu. */
+    @media (max-width: 1180px) {
+        .bar { gap: 0.6rem; }
+        .section_button { padding: 0.3em 0.5em 0.3em 0.6em; font-size: 0.95rem; }
+        .brand span { display: none; }
+    }
+
+    @media (max-width: 1060px) {
+        .brand span { display: inline; }
+        .links,
+        .lang_wide {
             display: none;
         }
-        .extra_thin_connect_button{
-            display: block;
+        .menu_button {
+            display: inline-flex;
         }
+    }
+
+    @media (max-width: 380px) {
+        .groups {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    /* Phones: Connect lives in the menu. */
+    @media (max-width: 420px) {
+        .right > .connect {
+            display: none;
+        }
+        .brand { font-size: 1.6rem; }
+    }
+
+    @media (min-width: 1061px) {
+        .menu { display: none; }
     }
 </style>

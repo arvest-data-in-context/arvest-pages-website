@@ -1,6 +1,6 @@
 <script>
     import { createEventDispatcher } from 'svelte'
-    import { onMount } from 'svelte';
+    import { onMount, onDestroy } from 'svelte';
     import { base } from '$app/paths';
     let slide_idx = 0;
     let freeze_time = 5000;
@@ -26,6 +26,21 @@
         process_slides();
 	})
 
+    onDestroy(() => {
+        if(currentTimeout){
+            clearTimeout(currentTimeout);
+        }
+    });
+
+    function go_to(idx){
+        incr = false;
+        slide_idx = idx;
+        if(currentTimeout){
+            clearTimeout(currentTimeout);
+        };
+        process_slides();
+    }
+
     function handle_nav_to(){
         dispatch('scroll_to', {
             current_slide: slide_idx
@@ -33,6 +48,7 @@
     }
 
     function process_slides(){
+        if(!back_img || !slides){ return; }
         // Increment slide index.
         if(incr){
             if(slide_idx + 1 == slides.length + 1){
@@ -115,253 +131,303 @@
     }
 </script>
 
-<div class="main_cont">
+<section class="main_cont" aria-roledescription="carousel" aria-label="Arvest">
+    <div class="intro">
+        <slot />
+    </div>
+
     <div class="inner_cont">
         <div class="back_img">
-            <img src="{base}/imgs/table_illustrations/slide_1.png" alt="arvest empty desk illustration" bind:this={back_img}>
+            <img src="{base}/imgs/table_illustrations/slide_1.png" alt="" bind:this={back_img} width="1800" height="1420">
         </div>
 
         <div class="slide">
             <div class="slide_inner_cont">
-                <img src="{base}/imgs/table_illustrations/docs_1.png" alt="arvest empty desk illustration">
+                <img src="{base}/imgs/table_illustrations/docs_1.png" alt="" width="1800" height="1420">
             </div>
         </div>
 
         <div class="slide">
             <div class="slide_inner_cont">
-                <img src="{base}/imgs/table_illustrations/docs_2.png" alt="arvest empty desk illustration">
+                <img src="{base}/imgs/table_illustrations/docs_2.png" alt="" width="1800" height="1420">
             </div>
         </div>
 
         <div class="slide">
             <div class="slide_inner_cont">
-                <img src="{base}/imgs/table_illustrations/highlights.png" alt="arvest empty desk illustration">
+                <img src="{base}/imgs/table_illustrations/highlights.png" alt="" width="1800" height="1420">
             </div>
         </div>
 
         <div class="slide">
             <div class="slide_inner_cont">
-                <img src="{base}/imgs/table_illustrations/arrows.png" alt="arvest empty desk illustration">
+                <img src="{base}/imgs/table_illustrations/arrows.png" alt="" width="1800" height="1420">
             </div>
         </div>
 
         <div class="slide">
             <div class="slide_inner_cont">
-                <img src="{base}/imgs/table_illustrations/share.png" alt="arvest share your work illustration">
+                <img src="{base}/imgs/table_illustrations/share.png" alt="" width="1800" height="1420">
             </div>
         </div>
     </div>
-    <div id="textual_content">
-        <h2>{PageVocab.presentation_widget[slide_idx].title[langVal]}</h2>
-        <p>{PageVocab.presentation_widget[slide_idx].content[langVal]}</p>
+
+    <div id="textual_content" class="card">
+        <span class="eyebrow">{slide_idx + 1} / {PageVocab.presentation_widget.length}</span>
+        <!-- Every slide's words in the same cell, only the current one shown: the card is
+             always as tall as the longest, so it never changes size and never moves the table. -->
+        <div class="words" aria-live="polite">
+            {#each PageVocab.presentation_widget as item, i}
+                <div class="slide_words" class:shown={i === slide_idx} aria-hidden={i !== slide_idx}>
+                    <h2>{item.title[langVal]}</h2>
+                    <p>{item.content[langVal]}</p>
+                </div>
+            {/each}
+        </div>
+
         <div class="navigator">
-            <button on:click={() => handle_nav_to()}>↓</button>
-            <button on:click={() => handle_nav(-1)}>←</button>
-            <button on:click={() => handle_nav(1)}>→</button>
+            <div class="dots">
+                {#each PageVocab.presentation_widget as item, i}
+                    <button class="dot" class:on={i === slide_idx} aria-label={item.title[langVal]} aria-current={i === slide_idx ? "step" : undefined} on:click={() => go_to(i)}></button>
+                {/each}
+            </div>
+            <div class="arrows">
+                <button class="round" aria-label="Previous" on:click={() => handle_nav(-1)}>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+                </button>
+                <button class="round" aria-label="Next" on:click={() => handle_nav(1)}>
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+                </button>
+            </div>
         </div>
+
+        <button class="more" on:click={() => handle_nav_to()}>
+            ↓ {langVal === "fr" ? "En savoir plus" : "Read more below"}
+        </button>
     </div>
-</div>
+</section>
 
 <style>
+    /* The landing page's first screen: the table takes all the room the window gives
+       (as tall as the window allows, never wider than its column); the page's intro and the
+       slide's words at its left. Narrow: intro, table, words, one under the other. */
     .main_cont{
-        width: 100%;
-        position: relative;
-        z-index: 0;
+        --table-ratio: 1.2676;   /* 1800 × 1420, the drawings */
         display: grid;
-        grid-template-columns: 3fr 1fr;
+        grid-template-columns: minmax(280px, 1fr) minmax(0, 2.3fr);
+        grid-template-areas:
+            "intro table"
+            "caption table";
+        grid-template-rows: auto 1fr;
+        column-gap: clamp(1.5rem, 3vw, 3rem);
+        row-gap: 1.5rem;
+        align-items: start;
+        max-width: calc(var(--page-max) + 2 * var(--gutter));
+        min-height: calc(100vh - var(--nav-h) - 5.5rem);
+        min-height: calc(100svh - var(--nav-h) - 5.5rem);
+        margin: 0 auto;
+        padding: clamp(1rem, 3vh, 2rem) var(--gutter) 1rem;
+    }
+
+    .intro{
+        grid-area: intro;
+        align-self: end;
     }
 
     .inner_cont{
-        width: 100%;
+        grid-area: table;
         position: relative;
+        align-self: center;
+        justify-self: center;
+        width: min(100%, calc((100vh - var(--nav-h) - 7.5rem) * var(--table-ratio)));
+        width: min(100%, calc((100svh - var(--nav-h) - 7.5rem) * var(--table-ratio)));
     }
 
-    .back_img{
+    /* The drawing and its layers share one grid cell, each at its own size (all are
+       1800 × 1420), so a layer always lies exactly over the table whatever the width,
+       and only its opacity changes. */
+    .inner_cont{
+        display: grid;
+    }
+
+    .back_img,
+    .slide{
+        grid-area: 1 / 1;
+        min-width: 0;
+    }
+
+    .back_img img,
+    .slide img{
+        display: block;
         width: 100%;
-        position: relative;
+        height: auto;
     }
 
     .back_img img{
-        width: 100%;
-        height: auto;
         opacity: 1;
-        transition-duration: 1000ms;
+        transition: opacity 1000ms;
     }
 
     .slide{
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        left: 0px;
-        top: 0px;
         opacity: 0;
-        transition-duration: 1000ms;
+        transition: opacity 1000ms;
+        pointer-events: none;
     }
 
-    .slide_inner_cont{
-        position: relative;
-        width: 100%;
-        height: 100%;
-    }
-
-    .slide img{
-        width: 100%;
-        height: 100%;
-    }
-
+    /* The slide's words: a small card. */
     #textual_content{
-        width: 25%;
-        position: absolute;
-        z-index: 9;
-        left: 75%;
-        top: -10%;
-        height: 100%;
+        grid-area: caption;
+        align-self: start;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        gap: 0.6rem;
+        padding: 1.1rem 1.2rem 1.2rem;
+        border-width: 1.5px;
+        box-shadow: var(--panel-shadow);
+    }
+
+    .eyebrow{
+        color: var(--primary);
+    }
+
+    .words{
+        display: grid;
+    }
+
+    .slide_words{
+        grid-area: 1 / 1;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.4s, visibility 0s 0.4s;
+    }
+
+    .slide_words.shown{
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 0.4s;
     }
 
     h2{
-        font-size: 1em;
-        padding-bottom: 0.5em;
-        width: 100%;
-        text-align: right;
+        font-size: clamp(1.4rem, 1.2rem + 0.8vw, 1.8rem);
+        padding-bottom: 0.3rem;
     }
 
     p{
-        font-size: 0.5em;
-        width: 100%;
-        text-align: right;
         color: var(--secondary-text);
-    }
-
-    button{
-        font-size: 0.3em;
-        background: none;
-        border: none;
-        color: var(--secondary-text);
-        height: 100%;
-        display: inline-block;
+        line-height: 1.5;
     }
 
     .navigator{
-        z-index: 20;
         display: flex;
-        height: fit-content;
-        padding-top: 0.3em;
-        width: 100%;
-        justify-content: flex-end;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        margin-top: 0.25rem;
     }
 
-    button:hover{
+    .dots{
+        display: flex;
+        gap: 0.2rem;
+    }
+
+    /* 22px targets around a small dot. */
+    .dot{
+        position: relative;
+        width: 22px;
+        height: 22px;
+        padding: 0;
+        border: none;
+        background: none;
         cursor: pointer;
-        background-color: rgb(218, 218, 218);
     }
 
-    /* LARGE SCREENS */
-    @media (min-width: 1500px) {
-        .main_cont{
-            grid-template-columns: 3fr 1fr;
-        }
-        #textual_content{
-            width: 25%;
-            left: 75%;
-            top: -10%;
-            height: 100%;
-        }
-        h2{
-            font-size: 1em;
-            padding-bottom: 0.5em;
-            width: 100%;
-            text-align: right;
-        }
-
-        p{
-            font-size: 0.5em;
-            width: 100%;
-            text-align: right;
-        }
+    .dot::after{
+        content: "";
+        position: absolute;
+        inset: 7px;
+        border-radius: 50%;
+        background: var(--line);
+        transition: background-color 0.15s, transform 0.15s;
     }
 
-    /* MEDIUM SCREENS */
-    @media (min-width: 1200px) and (max-width: 1499px)  {
-        .main_cont{
-            grid-template-columns: 3fr 1fr;
-        }
-        #textual_content{
-            width: 25%;
-            left: 75%;
-            top: -10%;
-            height: 100%;
-        }
-        h2{
-            font-size: 1em;
-            padding-bottom: 0.5em;
-            width: 100%;
-            text-align: right;
-        }
-
-        p{
-            font-size: 0.5em;
-            width: 100%;
-            text-align: right;
-        }
+    .dot:hover::after{
+        background: var(--secondary-text);
     }
 
-    /* SMALL SCREENS */
-    @media (min-width: 700px) and (max-width: 1199px) {
-        .main_cont{
-            grid-template-columns: 1fr;
-            margin-bottom: 2em;
-        }
-        #textual_content{
-            width: 100%;
-            left: 0%;
-            top: 75%;
-            height: fit-content;
-            padding-top: 0.5em;
-            padding-bottom: 0.5em;
-
-        }
-        h2{
-            font-size: 0.7em;
-            padding-bottom: 0.5em;
-            width: 100%;
-            text-align: right;
-        }
-
-        p{
-            font-size: 0.4em;
-            width: 100%;
-            text-align: right;
-        }
+    .dot.on::after{
+        background: var(--primary);
+        transform: scale(1.25);
     }
 
-    /* VERY SMALL SCREENS */
-    @media (max-width: 699px) {
+    .arrows{
+        display: flex;
+        gap: 0.4rem;
+    }
+
+    .round{
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        border: 1.5px solid var(--primary-text);
+        border-radius: 50%;
+        background: var(--surface);
+        color: var(--primary-text);
+        cursor: pointer;
+        transition: background-color 0.12s, color 0.12s;
+    }
+
+    .round:hover{
+        background: var(--primary-tint);
+        color: var(--primary);
+    }
+
+    .round svg{
+        width: 20px;
+        height: 20px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+
+    .more{
+        align-self: flex-start;
+        padding: 0.3em 0.9em;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--surface);
+        color: var(--secondary-text);
+        font-family: var(--font-ui);
+        font-size: 0.85rem;
+        cursor: pointer;
+    }
+
+    .more:hover{
+        border-color: var(--primary);
+        color: var(--primary);
+    }
+
+    @media (max-width: 900px){
         .main_cont{
             grid-template-columns: 1fr;
-            margin-bottom: 5em;
+            grid-template-areas:
+                "intro"
+                "table"
+                "caption";
+            grid-template-rows: auto;
+            min-height: 0;
+            row-gap: 1rem;
         }
-        #textual_content{
+        .inner_cont{
             width: 100%;
-            left: 0%;
-            top: 75%;
-            height: fit-content;
-            padding-top: 0.5em;
-            padding-bottom: 0.5em;
         }
-        h2{
-            font-size: 0.7em;
-            padding-bottom: 0.5em;
-            width: 100%;
-            text-align: right;
-        }
-
         p{
-            font-size: 0.4em;
-            width: 100%;
-            text-align: right;
+            min-height: 0;
         }
     }
 </style>

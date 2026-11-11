@@ -13,7 +13,8 @@
 
 <svelte:head>
   <title>Arvest | Data in Context</title>
-  <meta name="robots" content="noindex" />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="canonical" href="https://arvest.app/en" />
 </svelte:head>
 
 <div id="top_section">
@@ -24,6 +25,6 @@
       Consult, compare, organize and annotate documents, including images, videos and audio, on a virtual desktop.
     </p>
     <p>
-      Redirecting...
+      Redirecting… <a href="{base}/en" hreflang="en">English</a> · <a href="{base}/fr" hreflang="fr">Français</a>
     </p>
 </div>

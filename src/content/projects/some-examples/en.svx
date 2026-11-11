@@ -12,7 +12,6 @@ image: "projects/examples/network.png"
     import ArvestProject from '$lib/components/articles/ArvestProject.svelte';
 </script>
 
-# Some example projects
 
 Let's take a look at four example projects to see the kinds of things that are possible with Arvest.
 

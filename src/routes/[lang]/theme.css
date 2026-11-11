@@ -1,92 +1,355 @@
-@font-face {font-family: 'Input-Mono-Narrow';src: url('/fonts/Input Mono Narrow/InputMonoNarrow-Regular.ttf')}
-@font-face {font-family: 'Input-Mono-Narrow-Thin';src: url('/fonts/Input Mono Narrow/InputMonoNarrow-Thin.ttf')}
-@font-face {font-family: 'Steinbeck';src: url('/fonts/steinbeck/SteinbeckItalic.woff')}
+/* Arvest's look, as in the tool (arvest-playground-mmm/docs/design.md):
+   black-bordered white cards with a small offset shadow, purple for what you can do,
+   grey for what you read, rounded pills for choices.
+   Steinbeck (italic) for titles, Input Mono Narrow for everything else.
+   Sizes are in rem: nothing grows or shrinks with how deep it is nested. */
+
+@font-face {font-family: 'Input-Mono-Narrow'; src: url('/fonts/Input Mono Narrow/InputMonoNarrow-Regular.ttf'); font-display: swap;}
+@font-face {font-family: 'Input-Mono-Narrow-Thin'; src: url('/fonts/Input Mono Narrow/InputMonoNarrow-Thin.ttf'); font-display: swap;}
+@font-face {font-family: 'Steinbeck'; src: url('/fonts/steinbeck/SteinbeckItalic.woff') format('woff'), url('/fonts/steinbeck/SteinbeckItalic.otf') format('opentype'); font-display: swap;}
 
 :root {
-    --background-color-1: white;
-	--background-color-2: rgb(235, 235, 235);
-	--primary-text: black;
-	--secondary-text: grey;
-	--big-button-background-color : black;
-	--big-button-background-color-hover : grey;
-	--big-button-label-color : white;
+	--primary: #800080;
+	--on-primary: #ffffff;
+	--hover-primary: #6a006a;
+	--primary-tint: #f4ecf4;        /* hover of pills and icon buttons */
+	--primary-tint-2: #f3e6f3;      /* counts, badges */
+	--secundary: #add8e6;
+	--on-secundary: #020826;
+	--hover-secundary: #c6e5ef;
+
+	--primary-text: #000000;
+	--secondary-text: #4D4D4D;
+	--line: #cccccc;                /* thin lines, input borders */
+	--line-soft: #e3dee7;           /* side bars, separators */
+	--row-line: #eee9f1;
+	--surface: #ffffff;
+	--surface-soft: #faf8fb;
+	--dot-grid: #f7f4f8;
+
+	--live: #2ecc71;
+	--warn: #8a5a00;   --warn-bg: #fff8e1;
+	--error: #b3261e;  --error-bg: #fdeeee;
+	--success: #2e7d32; --success-bg: #eef8ef;
+
+	--card-border: 2px solid var(--primary-text);
+	--card-radius: 8px;
+	--card-shadow: 4px 4px 0 rgba(0, 0, 0, 0.12);
+	--card-shadow-hover: 6px 6px 0 rgba(0, 0, 0, 0.12);
+	--panel-border: 1.5px solid var(--primary-text);
+	--panel-shadow: 3px 3px 0 rgba(0, 0, 0, 0.12);
+
+	--font-display: 'Steinbeck', Georgia, serif;
+	--font-ui: 'Input-Mono-Narrow-Thin', ui-monospace, Menlo, monospace;
+	--font-ui-regular: 'Input-Mono-Narrow', ui-monospace, Menlo, monospace;
+
+	/* The page column and its side room (16px on a phone). */
+	--page-max: 1180px;
+	--read-max: 46rem;
+	--gutter: clamp(16px, 4vw, 2.5rem);
+	--nav-h: 60px;
+
+	/* Kept for older names still used in articles. */
+	--background-color-1: var(--surface);
+	--background-color-2: var(--surface-soft);
+	--big-button-label-color: var(--on-primary);
 }
 
-body{
-	font-family: 'Input-Mono-Narrow-Thin', monospace;
-	box-sizing: border-box;
+html {
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+
+body {
+	font-family: var(--font-ui);
+	font-size: 1rem;
+	line-height: 1.45;
+	color: var(--primary-text);
+	background: var(--surface);
 	margin: 0;
 	padding: 0;
 	height: 100%;
 	overflow: auto;
 }
 
-footer{
+*, *::before, *::after {
 	box-sizing: border-box;
 }
 
-div, h1, h2, h3{
-	box-sizing: border-box;
-	font-family: 'Steinbeck', monospace;
-	font-size: larger;
+h1, h2, h3, h4 {
+	font-family: var(--font-display);
+	font-weight: normal;
+	line-height: 1.15;
+	color: var(--primary-text);
+	overflow-wrap: break-word;
 }
 
-p{
-	font-family: 'Input-Mono-Narrow-Thin', monospace;
+h1 { font-size: clamp(2rem, 1.4rem + 2.4vw, 2.75rem); }
+h2 { font-size: clamp(1.5rem, 1.2rem + 1.2vw, 1.875rem); }
+h3 { font-size: 1.3rem; }
+h4 { font-size: 1.1rem; }
+
+p, li {
+	overflow-wrap: break-word;
 }
 
-.p_gloabl_wrap{
-	font-size: 0.4em;
-    color: var(--secondary-text);
-	font-family: 'Input-Mono-Narrow-Thin', monospace;
-	padding-bottom: 1em;
+img {
+	max-width: 100%;
 }
 
-.p_gloabl_wrap a{
+a {
+	color: inherit;
+}
+
+:focus-visible {
+	outline: 3px solid var(--secundary);
+	outline-offset: 2px;
+}
+
+/* The page: one centred column, the title at its top left. */
+.page {
+	width: 100%;
+	max-width: calc(var(--page-max) + 2 * var(--gutter));
+	margin: 0 auto;
+	padding: 1.25rem var(--gutter) 4rem;
+}
+
+.page_head {
+	padding-bottom: 1.5rem;
+}
+
+.page_head h1 {
+	padding-top: 0.25rem;
+}
+
+.page_head .lede {
+	margin-top: 0.6rem;
+	max-width: 40rem;
 	color: var(--secondary-text);
-	font-family: 'Input-Mono-Narrow-Thin', monospace;
+}
+
+/* A small grey line above a title or a group (small capitals). */
+.eyebrow,
+.option_label {
+	display: block;
+	font-family: var(--font-ui);
+	font-size: 0.78rem;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--secondary-text);
+}
+
+.hint {
+	font-size: 0.85rem;
+	color: var(--secondary-text);
+}
+
+/* Cards: white, 2px black, 8px corners, small offset shadow. A card that is a link lifts. */
+.card {
+	background: var(--surface);
+	border: var(--card-border);
+	border-radius: var(--card-radius);
+	box-shadow: var(--card-shadow);
+}
+
+a.card,
+.card.lift {
+	display: block;
+	text-decoration: none;
+	color: inherit;
+	transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+a.card:hover,
+.card.lift:hover {
+	transform: translate(-2px, -2px);
+	box-shadow: var(--card-shadow-hover);
+}
+
+/* Pictures shown as cards (screenshots, embeds). */
+.framed {
+	display: block;
+	width: 100%;
+	border: var(--card-border);
+	border-radius: var(--card-radius);
+	box-shadow: var(--card-shadow);
+	background: var(--surface);
+}
+
+/* Pills: tags and small actions. */
+.tag {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4em;
+	padding: 0.1em 0.65em;
+	border-radius: 999px;
+	background: var(--primary-tint-2);
+	color: var(--primary);
+	font-size: 0.78rem;
+	white-space: nowrap;
+}
+
+.tags {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.4rem;
+}
+
+/* One choice among a few, joined (the language). */
+.segmented {
+	display: inline-flex;
+	flex-wrap: nowrap;
+}
+
+.segmented > button,
+.segmented > a {
+	padding: 0.25em 0.75em;
+	border: 1px solid var(--line);
+	background: var(--surface);
+	color: var(--secondary-text);
+	font-family: var(--font-ui);
+	font-size: 0.85rem;
+	line-height: 1.4;
+	white-space: nowrap;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.segmented > :first-child { border-radius: 999px 0 0 999px; }
+.segmented > :last-child  { border-radius: 0 999px 999px 0; }
+.segmented > * + *        { margin-left: -1px; }
+
+.segmented > .on {
+	position: relative;
+	border-color: var(--primary);
+	background: var(--primary);
+	color: var(--on-primary);
+}
+
+.segmented > :not(.on):hover {
+	border-color: var(--primary);
+	color: var(--primary-text);
+}
+
+/* Grids of cards: as many columns as fit. */
+.card_grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+	gap: 1.5rem;
+}
+
+/* Reading text: articles, tutorials and the pages written as text. */
+.prose,
+.news_article_div {
+	max-width: var(--read-max);
+	color: var(--primary-text);
+}
+
+.prose h1,
+.news_article_div h1 {
+	padding-bottom: 0.6em;
+}
+
+.prose h2,
+.news_article_div h2 {
+	padding-top: 1.2em;
+	padding-bottom: 0.4em;
+}
+
+.prose h3,
+.news_article_div h3 {
+	padding-top: 1em;
+	padding-bottom: 0.35em;
+}
+
+.prose p,
+.news_article_div p,
+.p_gloabl_wrap {
+	padding-bottom: 1em;
+	line-height: 1.6;
+	color: var(--secondary-text);
+}
+
+.prose ul,
+.prose ol,
+.news_article_div ul,
+.news_article_div ol {
+	padding: 0 0 1em 1.4em;
+	color: var(--secondary-text);
+	line-height: 1.6;
+}
+
+.prose ul,
+.news_article_div ul { list-style: disc; }
+.prose ol,
+.news_article_div ol { list-style: decimal; }
+
+.prose a,
+.news_article_div a,
+.p_gloabl_wrap a {
+	color: var(--primary);
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.15em;
 	font-style: normal;
 }
 
-
-.news_article_div h1{
-	color: var(--primary-text);
-	padding-bottom: 1em;
+.prose a:hover,
+.news_article_div a:hover,
+.p_gloabl_wrap a:hover {
+	text-decoration-thickness: 2px;
 }
 
-.news_article_div h2{
-	color: var(--primary-text);
-	padding-bottom: 1em;
-	font-size: 0.7em;
-}
-
-.news_article_div a{
-
-	color: var(--primary-text);
-}
-
-.news_article_div p{
-	font-size: 0.5em;
-	color: var(--secondary-text);
-	padding-bottom: 1em;
-	line-height: 1.5em;
-}
-
-.news_article_div em{
-	font-size: 1em;
+.prose em,
+.news_article_div em {
 	font-style: italic;
 }
 
-.news_article_div strong{
-	font-size: 1em;
-	font-weight: bold;
+.prose strong,
+.news_article_div strong {
+	font-family: var(--font-ui-regular);
+	font-weight: normal;
+	color: var(--primary-text);
 }
 
-.cite_text{
-	font-size: 0.7em;
-	line-height: 1.3em;
+.prose code,
+.news_article_div code {
+	font-family: var(--font-ui-regular);
+	padding: 0.05em 0.35em;
+	border-radius: 4px;
+	background: var(--primary-tint);
+	font-size: 0.92em;
 }
-.cite_text strong{
-	font-weight: bold;
+
+/* Inline code only: a code block (CodeBox) is already a card. */
+.prose pre code,
+.news_article_div pre code {
+	padding: 0;
+	border-radius: 0;
+	background: none;
+	font-size: inherit;
+}
+
+.cite_text {
+	line-height: 1.6;
+}
+
+.cite_text strong {
+	font-family: var(--font-ui-regular);
 	text-decoration: underline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		transition-duration: 0.01ms !important;
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+.page_head > a {
+	margin-top: 1.1rem;
 }

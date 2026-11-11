@@ -1,4 +1,7 @@
 <script>
+    import Seo from '$lib/components/Seo.svelte';
+    import SeoVocab from '$lib/data/vocab/seo.json';
+    import AboutVocab from '$lib/data/vocab/about.json';
     import BreadCrumbs from '$lib/components/general_ui/BreadCrumbs.svelte';
     import { base } from '$app/paths';
 
@@ -10,20 +13,24 @@
 	});
 </script>
 
-<svelte:head>
-    <title>Arvest | {BCVocab.accessibility[langVal]}</title>
-</svelte:head>
+<Seo
+    title={BCVocab.accessibility[langVal]}
+    description={SeoVocab.accessibility[langVal]}
+/>
 
 <BreadCrumbs
     breadcrumbs={[
         { text: BCVocab.home[langVal], href: base + "/" + langVal },
-        { text: BCVocab.about[langVal], href: base + "/" + langVal + "/about"},
+        { text: BCVocab.about[langVal] },
         { text: BCVocab.accessibility[langVal], href: base + "/" + langVal + "/about/accessibility"}
       ]}
     />
 
-<div class="cont">
+<header class="page_head">
     <h1>Accessibility declaration</h1>
+</header>
+
+<div class="prose">
 
     <h2>Accessibility statement</h2>
     <p>
@@ -48,26 +55,9 @@
 </div>
 
 <style>
-    .cont{
-        padding-top: 1em;
-        padding-bottom: 1em;
-    }
-
-    h2{
-        font-size: 0.7em;
-        padding-bottom: 0.4em;
-    }
-
-    h1{
-        padding-bottom: 1em;
-    }
-
-    p{
-        font-size: 0.5em;
-        padding-bottom: 1em;
-    }
-
     .email_ad{
-        font-weight: bolder;
+        font-family: var(--font-ui-regular);
+        color: var(--primary-text);
+        overflow-wrap: anywhere;
     }
 </style>

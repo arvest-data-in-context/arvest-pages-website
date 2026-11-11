@@ -7,7 +7,6 @@ author: "Jacob Hart"
 image: "tutorials/ml-video-decomposition/ml-tut-video-decomp.png"
 ---
 
-# Machine learning tutorial: Video decomposition
 
 Full video tutorial coming soon.
 

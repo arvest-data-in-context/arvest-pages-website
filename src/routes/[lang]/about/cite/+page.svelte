@@ -1,4 +1,6 @@
 <script>
+    import Seo from '$lib/components/Seo.svelte';
+    import AboutVocab from '$lib/data/vocab/about.json';
     import BreadCrumbs from '$lib/components/general_ui/BreadCrumbs.svelte';
     import CodeBox from '$lib/components/general_ui/CodeBox.svelte';
     import BigButton from '$lib/components/general_ui/BigButton.svelte';
@@ -13,31 +15,34 @@
 	});
 </script>
 
-<svelte:head>
-    <title>Arvest | {BCVocab.cite[langVal]}</title>
-</svelte:head>
+<Seo
+    title={BCVocab.cite[langVal]}
+    description={AboutVocab.cite.blurb[langVal]}
+/>
 
 <BreadCrumbs
     breadcrumbs={[
         { text: BCVocab.home[langVal], href: base + "/" + langVal },
-        { text: BCVocab.about[langVal], href: base + "/" + langVal + "/about"},
+        { text: BCVocab.about[langVal] },
         { text: BCVocab.cite[langVal], href: base + "/" + langVal + "/about/cite"}
       ]}
     />
 
-<div class="cont">
+<header class="page_head">
     <h1>{CiteVocab.main.title[langVal]}</h1>
-    <p>
-        {CiteVocab.main.desc[langVal]}
-    </p>
+    <p class="lede">{CiteVocab.main.desc[langVal]}</p>
+</header>
+
+<div class="prose">
 
     <div>
         <h2>{CiteVocab.jdh.title[langVal]}</h2>
-        <p>{@html CiteVocab.jdh.desc[langVal]}</p>
+        <div>{@html CiteVocab.jdh.desc[langVal]}</div>
         <div class="button_resizer">
             <BigButton
                 url = {CiteVocab.jdh.link}
                 label = {"Link"}
+                kind = "secondary"
             />
         </div>
         <CodeBox 
@@ -47,25 +52,10 @@
 </div>
 
 <style>
-    .cont{
-        padding-bottom: 5em;
-    }
-    h1{
-        padding-top: 0.5em;
-        padding-bottom: 0.5em;
-    }
-    p{
-        font-size: 0.6em;
-    }
-
-    h2{
-        padding-top: 0.5em;
-        padding-bottom: 0.5em;
-        font-size: 0.8em;
+    .prose h2{
+        padding-top: 0;
     }
     .button_resizer{
-        padding-top: 1em;
-        font-size: 0.7em;
-        padding-bottom: 1em;
+        padding: 0.25rem 0 1.25rem;
     }
 </style>

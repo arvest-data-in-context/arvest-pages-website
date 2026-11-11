@@ -1,4 +1,6 @@
 <script>
+    import Seo from '$lib/components/Seo.svelte';
+    import CommunityVocab from '$lib/data/vocab/community.json';
     import BreadCrumbs from '$lib/components/general_ui/BreadCrumbs.svelte';
     import { base } from '$app/paths';
 
@@ -11,29 +13,25 @@
 	});
 </script>
 
-<svelte:head>
-    <title>Arvest | {BCVocab.forum[langVal]}</title>
-</svelte:head>
+<Seo
+    title={BCVocab.forum[langVal]}
+    description={CommunityVocab.forum.blurb[langVal]}
+    noindex
+/>
 
 <BreadCrumbs
     breadcrumbs={[
         { text: BCVocab.home[langVal], href: base + "/" + langVal },
-        { text: BCVocab.community[langVal], href: base + "/" + langVal + "/community"},
+        { text: BCVocab.community[langVal] },
         { text: BCVocab.forum[langVal], href: base + "/" + langVal + "/community/forum"}
       ]}
     />
 
 
-<div class="cont">
+<header class="page_head">
+    <h1>{BCVocab.forum[langVal]}</h1>
+</header>
+
+<div class="prose">
     <p>{PlaceholderVocab.discourse.part_1[langVal]} <a href="https://www.discourse.org">discourse</a> {PlaceholderVocab.discourse.part_2[langVal]}</p>
 </div>
-
-<style>
-    .cont{
-        padding-bottom: 5em;
-    }
-
-    p{
-        font-size: 0.5em;
-    }
-</style>

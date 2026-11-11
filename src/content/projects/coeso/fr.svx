@@ -16,7 +16,6 @@ image: "projects/coeso/coeso-networks.png"
     project_hash = "1834a259897721d2c76a1fb0553f7e1fd19d4d3a"
 />
 
-# Le prototype d'Arvest et le projet COESO
 
 Le développement d'Arvest a débuté en 2023. Notre but initial était de créer une nouvelle version de notre outil [MemoRekall](https://memorekall.com/fr/) qui serait compatible avec le standard ([IIIF](https://iiif.io/)) (International Image Interoperability Framework), d'où le nom MemoRekall-IIIF. 
 

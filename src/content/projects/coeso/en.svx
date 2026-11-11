@@ -12,7 +12,6 @@ image: "projects/coeso/coeso-networks.png"
     import ArvestProject from '$lib/components/articles/ArvestProject.svelte';
 </script>
 
-# Arvest prototype and the COESO Project
 
 <ArvestProject
     project_hash = "1834a259897721d2c76a1fb0553f7e1fd19d4d3a"

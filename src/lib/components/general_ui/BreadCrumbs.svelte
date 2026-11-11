@@ -3,48 +3,57 @@
 </script>
 
 <nav aria-label="Breadcrumb">
-    <ul>
-      {#each breadcrumbs as { text, href }, i}
-        <li>
-          <a href={href}>{text}</a>
-          
-        </li>
-        {#if i < breadcrumbs.length - 1}
-            <li>&gt;</li>
-          {/if}
-      {/each}
-    </ul>
+    <ol>
+        {#each breadcrumbs as { text, href }, i}
+            <li>
+                {#if i < breadcrumbs.length - 1}
+                    {#if href}<a {href}>{text}</a>{:else}<span>{text}</span>{/if}
+                    <span class="sep" aria-hidden="true">›</span>
+                {:else}
+                    <span class="here" aria-current="page">{text}</span>
+                {/if}
+            </li>
+        {/each}
+    </ol>
 </nav>
 
 <style>
-    nav{
-        padding-bottom: 1em;
+    nav {
+        padding: 0.25rem 0 1rem;
     }
-    ul{
+
+    ol {
         display: flex;
         flex-wrap: wrap;
-        font-size: 0.5em;
-        width: 100%;
+        align-items: baseline;
+        gap: 0.25rem 0.5rem;
+        font-size: 0.85rem;
+        color: var(--secondary-text);
     }
 
-    li{
-        padding-right: 0.5em;
-        font-family: 'Input-Mono-Narrow-Thin', monospace;
+    li {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 0.5rem;
+        min-width: 0;
+    }
+
+    a {
         color: var(--secondary-text);
         text-decoration: none;
     }
 
-    a{
-        text-decoration: none;
-        width: 100%;
-        font-family: 'Input-Mono-Narrow-Thin', monospace;
-        color: var(--secondary-text);
-        text-decoration: none;
-        font-size: 1em;
+    a:hover {
+        color: var(--primary);
+        text-decoration: underline;
     }
 
-    a:hover{
+    .sep {
+        color: var(--line);
+    }
+
+    .here {
         color: var(--primary-text);
-        cursor: pointer;
+        overflow-wrap: anywhere;
     }
 </style>

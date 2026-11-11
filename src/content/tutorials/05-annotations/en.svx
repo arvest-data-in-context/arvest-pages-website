@@ -11,7 +11,6 @@ image: "tutorials/basic-05/a05-thumb.png"
     import Youtube from '$lib/components/articles/Youtube.svelte';
 </script>
 
-# Basic tutorial #05: Annotations
 
 <Youtube
     youtube_src = "ufbsNsQFo2E"

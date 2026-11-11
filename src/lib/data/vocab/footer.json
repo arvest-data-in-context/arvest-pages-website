@@ -1,26 +1,118 @@
 {
-    "menu":{"en":"Menu","fr":"Menu"},
-    "community":{"en":"Community","fr":"Communauté"},
-    "projects":{"en":"Projects","fr":"Projets"},
-    "forum":{"en":"Forum","fr":"Forum"},
-    "stage":{"en":"STAGE","fr":"STAGE"},
-    "learn":{"en":"Learn","fr":"Apprendre"},
-    "tutorials":{"en":"Tutorials","fr":"Tutoriels"},
-    "iiif":{"en":"IIIF","fr":"IIIF"},
-    "ml":{"en":"Machine Learning","fr":"Machine Learning"},
-    "api":{"en":"API & ML","fr":"API & ML"},
-    "reference":{"en":"Documentation","fr":"Documentation"},
-    "git":{"en":"Git Repo","fr":"Repo Git"},
-    "news":{"en":"News","fr":"Blog"},
-    "about":{"en":"About","fr":"À propos"},
-    "about_arvest":{"en":"Infrastructure","fr":"Infrastructure"},
-    "team":{"en":"Team","fr":"Équipe"},
-    "accessibility":{"en":"Accessibility","fr":"Accessibilité"},
-    "credits":{"en":"Credits","fr":"Crédits"},
-    "connect":{"en":"Connect","fr":"Connexion"},
-    "demo":{"en":"Demo","fr":"Démo"},
-    "other_tools":{"en":"Other Tools","fr":"Autres outils"},
-    "home":{"en":"Home","fr":"Accueil"},
-    "contact":{"en":"Contact","fr":"Contact"},
-    "cite":{"en":"Cite","fr":"Citer"}
+    "menu": {
+        "en": "Menu",
+        "fr": "Menu"
+    },
+    "community": {
+        "en": "Community",
+        "fr": "Communauté"
+    },
+    "projects": {
+        "en": "Projects",
+        "fr": "Projets"
+    },
+    "forum": {
+        "en": "Forum",
+        "fr": "Forum"
+    },
+    "stage": {
+        "en": "STAGE",
+        "fr": "STAGE"
+    },
+    "learn": {
+        "en": "Learn",
+        "fr": "Apprendre"
+    },
+    "tutorials": {
+        "en": "Tutorials",
+        "fr": "Tutoriels"
+    },
+    "iiif": {
+        "en": "IIIF",
+        "fr": "IIIF"
+    },
+    "ml": {
+        "en": "Machine Learning",
+        "fr": "Machine Learning"
+    },
+    "api": {
+        "en": "API & ML",
+        "fr": "API & ML"
+    },
+    "reference": {
+        "en": "Documentation",
+        "fr": "Documentation"
+    },
+    "git": {
+        "en": "Git Repo",
+        "fr": "Repo Git"
+    },
+    "news": {
+        "en": "News",
+        "fr": "Blog"
+    },
+    "about": {
+        "en": "About",
+        "fr": "À propos"
+    },
+    "about_arvest": {
+        "en": "Infrastructure",
+        "fr": "Infrastructure"
+    },
+    "team": {
+        "en": "Team",
+        "fr": "Équipe"
+    },
+    "accessibility": {
+        "en": "Accessibility",
+        "fr": "Accessibilité"
+    },
+    "credits": {
+        "en": "Credits",
+        "fr": "Crédits"
+    },
+    "connect": {
+        "en": "Connect",
+        "fr": "Connexion"
+    },
+    "demo": {
+        "en": "Demo",
+        "fr": "Démo"
+    },
+    "other_tools": {
+        "en": "Other Tools",
+        "fr": "Autres outils"
+    },
+    "home": {
+        "en": "Home",
+        "fr": "Accueil"
+    },
+    "contact": {
+        "en": "Contact",
+        "fr": "Contact"
+    },
+    "cite": {
+        "en": "Cite",
+        "fr": "Citer"
+    },
+    "further": {
+        "en": "Going further",
+        "fr": "Aller plus loin"
+    },
+    "ecosystem": {
+        "en": "The Arvest ecosystem",
+        "fr": "L'écosystème Arvest"
+    },
+    "extension": {
+        "en": "Browser extension",
+        "fr": "Extension de navigateur"
+    },
+    "mmm": {
+        "en": "mmm",
+        "fr": "mmm"
+    },
+    "lapa": {
+        "en": "LA-PA editor",
+        "fr": "Éditeur LA-PA"
+    }
 }

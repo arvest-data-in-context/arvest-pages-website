@@ -1,5 +1,18 @@
 {
     "author" : {"en" : "Author", "fr" : "Auteur"},
     "date" : {"en" : "Date", "fr" : "Date"},
-    "tags" : {"en" : "Tags", "fr" : "Tags"}
+    "tags" : {"en" : "Tags", "fr" : "Tags"},
+    "back" : {"en" : "All", "fr" : "Tous les"},
+    "search" : {"en" : "Search", "fr" : "Rechercher"},
+    "search_placeholder" : {"en" : "Title, description, tag…", "fr" : "Titre, description, tag…"},
+    "all_tags" : {"en" : "All", "fr" : "Tous"},
+    "newest" : {"en" : "Newest first", "fr" : "Plus récents"},
+    "oldest" : {"en" : "Oldest first", "fr" : "Plus anciens"},
+    "sort" : {"en" : "Order", "fr" : "Ordre"},
+    "filter_by_tag" : {"en" : "Filter by tag", "fr" : "Filtrer par tag"},
+    "results_one" : {"en" : "1 result", "fr" : "1 résultat"},
+    "results_many" : {"en" : "{n} results", "fr" : "{n} résultats"},
+    "none" : {"en" : "Nothing matches. Try another word or tag.", "fr" : "Aucun résultat. Essayez un autre mot ou tag."},
+    "clear" : {"en" : "Clear", "fr" : "Effacer"},
+    "only_en" : {"en" : "", "fr" : "Cet article n'existe qu'en anglais."}
 }

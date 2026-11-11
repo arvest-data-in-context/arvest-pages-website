@@ -3,10 +3,12 @@
   export let filename = '';
   export let language = '';
   export let showLineNumbers = false;
+  export let wrap = true;   // false: long lines scroll sideways (code), true: they wrap (citations)
 
   import { onDestroy } from 'svelte';
 
   let copied = false;
+  let codeEl;
   let timeoutId;
 
   function escapeHtml(str) {
@@ -53,82 +55,98 @@
 </script>
 
 <style>
+  /* A card (1.5px, as inside panels), its head a thin grey line; Copy a small pill. */
   :global(.copy-code-box) {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    border: 1.5px solid var(--primary-text);
+    border-radius: var(--card-radius);
+    box-shadow: var(--panel-shadow);
+    background: var(--surface);
     overflow: hidden;
-    border: 1px solid rgba(0,0,0,0.06);
   }
 
   header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem 0.75rem;
-    background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.01));
-    font-size: 0.875rem;
+    gap: 0.75rem;
+    padding: 0.45rem 0.6rem 0.45rem 0.9rem;
+    border-bottom: 1px solid var(--line-soft);
+    background: var(--surface-soft);
+    font-size: 0.8rem;
   }
 
   .meta {
     display: flex;
     gap: 0.5rem;
     align-items: center;
-    color: #374151; /* neutral-gray */
+    min-height: 1.6em;
+    color: var(--secondary-text);
   }
 
   button.copy-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    background: transparent;
-    border: 1px solid rgba(0,0,0,0.06);
-    padding: 0.25rem 0.5rem;
-    border-radius: 6px;
+    gap: 0.4rem;
+    padding: 0.25rem 0.75rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--primary-text);
+    font-family: var(--font-ui-regular);
+    font-size: 0.8rem;
     cursor: pointer;
-    font-size: 0.85rem;
   }
 
-  button.copy-btn:focus {
-    outline: 3px solid rgba(59,130,246,0.2);
+  button.copy-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
   }
 
   pre {
-     margin: 0;
-  padding: 0.75rem;
-  color: #2f2f2f;
-  font-size: 0.9rem;
-  line-height: 1.45;
-  white-space: pre-wrap;     /* preserves newlines but allows wrapping */
-  word-break: break-word;    /* breaks long words if needed */
-  overflow-wrap: anywhere;   /* modern fallback */
-  overflow-x: hidden; 
+    margin: 0;
+    padding: 0.9rem 1rem;
+    color: var(--primary-text);
+    font-family: var(--font-ui-regular);
+    font-size: 0.88rem;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    overflow-x: hidden;
   }
 
-  /* line numbers column */
+  pre.scroll,
+  pre.scroll code {
+    white-space: pre;
+    word-break: normal;
+    overflow-wrap: normal;
+  }
+
+  pre.scroll {
+    overflow-x: auto;
+  }
+
   .code-wrapper {
     display: flex;
   }
 
   .line-numbers {
-    padding: 0.75rem 0.5rem;
+    padding: 0.9rem 0.5rem;
     user-select: none;
     text-align: right;
-    color: rgba(230,237,243,0.45);
-    background: rgba(255,255,255,0.02);
+    color: var(--secondary-text);
+    background: var(--surface-soft);
   }
 
   code {
+    display: block;
     white-space: pre-wrap;
-  word-break: break-word;
-  overflow-wrap: anywhere;
-  display: block;
+    word-break: break-word;
+    overflow-wrap: anywhere;
   }
 
   .copied-badge {
-    font-size: 0.8rem;
-    color: #10b981; /* green-ish */
-    margin-left: 0.5rem;
+    color: var(--success);
   }
 </style>
 
@@ -139,7 +157,7 @@
         <div class="filename" aria-hidden>{filename}</div>
       {/if}
       {#if copied}
-        <div class="copied-badge" role="status" aria-live="polite">Copied!</div>
+        <div class="copied-badge" role="status" aria-live="polite">Copied ✓</div>
       {/if}
     </div>
 
@@ -164,8 +182,6 @@
       </div>
     {/if}
 
-    <pre>
-      <code class={language} bind:this={codeEl}>{@html escapeHtml(code)}</code>
-    </pre>
+    <pre class:scroll={!wrap}><code class={language} bind:this={codeEl}>{@html escapeHtml(code)}</code></pre>
   </div>
 </div>

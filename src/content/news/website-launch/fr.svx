@@ -7,7 +7,6 @@ author: "Jacob Hart"
 image: "news/website-launch.jpg"
 ---
 
-# Arvest.app est en ligne
 
 Nous sommes heureux d’annoncer le lancement de notre site web. Vous y trouverez les dernières actualités, une présentation des projets développés par la communauté, des ressources pour apprendre à utiliser Arvest, ainsi qu’un aperçu de l’équipe et des travaux de recherche qui nourrissent le projet.
 

@@ -1,134 +1,123 @@
 <script>
+    // A news item, project or tutorial as a card (docs/design.md, "Things to browse"):
+    // its picture (16:10), its title, a grey line, then the date and tags.
+    // "compact": a row, for the latest item inside a section's card.
     import { base } from '$app/paths';
-    export let article;
-    import { onMount } from 'svelte';
-    let img_cont;
-    export let type;
-
     import { lang } from '$lib/scripts/stores.js';
+
+    export let article;
+    export let type = "news";            // news, projects or tutorials
+    export let section = "community";    // community or learn
+    export let compact = false;
+
     let langVal;
-	lang.subscribe(value => {
-		langVal = value;
-	});
-
-    onMount(() => {
-
-        let img_url = "url('" + base + "/" + article.image + "')";
-        img_cont.style.backgroundImage = img_url;
-        img_cont.style.backgroundSize = "cover";
-        img_cont.style.backgroundPosition = "center"; 
-
+    lang.subscribe(value => {
+        langVal = value;
     });
+
+    $: href = `${base}/${langVal}/${section}/${type}/${article.slug}`;
 </script>
 
-<div class="cont">
-    <a class="article_card" href={base}{`/${langVal}/community/${type}/${article.slug}`}>
-       
-        <div class="image_container" bind:this={img_cont}></div>
-        
-        <div class="text_part">
-            <h2>{article.title}</h2>
-            <p class="desc">{article.description}</p>
-            
-            <div class="lower_part">
-                <p>{article.date}</p>
+<a class="card article_card" class:compact {href}>
+    <div class="thumb">
+        <img src="{base}/{article.image}" alt="" loading="lazy">
+    </div>
 
-                {#each article.tags as tag}
-                    <p class="tag_box">{tag}</p>
-                {/each}
-            </div>
+    <div class="text_part">
+        <h3>{article.title}</h3>
+        {#if article.description}
+            <p class="desc">{article.description}</p>
+        {/if}
+
+        <div class="meta">
+            {#if article.date}<time datetime={article.date}>{article.date}</time>{/if}
+            {#each article.tags || [] as tag}
+                <span class="tag">{tag}</span>
+            {/each}
         </div>
-    </a>
-</div>
+    </div>
+</a>
 
 <style>
-    .lower_part{
+    .article_card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .thumb {
+        aspect-ratio: 16 / 10;
+        border-bottom: 1.5px solid var(--primary-text);
+        background: var(--dot-grid);
+        overflow: hidden;
+    }
+
+    .thumb img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .text_part {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        flex: 1;
+        padding: 0.9rem 1rem 1rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    .desc {
+        color: var(--secondary-text);
+        font-size: 0.92rem;
+        line-height: 1.45;
+    }
+
+    .meta {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.3em;
-        font-size: 0.5em;
-        /* height: 100%; */
         align-items: center;
-        align-content: center;
-    }
-
-    .desc{
-        padding-bottom: 0.5em;
-        font-size: 0.2em;
-    }
-
-    .tag_box{
-        background-color: rgb(122, 211, 134);
-        /* height: 100%; */
-        height: fit-content;
-        padding: 0.2em;
-        border-radius: 4px;
-        color: white;
-    }
-
-    p{
-        font-size: 0.5em;
+        gap: 0.4rem;
+        margin-top: auto;
+        padding-top: 0.25rem;
+        font-size: 0.82rem;
         color: var(--secondary-text);
-        font-size: 0.3em;
     }
 
-    .article_card{
-        margin-top: 0.1em;
-        margin-bottom: 0.5em;
-        transition-duration: 500ms;
-        border: black dashed 1px;
-        border-radius: 5px;
-        display: flex;
-        align-items: stretch;
-        height: 100%;
+    time {
+        margin-right: 0.25rem;
     }
 
-    .text_part{
-        padding: 0.3em;
-        flex-grow: 1;
+    /* The row form: a small picture at the left. */
+    .compact {
+        flex-direction: row;
+        border-width: 1.5px;
+        box-shadow: var(--panel-shadow);
     }
 
-    .image_container {
-        width: 10%;
-        flex-shrink: 0;
+    .compact .thumb {
+        flex: none;
+        width: clamp(84px, 24%, 140px);
+        aspect-ratio: auto;
+        border-bottom: none;
+        border-right: 1.5px solid var(--primary-text);
     }
 
-    .article_card:hover{
-        background-color: rgb(239, 239, 239);
+    .compact .text_part {
+        padding: 0.7rem 0.85rem;
+        gap: 0.35rem;
     }
 
-    a{
-        text-decoration: none;
-        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+    .compact h3 {
+        font-size: 1.1rem;
     }
 
-    a:hover{
-        background-color: rgb(233, 233, 233);
-    }
-
-    h2{
-        color: var(--primary-text);
-        font-size: 0.3em;
-        padding-bottom: 0.3em;
-    }
-
-    /* LARGE SCREENS */
-    @media (min-width: 1500px) {
-        .image_container {width: 10%;}
-    }
-
-    /* MEDIUM SCREENS */
-    @media (min-width: 1200px) and (max-width: 1499px)  {
-        .image_container {width: 10%;}
-    }
-
-    /* SMALL SCREENS */
-    @media (min-width: 700px) and (max-width: 1199px) {
-        .image_container {width: 15%;}
-    }
-
-    /* VERY SMALL SCREENS */
-    @media (max-width: 699px) {
-        .image_container {width: 20%;}
+    .compact .desc {
+        font-size: 0.85rem;
     }
 </style>

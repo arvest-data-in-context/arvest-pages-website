@@ -1,46 +1,37 @@
 <script>
-    // Get the language store:
-    import { lang } from '$lib/scripts/stores.js';
+    // The language: one choice among two, a segmented pill (docs/design.md: ".segmented").
+    import { lang, supported_langs } from '$lib/scripts/stores.js';
     import { page } from '$app/stores';
     import { base } from '$app/paths';
     import { goto } from '$app/navigation';
 
-    // Retrieve the language:
     let setLang;
-	lang.subscribe(value => {
-		setLang = value;
-	});
+    lang.subscribe(value => {
+        setLang = value;
+    });
 
-    // Update the language:
-    function updateLang(){
-        lang.set(setLang);
+    const names = { en: "English", fr: "Français" };
 
-        let clean = $page.url.pathname.replace(base, "")
-        let final = clean.slice(3)
+    function choose(to) {
+        if (to === setLang) return;
+        lang.set(to);
 
-        //let new_url = base + "/" + setLang + $page.url.pathname.slice(3);
-        let new_url = base + "/" + setLang + final;
-        //window.location.href = new_url;
-
-        goto(new_url, { replaceState: true });
+        // Same page, other language: /en/learn → /fr/learn.
+        let clean = $page.url.pathname.replace(base, "");
+        let final = clean.slice(3);
+        goto(base + "/" + to + final, { replaceState: true });
     }
 </script>
 
-<!--Language update select element-->
-<select bind:value={setLang} on:change={() => updateLang()}>
-    <option value="en">English</option>
-    <option value="fr">Français</option>
-</select>
-
-<style>
-    select{
-        font-family: 'Input-Mono-Narrow-Thin', monospace;
-        font-size: 0.5em;
-        border: none;
-        background-color: transparent;
-    }
-
-    select:hover{
-        cursor: pointer;
-    }
-</style>
+<div class="segmented" role="group" aria-label="Language">
+    {#each supported_langs as l}
+        <button
+            type="button"
+            class:on={setLang === l}
+            aria-pressed={setLang === l}
+            title={names[l]}
+            lang={l}
+            on:click={() => choose(l)}
+        >{l.toUpperCase()}</button>
+    {/each}
+</div>

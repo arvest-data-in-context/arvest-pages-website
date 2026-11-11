@@ -1,4 +1,7 @@
 <script>
+    import Seo from '$lib/components/Seo.svelte';
+    import SeoVocab from '$lib/data/vocab/seo.json';
+    import AboutVocab from '$lib/data/vocab/about.json';
     import BreadCrumbs from '$lib/components/general_ui/BreadCrumbs.svelte';
     import { base } from '$app/paths';
 
@@ -10,19 +13,24 @@
 	});
 </script>
 
-<svelte:head>
-    <title>Arvest | {BCVocab.credits[langVal]}</title>
-</svelte:head>
+<Seo
+    title={BCVocab.credits[langVal]}
+    description={SeoVocab.credits[langVal]}
+/>
 
 <BreadCrumbs
     breadcrumbs={[
         { text: BCVocab.home[langVal], href: base + "/" + langVal },
-        { text: BCVocab.about[langVal], href: base + "/" + langVal + "/about"},
+        { text: BCVocab.about[langVal] },
         { text: BCVocab.credits[langVal], href: base + "/" + langVal + "/about/credits"}
       ]}
     />
 
-<div class="cont">
+<header class="page_head">
+    <h1>{BCVocab.credits[langVal]}</h1>
+</header>
+
+<div class="prose">
     <p>
         This project has received funding from the European Research Council (ERC) under the European Union's Horizon Europe research and innovation program (grant agreement no. 101097091 - STAGE). Views and opinions expressed are, however, those of the author(s) only and do not necessarily reflect those of the European Union or ERC. Neither the European Union nor the granting authority can be held responsible for them.
     </p>
@@ -65,7 +73,7 @@
     <p>
         The general structure as well as the software, texts, images (animated or not), sounds, know-how, etc. and all other elements making up the site are the exclusive property of Arvest or are regularly used under license. This entire site is governed by French and international legislation on copyright and intellectual property. All reproduction rights are reserved, including for downloadable documents and iconographic or photographic representations. Any total or partial electronic reproduction of this site without the express authorization of Arvest is prohibited and constitutes an infringement punishable by articles L 335-2 et seq. of the French Intellectual Property Code (CPI), unless expressly stated otherwise. Reproduction on paper of pages from this site is authorized unless explicitly stated otherwise, subject to compliance with the following conditions:
     </p>
-        <ul>
+        <ul class="arrows">
             <li>→ respect for the integrity of the documents reproduced</li>
             <li>→ explicit mention of the origin: XXX.arvest.app and that reproduction rights are reserved and limited</li>
             <li>→ free distribution</li>
@@ -86,28 +94,8 @@
 </div>
 
 <style>
-    .cont{
-        padding-top: 1em;
-        padding-bottom: 1em;
-    }
-
-    h2{
-        font-size: 0.7em;
-        padding-bottom: 0.4em;
-    }
-
-    h1{
-        padding-bottom: 1em;
-    }
-
-    p{
-        font-size: 0.5em;
-        padding-bottom: 1em;
-    }
-
-    ul{
-        font-size: 0.5em;
-        padding-bottom: 1em;
-        font-family: 'Input-Mono-Narrow-Thin', monospace;
+    .prose ul.arrows{
+        list-style: none;
+        padding-left: 0.4em;
     }
 </style>

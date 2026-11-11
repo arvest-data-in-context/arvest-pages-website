@@ -1,56 +1,41 @@
 <script>
-    import { base } from '$app/paths';
-    import { onMount, onDestroy } from 'svelte';
-
     export let youtube_src = "zQOm8V22wI4";
     export let width = "50%";
-    export let title = "YouTube video player" 
-
-    let iframe_el;
-
-    onMount(() => {
-		resize_el();
-
-        window.addEventListener('resize', resize_el);
-
-        onDestroy(() => {
-            window.removeEventListener('resize', resize_el);
-        });
-	});
-
-    function resize_el(){
-        if (iframe_el) {
-            const width = iframe_el.offsetWidth;
-            const height = width * 9 / 16; // for 16:9 ratio
-            iframe_el.style.height = `${height}px`;
-        }
-    }
+    export let title = "YouTube video player";
 </script>
 
-<div class="widget_cont" style="width: {width};">
-    <iframe 
-        src="https://www.youtube.com/embed/{youtube_src}" 
-        title={title}
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
+<!-- 16:9 by CSS; the width asked for on a large screen, the whole column on a phone. -->
+<div class="widget_cont" style="--w: {width};">
+    <iframe
+        class="framed"
+        src="https://www.youtube.com/embed/{youtube_src}"
+        {title}
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
-        bind:this={iframe_el}
-    >
-    </iframe>
+        loading="lazy"
+    ></iframe>
 </div>
 
 <style>
-    .widget_cont{
-        width: 100%;
-        height: 100%;
-        margin-bottom: 1em;
-        
+    .widget_cont {
+        width: var(--w, 100%);
+        max-width: 100%;
+        margin-bottom: 1.5rem;
     }
 
-    iframe{
+    iframe {
+        display: block;
         width: 100%;
-        box-sizing: border-box;
-        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
+        aspect-ratio: 16 / 9;
+        height: auto;
+        background: var(--dot-grid);
+    }
+
+    @media (max-width: 700px) {
+        .widget_cont {
+            width: 100%;
+        }
     }
 </style>

@@ -11,7 +11,6 @@ image: "news/website-launch.jpg"
     import Youtube from '$lib/components/articles/Youtube.svelte';
 </script>
 
-# Lancement d'Arvest
 
 Aujourd'hui marque le lancement officielle de la première version d’Arvest. Cela signifie que vous pouvez vous inscrire dès aujourd’hui [ici](https://workspace.arvest.app/) et commencer à créer.
 

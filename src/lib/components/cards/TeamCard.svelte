@@ -10,98 +10,64 @@
     import { base } from '$app/paths';
 </script>
 
-<div class="team_card_cont">
-    <img src="{base}/{member_data.img}" alt={member_data.name}>
-    <div>
-        <h3>{member_data.name}</h3>
-        <a href="{member_data.site}">{member_data.site}</a>
+<article class="card team_card_cont">
+    <img src="{base}/{member_data.img}" alt={member_data.name} loading="lazy">
+    <div class="text">
+        <h2>{member_data.name}</h2>
+        {#if member_data.site}
+            <a href="{member_data.site}">{member_data.site.replace(/^https?:\/\//, "").replace(/\/$/, "")}</a>
+        {/if}
         <p>{member_data.description[langVal]}</p>
     </div>
-</div>
+</article>
 
 <style>
     .team_card_cont{
-        margin-top: 1em;
-        width: 80%;
         display: flex;
-        gap: 1em;
-        /* align-items: center; */
-    }
-
-    h3{
-        font-size: 0.7em;
-    }
-
-    p{
-        margin-top: 1em;
-        font-size: 0.3em;
-        color: var(--secondary-text);
-        font-family: 'Input-Mono-Narrow-Thin', monospace;
-    }
-
-    a{
-        font-size: 0.3em;
-        color: var(--secondary-text);
-        font-family: 'Input-Mono-Narrow-Thin', monospace;
-        font-style: normal;
+        gap: 1.25rem;
+        align-items: flex-start;
+        padding: 1.1rem;
     }
 
     img{
-        width: auto;
-        height: 100px;
-        box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
-        border-radius: 5px;
+        flex: none;
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border: 1.5px solid var(--primary-text);
+        border-radius: var(--card-radius);
     }
 
-    /* LARGE SCREENS */
-    @media (min-width: 1500px) {
-        .team_card_cont{
-            margin-top: 1em;
-            width: 80%;
-            display: flex;
-        }
-
-        h3{
-            margin-top: 0em;
-        }
+    .text{
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
     }
 
-    /* MEDIUM SCREENS */
-    @media (min-width: 1200px) and (max-width: 1499px)  {
-        .team_card_cont{
-            margin-top: 1em;
-            width: 80%;
-            display: flex;
-        }
-
-        h3{
-            margin-top: 0em;
-        }
+    h2{
+        font-size: 1.5rem;
     }
 
-    /* SMALL SCREENS */
-    @media (min-width: 700px) and (max-width: 1199px) {
-        .team_card_cont{
-            margin-top: 3em;
-            width: 100%;
-            display: block;
-        }
-
-        h3{
-            margin-top: 1em;
-        }
+    a{
+        color: var(--primary);
+        font-size: 0.9rem;
+        overflow-wrap: anywhere;
     }
 
-    /* VERY SMALL SCREENS */
-    @media (max-width: 699px) {
-        .team_card_cont{
-            margin-top: 3em;
-            width: 100%;
-            display: block;
-        }
+    p{
+        margin-top: 0.35rem;
+        color: var(--secondary-text);
+        line-height: 1.55;
+    }
 
-        h3{
-            margin-top: 1em;
+    @media (max-width: 560px){
+        .team_card_cont{
+            flex-direction: column;
+        }
+        img{
+            width: 96px;
+            height: 96px;
         }
     }
 </style>
