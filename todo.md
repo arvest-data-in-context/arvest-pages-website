@@ -2,9 +2,9 @@
     - [x] Add a "Share your work" slide
     - [x] Make lower content correspond to slides (and navigate to)
     - [x] Lower feature logos to make smaller on small screens
-    - [ ] Update features with better text and images (possibly animations)
+    - [x] Update features with better text and images (possibly animations)
 - News
-    - [ ] Tags 
+    - [x] Tags
 - [ ] Scientific publications tag in projects
 - Credits
     - [x] Attribution -> Credits

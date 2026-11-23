@@ -29,6 +29,16 @@ image: "news/website-launch.jpg"
 
 Note that the image file is stored in the website's [static](/static/) folder. This is where you will need to drop any media you wish to add to your article.
 
+What each field is used for:
+
+- `title`: the article's title, shown in the box over the picture at the top of the page, on its card in the list, and as the page title for search engines. **Do not repeat it as a `# Title` heading at the start of the article**: the page already has one title (`h1`), and a second would show twice and confuse search engines.
+- `description`: the line under the title, on the card in the list, and the description search engines and social networks show. One or two sentences.
+- `tags`: shown as pills; on the list page they are the filters, and a tag on an article opens its list filtered by that tag. Reuse the existing spellings (`basics`, `gui`, `api`, `machine-learning`…) so the filters stay short.
+- `image`: shown across the whole width at the top of the article (whole, unless it is very tall), and as the card's picture (cropped to 16:10). A landscape image about 1600 to 1800 px wide works best; keep its important part away from the lower left corner, where the title box sits.
+- `date`: `YYYY-MM-DD`. Lists are sorted by it, newest first.
+
+New articles are added to the [sitemap](/src/routes/sitemap.xml/+server.js) automatically, in the languages they exist in.
+
 ### svelte components
 
 We provide a number of svelte components that you can use in your article. You will need to import them into your article after the metadata like such:

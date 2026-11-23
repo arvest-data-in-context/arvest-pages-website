@@ -14,27 +14,25 @@
 	import TopNav from '$lib/components/top_nav/TopNav.svelte';
 	import Footer from '$lib/components/footer/Footer.svelte';
 
-	let global_container;
 	let scrolled = false;
 	let top_nav_element;
 
 	function handle_scroll(){
-		scrolled = global_container.scrollTop > 0;
-		top_nav_element.handle_scroll(scrolled);
+		scrolled = window.scrollY > 0;
+		top_nav_element?.handle_scroll(scrolled);
 	};
 
 	onMount(()=> {
 		handle_scroll();
-		global_container.addEventListener('scroll', function(e) {
-			handle_scroll();
-		})
+		window.addEventListener('scroll', handle_scroll, { passive: true });
+		return () => window.removeEventListener('scroll', handle_scroll);
 	})
 
-	// The page scrolls inside #global_container, so the browser's own scrolling on
-	// navigation does not reach it. A new page starts at its top at once; a link to a place
-	// (#…), on this page or another, glides there (at once for those who ask for less motion).
+	// The window scrolls (not a box inside the page: Safari on iPhone painted the animated
+	// demos of a scrolling fixed box below the footer). A new page starts at its top at once
+	// (not glided by the smooth scrolling below); a link to a place (#…), on this page or
+	// another, glides there (at once for those who ask for less motion).
 	afterNavigate(async ({ to, from }) => {
-		if (!global_container) return;
 		await tick();
 		const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 		const hash = to?.url.hash ? decodeURIComponent(to.url.hash.slice(1)) : "";
@@ -42,7 +40,7 @@
 		if (target) {
 			target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
 		} else if (from?.url.pathname !== to?.url.pathname) {
-			global_container.scrollTo({ top: 0, behavior: 'instant' });
+			window.scrollTo({ top: 0, behavior: 'instant' });
 		}
 	});
 
@@ -51,7 +49,7 @@
 	});
 </script>
 
-<div id="global_container" bind:this={global_container}>
+<div id="global_container">
 	<!-- The page's background, as the tool's dashboard without pictures: a faint dot grid,
 	     Arvest's purple, light blue and amber blurred and slowly drifting. Fixed behind everything. -->
 	<div class="backdrop" aria-hidden="true">
@@ -78,15 +76,13 @@
 </div>
 
 <style>
+	/* The page itself scrolls (the window): never make this box a scroller again. */
 	#global_container{
 		width: 100%;
-		height: 100%;
+		min-height: 100vh;
+		min-height: 100svh;
 		background: var(--dot-grid);
-		position: fixed;
-		top: 0;
-		left: 0;
-		overflow-x: hidden;
-		overflow-y: auto;
+		overflow-x: clip;
 		display: flex;
 		flex-direction: column;
 	}
@@ -98,11 +94,14 @@
 
 	#global_container{
 		isolation: isolate;
+	}
+
+	:global(html){
 		scroll-behavior: smooth;
 	}
 
 	@media (prefers-reduced-motion: reduce){
-		#global_container{
+		:global(html){
 			scroll-behavior: auto;
 		}
 	}

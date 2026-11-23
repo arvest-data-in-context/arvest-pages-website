@@ -39,3 +39,4 @@ You can read the following guides to contribute to the website:
 
 - [Adding articles](/docs/adding-articles.md)
 - [Adding languages](/docs/adding-languages.md) (and modifying ad hoc vocabulary)
+- [How the site is put together](/docs/site-structure.md): menus, pages, look, scrolling, animated demos, paths
