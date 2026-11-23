@@ -1,0 +1,1 @@
+import"../chunks/disclose-version.C-mJVDQc.js";import{p as a,a as p}from"../chunks/runtime.Buieu2QD.js";import{i}from"../chunks/lifecycle.DStDkpEQ.js";import{T as n,a as r}from"../chunks/ToolLanding.B1R6tI-u.js";function g(o,t){a(t,!1),i(),n(o,{get tool(){return r.extension}}),p()}export{g as component};
