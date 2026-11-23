@@ -67,7 +67,7 @@
             <rect x="138" y="76" width="66" height="7" rx="3.5" fill="#fff" />
             <g transform="translate(212 74) scale(0.078125)">
                 <rect width="128" height="128" rx="28" fill="#800080" />
-                <path fill-rule="evenodd" fill="#fff" d="M56 22h16l30 84H86l-6-18H48l-6 18H26zM53 74h22l-11-33z" />
+                <path fill-rule="evenodd" fill="#fff" d="M27.3 106H36.5L52.4 82.6H90.5L92 106H100.7L95.2 22H85.5ZM87.3 31.6 90 75.4H57.3Z" />
             </g>
             <rect x="160" y="96" width="70" height="44" rx="4" fill="#fff" stroke="#000" stroke-width="1.1" class="popup" />
             <KindTile kind="image" x={164} y={100} size={14} />
@@ -85,9 +85,8 @@
             <line x1="280" y1="62" x2="500" y2="62" stroke="#000" stroke-width="1.2" />
             <g transform="translate(288 42) scale(0.109375)">
                 <rect width="128" height="128" rx="28" fill="#800080" />
-                <path fill-rule="evenodd" fill="#fff" d="M56 22h16l30 84H86l-6-18H48l-6 18H26zM53 74h22l-11-33z" />
+                <path fill-rule="evenodd" fill="#fff" d="M27.3 106H36.5L52.4 82.6H90.5L92 106H100.7L95.2 22H85.5ZM87.3 31.6 90 75.4H57.3Z" />
             </g>
-            <text x="309" y="56" class="brand">Arvest</text>
             <rect x="372" y="43" width="44" height="12" rx="6" fill="#800080" />
             <rect x="422" y="47.5" width="30" height="3" rx="1.5" fill="#9a9a9a" />
             <rect x="280.75" y="62.75" width="218.5" height="132.5" fill="url(#dots-{id})" />
@@ -177,12 +176,6 @@
 </DemoFrame>
 
 <style>
-    .brand {
-        font-family: var(--font-display);
-        font-size: 15px;
-        fill: #800080;
-    }
-
     .part {
         transition: opacity 0.3s;
     }

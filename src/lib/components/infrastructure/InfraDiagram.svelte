@@ -93,7 +93,7 @@
             <line x1="196" y1="48" x2="444" y2="48" stroke="#000" stroke-width="1.2" />
             <g transform="translate(204 30) scale(0.09375)">
                 <rect width="128" height="128" rx="28" fill="#800080" />
-                <path fill-rule="evenodd" fill="#fff" d="M56 22h16l30 84H86l-6-18H48l-6 18H26zM53 74h22l-11-33z" />
+                <path fill-rule="evenodd" fill="#fff" d="M27.3 106H36.5L52.4 82.6H90.5L92 106H100.7L95.2 22H85.5ZM87.3 31.6 90 75.4H57.3Z" />
             </g>
             <rect x="226" y="34" width="44" height="12" rx="6" fill="#800080" />
             <rect x="276" y="38.5" width="30" height="3" rx="1.5" fill="#9a9a9a" />

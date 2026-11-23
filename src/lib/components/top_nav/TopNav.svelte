@@ -87,8 +87,7 @@
 <header class:scrolled class:menu_open>
     <nav class="bar" aria-label="Main" bind:this={bar}>
         <a class="brand" href="{base}/{langVal}" aria-label="Arvest, home">
-            <img src="{base}/favicon.svg" alt="" width="30" height="30">
-            <span>Arvest</span>
+            <img src="{base}/favicon.svg" alt="" width="34" height="34">
         </a>
 
         <ul class="links">
@@ -214,9 +213,10 @@
         line-height: 1;
     }
 
+    /* The mark alone: the Steinbeck A in the purple square, no word. */
     .brand img {
-        width: 30px;
-        height: 30px;
+        width: 34px;
+        height: 34px;
         flex: none;
     }
 
@@ -436,16 +436,14 @@
     }
 
     /* Tighter pills before going to the menu. */
-    /* Five sections are wide (French most of all): below 1180px the brand is the A alone
-       and the buttons tighter; below 1060px the sections go into the menu. */
+    /* Five sections are wide (French most of all): below 1180px the buttons are tighter;
+       below 1060px the sections go into the menu. */
     @media (max-width: 1180px) {
         .bar { gap: 0.6rem; }
         .section_button { padding: 0.3em 0.5em 0.3em 0.6em; font-size: 0.95rem; }
-        .brand span { display: none; }
     }
 
     @media (max-width: 1060px) {
-        .brand span { display: inline; }
         .links,
         .lang_wide {
             display: none;
@@ -466,7 +464,6 @@
         .right > .connect {
             display: none;
         }
-        .brand { font-size: 1.6rem; }
     }
 
     @media (min-width: 1061px) {

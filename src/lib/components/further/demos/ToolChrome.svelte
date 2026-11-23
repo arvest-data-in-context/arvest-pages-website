@@ -38,7 +38,7 @@
     <rect x="540" y="32" width="20" height="20" rx="5" fill={ext_on ? "#f4ecf4" : "none"} class="ext" />
     <g transform="translate(543 35) scale(0.109375)">
         <rect width="128" height="128" rx="28" fill="#800080" />
-        <path fill-rule="evenodd" fill="#fff" d="M56 22h16l30 84H86l-6-18H48l-6 18H26zM53 74h22l-11-33z" />
+        <path fill-rule="evenodd" fill="#fff" d="M27.3 106H36.5L52.4 82.6H90.5L92 106H100.7L95.2 22H85.5ZM87.3 31.6 90 75.4H57.3Z" />
     </g>
     <circle cx="582" cy="42" r="7" fill="none" stroke="#9a9a9a" stroke-width="1.3" />
     <circle cx="608" cy="42" r="2" fill="#9a9a9a" />

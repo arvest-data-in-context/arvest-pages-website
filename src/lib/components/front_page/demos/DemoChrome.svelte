@@ -23,9 +23,8 @@
 <line x1="0" y1="36" x2="640" y2="36" stroke="#000" stroke-width="1.5" />
 <g transform="translate(12 9) scale(0.140625)">
     <rect width="128" height="128" rx="28" fill="#800080" />
-    <path fill-rule="evenodd" fill="#fff" d="M56 22h16l30 84H86l-6-18H48l-6 18H26zM53 74h22l-11-33z" />
+    <path fill-rule="evenodd" fill="#fff" d="M27.3 106H36.5L52.4 82.6H90.5L92 106H100.7L95.2 22H85.5ZM87.3 31.6 90 75.4H57.3Z" />
 </g>
-<text x="36" y="24" class="brand">Arvest</text>
 {#each [0, 1, 2] as i}
     <rect x={112 + i * 74} y="10" width="66" height="16" rx="8" fill={i === page ? "#800080" : "none"} />
     <rect x={124 + i * 74} y="16.5" width="42" height="3" rx="1.5" fill={i === page ? "#fff" : "#9a9a9a"} />
@@ -46,10 +45,3 @@
     <rect x="15" y={57 + i * 38} width="14" height="14" rx="2.5" fill="none" stroke={i === side ? "#800080" : "#000"} stroke-width="1.3" />
 {/each}
 
-<style>
-    .brand {
-        font-family: var(--font-display);
-        font-size: 17px;
-        fill: #800080;
-    }
-</style>
