@@ -53,7 +53,7 @@
     </div>  
 
     <div class="foot_line">
-        <a class="brand" href="{base}/{langVal}" aria-label="Arvest, home"><img src="{base}/favicon.svg" alt="" width="28" height="28"></a>
+        <a class="brand" href="{base}/{langVal}" aria-label="Arvest, home"><img src="{base}/favicon.svg?v=2" alt="" width="28" height="28"></a>
         <p id="copyright_notice">© 2023 - {currentYear} Arvest</p>
     </div>
     </div>

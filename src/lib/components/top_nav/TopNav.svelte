@@ -87,7 +87,7 @@
 <header class:scrolled class:menu_open>
     <nav class="bar" aria-label="Main" bind:this={bar}>
         <a class="brand" href="{base}/{langVal}" aria-label="Arvest, home">
-            <img src="{base}/favicon.svg" alt="" width="34" height="34">
+            <img src="{base}/favicon.svg?v=2" alt="" width="34" height="34">
         </a>
 
         <ul class="links">
